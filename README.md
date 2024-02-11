@@ -6,7 +6,7 @@
 
 ## Project Live Link
 
-[Click here to get my project live link :](https://hostel-management-8210c.web.app/)
+[Click here to get my project live link :](https://hostel-management-3967.netlify.app/)
 
 ### Feature - 1
 

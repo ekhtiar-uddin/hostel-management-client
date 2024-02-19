@@ -1,7 +1,8 @@
+import Lottie from "lottie-react";
 import { Navigate, useLocation } from "react-router-dom";
 import UseAdmin from "../Hooks/UseAdmin";
 import UseAuth from "../Hooks/UseAuth";
-
+import banner from "../assets/bannerAnimation/kJf7VPLhza.json";
 const AdminRoute = ({ children }) => {
   const { user, loading, setLoading } = UseAuth();
 
@@ -10,8 +11,12 @@ const AdminRoute = ({ children }) => {
   const location = useLocation();
 
   if (loading || isAdminLoading) {
-    return <span className="loading loading-infinity loading-lg"></span>;
-    // setLoading(false);
+    return (
+      <div className="flex justify-center items-center lg:h-[70vh]">
+        {" "}
+        <Lottie className="w-[300px]" animationData={banner} loop={true} />{" "}
+      </div>
+    );
   }
 
   if (user && isAdmin) {

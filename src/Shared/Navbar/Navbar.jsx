@@ -1,12 +1,14 @@
 import { FaBars } from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import UseAdmin from "../../Hooks/UseAdmin";
 import UseAuth from "../../Hooks/UseAuth";
 
 const NavBar = () => {
   const [isAdmin] = UseAdmin();
   const { user, logOut } = UseAuth();
+
+  const navigate = useNavigate();
 
   const navlinksBeforeLogin = (
     <>
@@ -117,48 +119,15 @@ const NavBar = () => {
           Contact Us
         </NavLink>
       </li>
-
-      {/* <li>
-        <div className="dropdown hidden lg:block dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-[60px] rounded-full">
-              <img src={user?.photoURL} alt={user?.displayName} />
-            </div>
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52"
-          >
-            <li>
-              <button className="btn btn-sm  btn-ghost">
-                {user?.displayName}
-              </button>
-            </li>
-            {user && isAdmin && (
-              <li className="ml-10">
-                <Link to="/dashboard/adminProfile">Dashboard</Link>
-              </li>
-            )}
-            {user && !isAdmin && (
-              <li className="ml-10">
-                <Link to="/dashboard/userProfile">Dashboard</Link>
-              </li>
-            )}
-            <li>
-              <button onClick={logOut} className="btn btn-sm  btn-ghost">
-                Logout
-              </button>
-            </li>
-          </ul>
-        </div>
-      </li> */}
     </>
   );
-
-  console.log(user);
+  const handleLogOut = () => {
+    logOut();
+    navigate("/");
+  };
   return (
     <>
-      <div className="py-4 flex justify-between">
+      <div className="py-4 flex  items-center justify-between">
         <div className="flex  items-center gap-2">
           <div className="dropdown">
             <div tabIndex={0} role="button" className=" lg:hidden">
@@ -181,7 +150,7 @@ const NavBar = () => {
         </div>
 
         <div className="flex items-center">
-          <ul className="hidden lg:block lg:flex gap-5">
+          <ul className="hidden  lg:flex gap-5">
             {user ? navLinks : navlinksBeforeLogin}
           </ul>
         </div>
@@ -192,7 +161,7 @@ const NavBar = () => {
               <div className="flex gap-3 items-center">
                 <div>
                   <button
-                    onClick={logOut}
+                    onClick={handleLogOut}
                     className="text-sm flex items-center gap-1 font-Inter font-semibold text-[#BFFCF9] hover:text-[#EB3656]"
                   >
                     Logout{" "}
@@ -226,7 +195,7 @@ const NavBar = () => {
               </ul>
             </div>
           ) : (
-            <button className="mt-1">
+            <button className="">
               <NavLink
                 to="/login"
                 className={({ isActive, isPending }) =>

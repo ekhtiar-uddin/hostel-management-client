@@ -94,13 +94,13 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>Register | CampusBite</title>
       </Helmet>
-      <div className=" my-20">
-        <div className="bg-white flex  rounded-3xl w-2/3 h-[550px]  mx-auto">
-          <div className="flex-1  text-[#FFF]  rounded-tr-[170px] rounded-br-[100px] bg-[#EB3656] flex justify-center items-center rounded-3xl">
+      <div className=" my-20 ">
+        <div className="bg-white flex lg:flex-row flex-col-reverse  rounded-3xl lg:w-2/3 lg:h-[550px]  mx-auto">
+          <div className="flex-1 py-20 lg:py-0 text-[#FFF] lg:rounded-t-3xl rounded-t-[90px]    lg:rounded-tr-[170px] lg:rounded-br-[100px] bg-[#EB3656] flex justify-center items-center rounded-3xl">
             <div className="">
               <h2 className="mb-4 text-3xl font-Inter font-bold  text-center">
                 Login
@@ -110,7 +110,7 @@ const Register = () => {
               </p>
               <div className="flex justify-center ">
                 <Link to="/login">
-                  <button className=" px-8 py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none  text-white rounded">
+                  <button className="px-4 lg:px-8 py-1 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none  text-white rounded">
                     SIGN IN
                   </button>
                 </Link>{" "}
@@ -118,14 +118,14 @@ const Register = () => {
             </div>
           </div>
 
-          <div className="flex-1 py-8 pl-8">
-            <h2 className="my-5 text-[#000] text-3xl font-Inter font-bold  text-center">
+          <div className="flex-1 py-5 lg:py-8 lg:pl-8">
+            <h2 className="lg:my-5 text-[#000] text-2xl lg:text-3xl font-Inter font-bold  text-center">
               Create Account With
             </h2>
-            <div className="flex gap-5 items-center justify-center">
+            <div className="flex lg:flex-row flex-col gap-5 items-center justify-center">
               <div
                 onClick={handleGoogleLogin}
-                className="cursor-pointer justify-center flex items-center gap-2 mb-3 mt-2 py-2 px-5 rounded text-base border "
+                className="cursor-pointer justify-center flex items-center lg:gap-2 lg:mb-3 mt-2 py-2 px-5 rounded text-base border "
               >
                 <div className="flex items-center gap-2">
                   <FcGoogle className="text-2xl"></FcGoogle>
@@ -138,7 +138,7 @@ const Register = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="">
               <div>
                 <input
-                  className="bg-[#FFF] mb-5 py-2 outline-none  border  w-[400px]  block pb-3 pl-3 rounded-lg"
+                  className="bg-[#FFF] mb-3 lg:mb-5 py-2 outline-none  border  lg:w-[400px]  w-3/4 mx-auto lg:mx-0  block pb-3 pl-3 rounded-lg"
                   type="text"
                   placeholder="Your Name"
                   {...register("name", { required: true })}
@@ -149,7 +149,7 @@ const Register = () => {
                 )}
 
                 <input
-                  className="bg-[#FFF] mb-5 py-2 outline-none  border  w-[400px]  block pb-3 pl-3 rounded-lg"
+                  className="bg-[#FFF] mb-3 lg:mb-5 py-2 outline-none  border  lg:w-[400px]  w-3/4 mx-auto lg:mx-0  block pb-3 pl-3 rounded-lg"
                   type="text"
                   placeholder="photo URL"
                   {...register("photoURL", { required: true })}
@@ -159,7 +159,7 @@ const Register = () => {
                 )}
 
                 <input
-                  className="bg-[#FFF] mb-5 py-2 outline-none  border  w-[400px]  block pb-3 pl-3 rounded-lg"
+                  className="bg-[#FFF] mb-3 lg:mb-5 py-2 outline-none  border  lg:w-[400px]  w-3/4 mx-auto lg:mx-0  block pb-3 pl-3 rounded-lg"
                   type="emial"
                   placeholder="Username or Email"
                   {...register("email", { required: true })}
@@ -169,11 +169,11 @@ const Register = () => {
                 {errors.email && (
                   <span className="text-[#D24821] ">email is required</span>
                 )}
-                <div className="relative mb-4 w-[400px]">
+                <div className="relative mb-4 lg:w-[400px]">
                   <input
                     type={showPassword ? "text" : "password"}
                     placeholder="password"
-                    className="bg-[#FFF] mb-5 py-2 outline-none  border  w-[400px]  block pb-3 pl-3 rounded-lg"
+                    className="bg-[#FFF] mb-3 lg:mb-5 py-2 outline-none  border  lg:w-[400px]  w-3/4 mx-auto lg:mx-0  block pb-3 pl-3 rounded-lg"
                     name="password"
                     {...register("password", {
                       required: true,
@@ -206,7 +206,7 @@ const Register = () => {
 
                   <span
                     onClick={() => setShowPassword(!showPassword)}
-                    className="text-xl cursor-pointer absolute right-2 bottom-3"
+                    className="text-xl cursor-pointer absolute right-14 lg:right-2 bottom-3"
                   >
                     {showPassword ? (
                       <AiFillEye className="text-[#D24821] "></AiFillEye>
@@ -217,7 +217,7 @@ const Register = () => {
                 </div>
               </div>
 
-              <div className="mb-3">
+              <div className="mb-3 ml-10 lg:ml-0 text-sm lg:text-base">
                 <input type="checkbox" name="terms" id="terms" />
                 <label className="font-Inter text-[#D24821] font-medium">
                   {" "}
@@ -229,7 +229,7 @@ const Register = () => {
               </div>
 
               <div className="flex justify-center  mt-3">
-                <button className=" px-10 py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656]  text-white rounded">
+                <button className="px-4 lg:px-10 py-1 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656]  text-white rounded">
                   Continue
                 </button>
               </div>

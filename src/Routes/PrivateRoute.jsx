@@ -1,21 +1,25 @@
-import { Navigate, useLocation } from "react-router-dom";
+import Lottie from "lottie-react";
+import { Navigate } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
+import banner from "../assets/bannerAnimation/kJf7VPLhza.json";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = UseAuth();
 
-  const location = useLocation();
-
   if (loading) {
-    return <span className="loading loading-infinity loading-lg"></span>;
+    return (
+      <div className="flex justify-center items-center lg:h-[70vh]">
+        {" "}
+        <Lottie className="w-[300px]" animationData={banner} loop={true} />{" "}
+      </div>
+    );
   }
 
   if (user) {
     return children;
+  } else {
+    return <Navigate to="/login"></Navigate>;
   }
-
-  // return <Navigate state={{from : location}} replace  to="/login"></Navigate>
-  return <Navigate to="/login"></Navigate>;
 };
 
 export default PrivateRoute;

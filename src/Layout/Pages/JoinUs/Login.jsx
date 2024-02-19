@@ -56,8 +56,8 @@ const Login = () => {
         <title>Login | CampusBite</title>
       </Helmet>
       <div className="   mt-20 ">
-        <div className="bg-white  flex  rounded-3xl w-2/3 h-[550px]  mx-auto">
-          <div className="flex-1 py-8 pl-8">
+        <div className="bg-white  flex lg:flex-row flex-col  rounded-3xl lg:w-2/3 w-full lg:h-[550px]  mx-auto">
+          <div className="flex-1 py-5 lg:py-8 lg:pl-8">
             <h2 className="my-5 text-[#000] text-3xl font-Inter font-bold  text-center">
               Sign In With
             </h2>
@@ -75,7 +75,7 @@ const Login = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="">
               <div>
                 <input
-                  className="bg-[#FFF] mb-5 py-2 outline-none  border  w-[400px]  block pb-3 pl-3 rounded-lg"
+                  className="bg-[#FFF] w-3/4 mx-auto lg:mx-0 mb-5 py-2 outline-none  border  lg:w-[400px]  block pb-3 pl-3 rounded-lg"
                   type="email"
                   placeholder="Email"
                   {...register("email", { required: true })}
@@ -86,11 +86,11 @@ const Login = () => {
                   <span className="text-[#D24821]">email is required</span>
                 )}
 
-                <div className="relative mb-4 w-[400px]">
+                <div className="relative mb-4 lg:w-[400px]">
                   <input
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
-                    className="border  pl-3 rounded-lg w-[400px]  py-2 outline-none block pb-3  bg-[#FFF]"
+                    className="border w-3/4 mx-auto lg:mx-0  pl-3 rounded-lg lg:w-[400px]  py-2 outline-none block pb-3  bg-[#FFF]"
                     name="password"
                     {...register("password", {
                       required: true,
@@ -123,7 +123,7 @@ const Login = () => {
 
                   <span
                     onClick={() => setShowPassword(!showPassword)}
-                    className="text-xl cursor-pointer absolute right-2 bottom-3"
+                    className="text-xl cursor-pointer absolute right-14 lg:right-2 bottom-3"
                   >
                     {showPassword ? (
                       <AiFillEye className="text-[#EB3656]"></AiFillEye>
@@ -134,7 +134,7 @@ const Login = () => {
                 </div>
               </div>
 
-              <div className="mb-3">
+              <div className="mb-3 ml-12 lg:ml-0 lg:text-left text-sm">
                 <input type="checkbox" name="terms" id="terms" />
                 <label className="font-Inter text-[#D24821] font-medium">
                   {" "}
@@ -146,24 +146,24 @@ const Login = () => {
               </div>
 
               <div className="flex justify-center  mt-3">
-                <button className=" px-10 py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656]  text-white rounded">
+                <button className="px-4 lg:px-10 py-1 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656]  text-white rounded">
                   Continue
                 </button>
               </div>
             </form>
           </div>
 
-          <div className="flex-1  text-[#FFF]  rounded-tl-[170px] rounded-bl-[100px] bg-[#EB3656] flex justify-center items-center rounded-3xl">
+          <div className="flex-1  py-20 lg:py-0 text-[#FFF]  lg:rounded-tl-[170px] lg:rounded-bl-[100px] bg-[#EB3656] flex justify-center items-center rounded-3xl lg:rounded-t-3xl rounded-t-[90px]">
             <div className="">
-              <h2 className="mb-4 text-3xl font-Inter font-bold  text-center">
+              <h2 className="mb-4 text-2xl lg:text-3xl font-Inter font-bold  text-center">
                 Create Account
               </h2>
-              <p className="text-center mb-4 font-Inter ">
+              <p className="text-center lg:text-base text-sm mb-4 font-Inter ">
                 Don't have an account?{" "}
               </p>
               <div className="flex justify-center ">
                 <Link to="/register">
-                  <button className=" px-8 py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none  text-white rounded">
+                  <button className="px-4 lg:px-8 py-1 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none  text-white rounded">
                     SIGN UP
                   </button>
                 </Link>{" "}

@@ -19,8 +19,8 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? " text-sm bg-[#101010] text-[#EB3656] font-Inter rounded-full  font-semibold py-1 lg:py-2 lg:px-4 "
-              : " text-sm hover:bg-[#101010] text-white  font-Inter rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+              ? " text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4 "
+              : " text-sm hover:bg-[#101010] text-white   rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           Home
@@ -34,8 +34,8 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-sm bg-[#101010] text-[#EB3656] font-Inter rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
-              : " text-sm hover:bg-[#101010] text-white  font-Inter rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+              : " text-sm hover:bg-[#101010] text-white   rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           Meals
@@ -49,8 +49,8 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-sm bg-[#101010] text-[#EB3656] font-Inter rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] text-white  font-Inter rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] text-white   rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           Upcoming Meals
@@ -68,8 +68,8 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-sm bg-[#101010]  text-[#EB3656] font-Inter rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] text-white font-Inter rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm bg-[#101010]  text-[#EB3656]  rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] text-white  rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           Home
@@ -83,8 +83,8 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-sm bg-[#101010] text-[#EB3656] font-Inter rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] text-white font-Inter rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] text-white  rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           Meals
@@ -98,8 +98,8 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-sm lg:bg-[#101010] text-[#EB3656] font-Inter rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] text-white font-Inter rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm lg:bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] text-white  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           Upcoming Meals
@@ -112,8 +112,8 @@ const NavBar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "text-sm bg-[#101010] text-[#EB3656] font-Inter rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] text-white font-Inter rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] text-white  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           Contact Us
@@ -162,7 +162,7 @@ const NavBar = () => {
                 <div>
                   <button
                     onClick={handleLogOut}
-                    className="text-sm flex items-center gap-1 font-Inter font-semibold text-[#BFFCF9] hover:text-[#EB3656]"
+                    className="text-sm flex items-center gap-1  font-semibold text-[#BFFCF9] hover:text-[#EB3656]"
                   >
                     Logout{" "}
                     <HiOutlineLogout className="text-xl"></HiOutlineLogout>
@@ -179,16 +179,16 @@ const NavBar = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box bg-[#2C2C2C]  "
               >
-                <li className=" hover:bg-[#161515] py-1 px-4 rounded-xl text-white font-Inter text-center">
+                <li className=" hover:bg-[#161515] py-1 px-4 rounded-xl text-white  text-center">
                   {user?.displayName}
                 </li>
                 {user && isAdmin && (
-                  <li className="hover:bg-[#161515] px-4   rounded-xl text-white font-Inter ">
+                  <li className="hover:bg-[#161515] px-4   rounded-xl text-white  ">
                     <Link to="/dashboard/adminProfile"> Dashboard</Link>
                   </li>
                 )}
                 {user && !isAdmin && (
-                  <li className="hover:bg-[#161515] px-4   rounded-xl text-white font-Inter ">
+                  <li className="hover:bg-[#161515] px-4   rounded-xl text-white  ">
                     <Link to="/dashboard/userProfile">Dashboard</Link>
                   </li>
                 )}
@@ -202,8 +202,8 @@ const NavBar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "text-sm bg-[#870012] text-white font-Inter rounded-full  font-semibold py-2 px-4"
-                    : " text-sm hover:bg-[#870012] bg-[#EB3656] text-white  font-Inter rounded-full  font-semibold py-2 px-4"
+                    ? "text-sm bg-[#870012] text-white  rounded-full  font-semibold py-2 px-4"
+                    : " text-sm hover:bg-[#870012] bg-[#EB3656] text-white   rounded-full  font-semibold py-2 px-4"
                 }
               >
                 Join Now

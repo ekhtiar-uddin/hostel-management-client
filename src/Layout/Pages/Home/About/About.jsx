@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="my-10 lg:my-20">
-      <h2 className="text-3xl lg:text-4xl uppercase text-center lg:mb-16  text-white font-Inter font-extrabold">
+      <h2 className="text-3xl lg:text-4xl uppercase text-center lg:mb-16  text-white  font-extrabold">
         About <span className=" text-[#EB3656] "> CampusBite</span>
       </h2>
       <div className=" flex lg:flex-row flex-col-reverse gap-10 justify-between ">
         <div className="flex-1">
-          <p className=" text-white lg:mt-10  font-Inter font-medium">
+          <p className=" text-white lg:mt-10   font-medium">
             Beyond being a meal service, CampusBite is a community hub. Connect
             with fellow students through exclusive events and shared culinary
             adventures, fostering bonds that go beyond the lecture halls. Our
@@ -18,7 +18,7 @@ const About = () => {
             your subscription, customize preferences, and track deliveries
             effortlessly.
           </p>
-          <p className=" text-white mt-5 lg:mt-10  font-Inter font-medium ">
+          <p className=" text-white mt-5 lg:mt-10   font-medium ">
             Join us in redefining student dining – where convenience meets
             community, and each meal becomes a celebration of your academic
             journey. Experience the difference with CampusBite, where we're not
@@ -27,9 +27,9 @@ const About = () => {
           </p>
 
           <Link to={`/contact`}>
-            <button className="mt-7 lg:mt-12 px-4 lg:px-8 py-2 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-150 bg-[#BFFCF9] text-[#000000] rounded-full hover:text-white">
-              Contact Us
-            </button>
+            <button className="btnAll mt-7 lg:mt-12 px-4 lg:px-8 py-2 lg:py-2     font-medium  transition-all duration-200 rounded bg-[#EB3656] ">
+              <span className=""> Contact Us</span>
+            </button>{" "}
           </Link>
         </div>
 

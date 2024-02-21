@@ -34,7 +34,7 @@ const ManageUsers = () => {
 
   return (
     <div>
-      <h2 className=" my-12  uppercase text-4xl text-center text-white font-Inter font-extrabold">
+      <h2 className=" my-12  uppercase text-4xl text-center text-white  font-extrabold">
         all user <span className="text-[#EB3656]"> data </span>
       </h2>
 

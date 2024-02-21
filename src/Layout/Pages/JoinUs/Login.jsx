@@ -37,7 +37,10 @@ const Login = () => {
         new Swal("Login Successful!", "Welcome back!", "success");
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        new Swal("Please Register!", "", "error");
+        navigate("/register");
+      });
   };
 
   const handleGoogleLogin = () => {
@@ -47,7 +50,9 @@ const Login = () => {
         new Swal("Login Successful!", "Welcome back!", "success");
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -58,7 +63,7 @@ const Login = () => {
       <div className="   mt-20 ">
         <div className="bg-white  flex lg:flex-row flex-col  rounded-3xl lg:w-2/3 w-full lg:h-[550px]  mx-auto">
           <div className="flex-1 py-5 lg:py-8 lg:pl-8">
-            <h2 className="my-5 text-[#000] text-3xl font-Inter font-bold  text-center">
+            <h2 className="my-5 text-[#000] text-3xl  font-bold  text-center">
               Sign In With
             </h2>
             <div
@@ -69,7 +74,7 @@ const Login = () => {
                 <FcGoogle className="text-2xl"></FcGoogle>
               </div>
             </div>
-            <p className="text-[#000] font-Inter text-center mb-3 ">
+            <p className="text-[#000]  text-center mb-3 ">
               or use your email password
             </p>
             <form onSubmit={handleSubmit(onSubmit)} className="">
@@ -136,17 +141,17 @@ const Login = () => {
 
               <div className="mb-3 ml-12 lg:ml-0 lg:text-left text-sm">
                 <input type="checkbox" name="terms" id="terms" />
-                <label className="font-Inter text-[#D24821] font-medium">
+                <label className=" text-[#D24821] font-medium">
                   {" "}
                   Accept our{" "}
                 </label>
-                <a className="text-[#D24821] font-Inter font-medium">
+                <a className="text-[#D24821]  font-medium">
                   Terms and Conditions
                 </a>
               </div>
 
               <div className="flex justify-center  mt-3">
-                <button className="px-4 lg:px-10 py-1 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656]  text-white rounded">
+                <button className="px-4 lg:px-10 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656]  text-white rounded">
                   Continue
                 </button>
               </div>
@@ -155,15 +160,15 @@ const Login = () => {
 
           <div className="flex-1  py-20 lg:py-0 text-[#FFF]  lg:rounded-tl-[170px] lg:rounded-bl-[100px] bg-[#EB3656] flex justify-center items-center rounded-3xl lg:rounded-t-3xl rounded-t-[90px]">
             <div className="">
-              <h2 className="mb-4 text-2xl lg:text-3xl font-Inter font-bold  text-center">
+              <h2 className="mb-4 text-2xl lg:text-3xl  font-bold  text-center">
                 Create Account
               </h2>
-              <p className="text-center lg:text-base text-sm mb-4 font-Inter ">
+              <p className="text-center lg:text-base text-sm mb-4  ">
                 Don't have an account?{" "}
               </p>
               <div className="flex justify-center ">
                 <Link to="/register">
-                  <button className="px-4 lg:px-8 py-1 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none  text-white rounded">
+                  <button className="px-4 lg:px-8 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none  text-white rounded">
                     SIGN UP
                   </button>
                 </Link>{" "}

@@ -1,7 +1,7 @@
 const WhyChoose = () => {
   return (
     <div className="lg:my-24">
-      <h2 className="text-3xl lg:text-4xl uppercase text-center mb-16 lg:mb-20  text-white font-Inter font-extrabold">
+      <h2 className="text-3xl lg:text-4xl uppercase text-center mb-16 lg:mb-20  text-white  font-extrabold">
         Why <span className=" text-[#EB3656] "> Choose Us?</span>
       </h2>
 
@@ -15,10 +15,10 @@ const WhyChoose = () => {
           </div>
 
           <div>
-            <h2 className="text-white font-Inter font-bold mb-1 lg:mb-3 text-xl lg:text-2xl">
+            <h2 className="text-white  font-bold mb-1 lg:mb-3 text-xl lg:text-2xl">
               Balanced Diet
             </h2>
-            <p className=" text-white font-Inter text-sm lg:text-base font-medium">
+            <p className=" text-white  text-sm lg:text-base font-medium">
               {" "}
               Discover the perfect blend of nutrients for a healthy and
               nourishing lifestyle with balanced meals.
@@ -34,10 +34,10 @@ const WhyChoose = () => {
           </div>
 
           <div>
-            <h2 className="text-white font-Inter font-bold mb-1 lg:mb-3 text-xl lg:text-2xl ">
+            <h2 className="text-white  font-bold mb-1 lg:mb-3 text-xl lg:text-2xl ">
               Variety Foods
             </h2>
-            <p className=" text-white font-Inter text-sm lg:text-base font-medium">
+            <p className=" text-white  text-sm lg:text-base font-medium">
               {" "}
               Indulge in a world of flavors and textures with our diverse range
               of delicious, nutritious options.
@@ -54,10 +54,10 @@ const WhyChoose = () => {
           </div>
 
           <div className="">
-            <h2 className="text-white font-Inter font-bold mb-1 lg:mb-3 text-xl lg:text-2xl">
+            <h2 className="text-white  font-bold mb-1 lg:mb-3 text-xl lg:text-2xl">
               Control
             </h2>
-            <p className=" text-white font-Inter text-sm lg:text-base font-medium">
+            <p className=" text-white  text-sm lg:text-base font-medium">
               {" "}
               Take charge of your wellness journey by maintaining mindful
               portions and fostering self-discipline effortlessly.
@@ -73,10 +73,10 @@ const WhyChoose = () => {
           </div>
 
           <div>
-            <h2 className="text-white font-Inter font-bold mb-1 lg:mb-3 text-xl lg:text-2xl">
+            <h2 className="text-white  font-bold mb-1 lg:mb-3 text-xl lg:text-2xl">
               Exercise
             </h2>
-            <p className=" text-white font-Inter text-sm lg:text-base font-medium">
+            <p className=" text-white  text-sm lg:text-base font-medium">
               {" "}
               Ignite your vitality with invigorating workouts, enhancing your
               overall well-being and promoting an active lifestyle .

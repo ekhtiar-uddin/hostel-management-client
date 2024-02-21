@@ -59,7 +59,7 @@ const MealPage = () => {
         <title>Meals | CampusBite</title>
       </Helmet>
       <div className="">
-        <h2 className="text-white my-16 text-3xl lg:text-4xl text-center  font-Inter font-extrabold  uppercase">
+        <h2 className="text-white my-16 text-3xl lg:text-4xl text-center   font-extrabold  uppercase">
           Eat Quality <span className="text-[#EB3656]"> Food</span>
         </h2>
 
@@ -69,12 +69,12 @@ const MealPage = () => {
               className=" 
             "
             >
-              <p className="text-center  text-2xl uppercase my-8 text-white font-Inter font-bold">
+              <p className="text-center  text-2xl uppercase my-8 text-white  font-bold">
                 <span className="text-[#EB3656]">Welcome</span> to CampusBite
                 Meals page{" "}
               </p>
 
-              <p className="mb-7 text-white font-Inter font-medium">
+              <p className="mb-7 text-white  font-medium">
                 We fuel campus life with delicious bites! Our mission is to
                 provide a world of diverse, healthy, and convenient food options
                 to keep you energized throughout your busy day. Whether you're
@@ -93,7 +93,7 @@ const MealPage = () => {
                       className="w-[30px]"
                       src="https://i.ibb.co/qxknKhC/checkmark.png"
                     ></img>
-                    <p className=" text-white text-sm font-Inter font-medium">
+                    <p className=" text-white text-sm  font-medium">
                       The food here uses 100% natural preservatives
                     </p>
                   </div>
@@ -102,7 +102,7 @@ const MealPage = () => {
                       className="w-[30px] "
                       src="https://i.ibb.co/qxknKhC/checkmark.png"
                     ></img>
-                    <p className=" text-white text-sm font-Inter font-medium">
+                    <p className=" text-white text-sm  font-medium">
                       The package here is very up to date and safe
                     </p>
                   </div>
@@ -111,7 +111,7 @@ const MealPage = () => {
                       className="w-[30px]"
                       src="https://i.ibb.co/qxknKhC/checkmark.png"
                     ></img>
-                    <p className=" text-white text-sm font-Inter font-medium">
+                    <p className=" text-white text-sm  font-medium">
                       A comfortable place to hang out with your friends.
                     </p>
                   </div>
@@ -169,7 +169,7 @@ const MealPage = () => {
         </div>
 
         <div className="border-b mt-10 lg:mt-20 mb-12 border-[#444] pb-10">
-          <h2 className="text-white text-3xl uppercase lg:text-4xl text-center  font-Inter font-extrabold  ">
+          <h2 className="text-white text-3xl uppercase lg:text-4xl text-center   font-extrabold  ">
             Our <span className="text-[#EB3656]"> Specials</span>
           </h2>
         </div>
@@ -180,7 +180,7 @@ const MealPage = () => {
               <div className="flex gap-4 lg:gap-10">
                 <div className=" bg-[#FFF]  ">
                   <div className=" ">
-                    <h2 className="font-bold text-center mb-4 text-[#000] font-Inter text-[19px]">
+                    <h2 className="font-bold text-center mb-4 text-[#000]  text-[19px]">
                       Filter By Category
                     </h2>
                     <Select
@@ -193,7 +193,7 @@ const MealPage = () => {
                 </div>
 
                 <div>
-                  <h2 className="font-bold text-center mb-4 text-[#000] font-Inter  text-[19px]">
+                  <h2 className="font-bold text-center mb-4 text-[#000]   text-[19px]">
                     Filter By Price
                   </h2>
                   <button
@@ -205,7 +205,7 @@ const MealPage = () => {
                 </div>
               </div>
 
-              <h2 className="font-bold text-center mb-10 text-[#000] font-Inter text-3xl lg:text-4xl  mt-36 ">
+              <h2 className="font-bold text-center mb-10 text-[#000]  text-3xl lg:text-4xl  mt-36 ">
                 Best Rating Meal
               </h2>
               <div className="lg:w-[400px]">

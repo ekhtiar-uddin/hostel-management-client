@@ -3,7 +3,7 @@ import React from "react";
 const Description = () => {
   return (
     <div className="flex justify-center py-16 ">
-      <p className="text-white w-[600px] text-center font-Inter font-medium">
+      <p className="text-white w-[600px] text-center  font-medium">
         On campus dining locations provide an essential service for the CB
         community of students, staff, and faculty. Whether it’s comfort food for
         dinner take-out, sushi ordered via your mobile device for lunch, or a

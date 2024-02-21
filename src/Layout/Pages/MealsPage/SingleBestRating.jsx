@@ -24,11 +24,11 @@ const SingleBestRating = ({ item }) => {
         src={image}
       ></img>
 
-      <h2 className="font-Inter text-sm text-center font-semibold lg:mt-5 mt-3">
+      <h2 className=" text-sm text-center font-semibold lg:mt-5 mt-3">
         {category}
       </h2>
-      <p className="font-bold text-sm text-center font-Inter">
-        $ <span className="lg:text-base font-bold font-Inter">{price}</span>{" "}
+      <p className="font-bold text-sm text-center ">
+        $ <span className="lg:text-base font-bold ">{price}</span>{" "}
       </p>
     </div>
   );

@@ -59,7 +59,7 @@ const Contact = () => {
                   required
                 />
 
-                <label className="mb-4 absolute left-3 top-2 text-white font-Inter font-semibold transition-all duration-200  ">
+                <label className="mb-4 absolute left-3 top-2 text-white  font-semibold transition-all duration-200  ">
                   First Name
                 </label>
               </div>
@@ -71,12 +71,11 @@ const Contact = () => {
                   id=""
                   required
                 />
-                <label className="mb-4 absolute left-3 top-2 text-white font-Inter font-semibold  transition-all duration-200 ">
+                <label className="mb-4 absolute left-3 top-2 text-white  font-semibold  transition-all duration-200 ">
                   Last Name
                 </label>
               </div>
             </div>
-
             <div className="relative ">
               <input
                 className="outline-none rounded-lg text-white bg-[#161515] w-full  pl-2 border border-[#BFFCF9] py-2 mb-7 "
@@ -85,7 +84,7 @@ const Contact = () => {
                 id=""
                 required
               />
-              <label className="font-Inter font-semibold  mb-4 absolute left-3 top-2 text-white transition-all duration-200 ">
+              <label className=" font-semibold  mb-4 absolute left-3 top-2 text-white transition-all duration-200 ">
                 Email
               </label>
             </div>
@@ -97,12 +96,11 @@ const Contact = () => {
                 id=""
                 required
               />
-              <label className="font-Inter font-semibold  mb-4 absolute left-3 top-2 text-white transition-all duration-200 ">
+              <label className=" font-semibold  mb-4 absolute left-3 top-2 text-white transition-all duration-200 ">
                 Phone
               </label>
             </div>
-
-            <div className=" font-Inter font-semibold text-sm mb-8  text-white ">
+            <div className="  font-semibold text-sm mb-8  text-white ">
               <h4 className="mb-2">
                 You are <span className="text-[#CC0018]">*</span>
               </h4>
@@ -147,7 +145,6 @@ const Contact = () => {
               />{" "}
               <span className=" font-medium text-sm"> Other</span> <br />
             </div>
-
             <div className="relative ">
               <textarea
                 className=" mb-4 outline-none rounded-lg text-white bg-[#161515] pl-2 border border-[#BFFCF9] w-full"
@@ -157,14 +154,13 @@ const Contact = () => {
                 rows="5"
                 required
               ></textarea>
-              <label className="mb-4 absolute transition-all duration-200  left-3 top-2 text-white font-Inter font-semibold ">
+              <label className="mb-4 absolute transition-all duration-200  left-3 top-2 text-white  font-semibold ">
                 Question <span className="text-[#CC0018]">*</span>
               </label>
             </div>
-
-            <button className="bg-[#BFFCF9] text-[#000000] px-4 lg:px-8 py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-150 rounded-full hover:text-white lg:text-base text-sm">
-              Send Message
-            </button>
+            <button className="btnAll mt-4 px-4 lg:px-6 py-1 lg:py-2   font-medium  transition-all duration-200 rounded bg-[#EB3656] ">
+              <span className="">Send Message</span>
+            </button>{" "}
           </form>
         </div>
 

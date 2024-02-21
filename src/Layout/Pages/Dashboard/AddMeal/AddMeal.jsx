@@ -110,10 +110,10 @@ const AddMeal = () => {
   };
 
   return (
-    <div className="font-Inter h-full">
+    <div className=" h-full">
       <div className="flex h-full justify-center gap-10 items-center">
         <div>
-          <h2 className="text-4xl font-Inter  font-extrabold text-center uppercase">
+          <h2 className="text-4xl   font-extrabold text-center uppercase">
             Add a <span className="text-[#EB3656]">Meal</span>{" "}
           </h2>
 
@@ -152,7 +152,6 @@ const AddMeal = () => {
                 </select>
               </div>
             </div>
-
             <div className="flex w-full gap-4  ">
               <input
                 type="datetime-local"
@@ -176,7 +175,6 @@ const AddMeal = () => {
                 className="outline-none rounded-lg bg-[#161515]    pl-2 border border-[#BFFCF9] py-2 mb-7  w-full"
               />
             </div>
-
             <div className="flex w-full gap-4 mb-6">
               <input
                 type="number"
@@ -193,7 +191,6 @@ const AddMeal = () => {
                 className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2 mb-7 "
               />
             </div>
-
             <div className="flex w-full gap-4 ">
               <input
                 type="text"
@@ -214,7 +211,6 @@ const AddMeal = () => {
                 className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2 mb-7 "
               />
             </div>
-
             <div className="flex gap-5 w-full">
               <textarea
                 {...register("ingredients", { required: true })}
@@ -228,7 +224,6 @@ const AddMeal = () => {
                 className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] py-2 mb-7  w-full"
               ></textarea>
             </div>
-
             <div className="w-full">
               <input
                 {...register("image", { required: true })}
@@ -237,7 +232,6 @@ const AddMeal = () => {
                 className="outline-none rounded-lg bg-[#161515]  pl-2 border w-full border-[#BFFCF9] py-2 mb-7 "
               />
             </div>
-
             <div>
               {errors.name && (
                 <span className="text-[#D24821] mr-4 ">Name is required</span>
@@ -272,19 +266,18 @@ const AddMeal = () => {
                 </span>
               )}
             </div>
-
             <button
               onClick={handleSubmit(onSubmitAddMeal)}
-              className=" mt-4 px-6 lg:px-8 py-1 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 rounded-full bg-[#BFFCF9] text-[#000000] hover:text-white"
+              className="btnAll mt-4 px-6 lg:px-8 py-1 lg:py-2     font-medium  transition-all duration-200 rounded bg-[#EB3656] "
             >
-              Add Meal
-            </button>
+              <span className=""> Add Meal</span>
+            </button>{" "}
             <button
               onClick={handleSubmit(onSubmitUpcomingMeal)}
-              className="ml-4 mt-4 px-6 lg:px-8 py-1 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 rounded-full bg-[#BFFCF9] text-[#000000] hover:text-white"
+              className="btnAll ml-4 mt-4 px-6 lg:px-8 py-1 lg:py-2     font-medium  transition-all duration-200 rounded bg-[#EB3656] "
             >
-              Add To Upcoming
-            </button>
+              <span className=""> Add To Upcoming</span>
+            </button>{" "}
           </form>
         </div>
       </div>

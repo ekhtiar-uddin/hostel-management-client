@@ -13,7 +13,7 @@ const SingleMeal = ({ item, handleDeleteMeal }) => {
         ></img>
       </div>
 
-      <div className="p-2 font-Inter ">
+      <div className="p-2  ">
         <div className="flex items-center gap-2 mt-3 text-[#000000]">
           <Link to={`/dashboard/updateMeal/${item._id}`}>
             {" "}
@@ -34,7 +34,7 @@ const SingleMeal = ({ item, handleDeleteMeal }) => {
           </Link>
         </div>
 
-        <h2 className=" mt-3 font-Inter text-lg font-semibold">
+        <h2 className=" mt-3  text-lg font-semibold">
           {name?.split(" ")[0]} {name?.split(" ")[1]}
         </h2>
         <div className="flex  gap-4">
@@ -42,8 +42,8 @@ const SingleMeal = ({ item, handleDeleteMeal }) => {
           <p>{review} reviews</p>
         </div>
         <div className="mt-3">
-          <h2 className=" font-Inter text-sm  font-medium">{adminName}</h2>
-          <h2 className=" font-Inter text-sm  font-medium">{adminEmail}</h2>
+          <h2 className="  text-sm  font-medium">{adminName}</h2>
+          <h2 className="  text-sm  font-medium">{adminEmail}</h2>
         </div>
       </div>
 

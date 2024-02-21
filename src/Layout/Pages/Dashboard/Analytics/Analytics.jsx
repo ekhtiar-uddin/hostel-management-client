@@ -55,8 +55,8 @@ const Analytics = () => {
   const COLORS = ["#BFFCF9", "#EB3656", "#2C2C2C"];
 
   return (
-    <div className="font-Inter">
-      <h2 className="text-3xl lg:text-4xl font-Inter font-extrabold text-center">
+    <div className="">
+      <h2 className="text-3xl lg:text-4xl  font-extrabold text-center">
         MEMBERSHIP ANALYTICS
       </h2>
       <h2 className="text-xl uppercase  font-extrabold text-center text-[#EB3656] my-2">
@@ -87,22 +87,16 @@ const Analytics = () => {
       <div className="flex justify-center">
         <div className="flex flex-col lg:flex-row md:flex-row md:gap-6 lg:gap-14 gap-6">
           <div className="flex items-center gap-4">
-            <h4 className="text-[#FFF] font-Inter text-lg font-semibold ">
-              Silver{" "}
-            </h4>
+            <h4 className="text-[#FFF]  text-lg font-semibold ">Silver </h4>
             <div className="w-[100px] h-[12px] bg-[#BFFCF9]"> </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <h4 className="text-[#FFF] font-Inter text-lg font-semibold ">
-              Gold{" "}
-            </h4>
+            <h4 className="text-[#FFF]  text-lg font-semibold ">Gold </h4>
             <div className="w-[100px] h-[12px] bg-[#EB3656]"> </div>
           </div>
           <div className="flex items-center gap-4">
-            <h4 className="text-[#FFF] font-Inter text-lg font-semibold ">
-              Platinum{" "}
-            </h4>
+            <h4 className="text-[#FFF]  text-lg font-semibold ">Platinum </h4>
             <div className="w-[100px] h-[12px] bg-[#2C2C2C]"> </div>
           </div>
         </div>

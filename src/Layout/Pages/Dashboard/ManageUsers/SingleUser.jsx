@@ -10,11 +10,9 @@ const SingleUser = ({ user, handleMakeAdmin }) => {
         className="w-[100px] mx-auto rounded-full h-[100px]"
         src={photoURL}
       ></img>
-      <h2 className="text-center mt-2 font-Inter text-lg font-semibold">
-        {name}
-      </h2>
-      <p className="text-center  font-Inter text-sm ">{email}</p>
-      <div className="flex justify-center font-Inter mt-3 text-[#000000]">
+      <h2 className="text-center mt-2  text-lg font-semibold">{name}</h2>
+      <p className="text-center   text-sm ">{email}</p>
+      <div className="flex justify-center  mt-3 text-[#000000]">
         {user.role === "admin" ? (
           <span className="bg-[#BFFCF9] top-[80px] right-[40px] absolute text-sm px-2 py-1 rounded">
             Admin

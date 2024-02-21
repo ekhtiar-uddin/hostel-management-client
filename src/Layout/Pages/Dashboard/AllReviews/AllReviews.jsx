@@ -67,7 +67,7 @@ const AllReviews = () => {
 
   return (
     <div>
-      <h2 className=" my-12  uppercase text-4xl text-center text-white font-Inter font-extrabold">
+      <h2 className=" my-12  uppercase text-4xl text-center text-white  font-extrabold">
         Review From <span className="text-[#EB3656]"> Users </span>
       </h2>
 

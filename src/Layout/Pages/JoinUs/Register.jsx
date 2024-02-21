@@ -102,15 +102,13 @@ const Register = () => {
         <div className="bg-white flex lg:flex-row flex-col-reverse  rounded-3xl lg:w-2/3 lg:h-[550px]  mx-auto">
           <div className="flex-1 py-20 lg:py-0 text-[#FFF] lg:rounded-t-3xl rounded-t-[90px]    lg:rounded-tr-[170px] lg:rounded-br-[100px] bg-[#EB3656] flex justify-center items-center rounded-3xl">
             <div className="">
-              <h2 className="mb-4 text-3xl font-Inter font-bold  text-center">
-                Login
-              </h2>
-              <p className="text-center mb-4 font-Inter ">
+              <h2 className="mb-4 text-3xl  font-bold  text-center">Login</h2>
+              <p className="text-center mb-4  ">
                 Already have an account? You can
               </p>
               <div className="flex justify-center ">
                 <Link to="/login">
-                  <button className="px-4 lg:px-8 py-1 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none  text-white rounded">
+                  <button className="px-4 lg:px-8 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none  text-white rounded">
                     SIGN IN
                   </button>
                 </Link>{" "}
@@ -119,7 +117,7 @@ const Register = () => {
           </div>
 
           <div className="flex-1 py-5 lg:py-8 lg:pl-8">
-            <h2 className="lg:my-5 text-[#000] text-2xl lg:text-3xl font-Inter font-bold  text-center">
+            <h2 className="lg:my-5 text-[#000] text-2xl lg:text-3xl  font-bold  text-center">
               Create Account With
             </h2>
             <div className="flex lg:flex-row flex-col gap-5 items-center justify-center">
@@ -131,7 +129,7 @@ const Register = () => {
                   <FcGoogle className="text-2xl"></FcGoogle>
                 </div>
               </div>
-              <p className="text-[#000] font-Inter text-center mb-3 ">
+              <p className="text-[#000]  text-center mb-3 ">
                 or use your email password
               </p>
             </div>
@@ -219,17 +217,17 @@ const Register = () => {
 
               <div className="mb-3 ml-10 lg:ml-0 text-sm lg:text-base">
                 <input type="checkbox" name="terms" id="terms" />
-                <label className="font-Inter text-[#D24821] font-medium">
+                <label className=" text-[#D24821] font-medium">
                   {" "}
                   Accept our{" "}
                 </label>
-                <a className="text-[#D24821] font-Inter font-medium">
+                <a className="text-[#D24821]  font-medium">
                   Terms and Conditions
                 </a>
               </div>
 
               <div className="flex justify-center  mt-3">
-                <button className="px-4 lg:px-10 py-1 lg:py-2 font-Inter  font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656]  text-white rounded">
+                <button className="px-4 lg:px-10 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656]  text-white rounded">
                   Continue
                 </button>
               </div>

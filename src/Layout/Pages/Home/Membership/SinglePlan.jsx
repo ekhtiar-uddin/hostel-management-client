@@ -1,44 +1,72 @@
-import { IoCheckmarkCircle } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import "../../../../Css/App.css";
 
 const SinglePlan = ({ plan }) => {
   const { planName, advantages, description, price } = plan;
-  return (
-    <div className="singlePlan rounded-xl relative">
-      <div className="box p-8 border-2 border-[#1e1f23] bg-[#2a2b2f] rounded-xl mx-3 lg:mx-5 my-5 h-[500px] lg:h-[500px] text-white">
-        <h2 className="text-xl font-Inter">{planName}</h2>
 
-        <h2 className="text-3xl lg:text-4xl font-medium mt-1 mb-4 lg:mb-8 font-Inter">
+  const bgColor = () => {
+    if (planName === "Sliver") {
+      return "bg-[#272C2C]";
+    } else if (planName === "Gold") {
+      return "bg-[#411C23]";
+    } else {
+      return "bg-[#272C2C]";
+    }
+  };
+
+  const buttonColor = () => {
+    if (planName === "Sliver") {
+      return "bg-[#556B6A]";
+    } else if (planName === "Gold") {
+      return "bg-[#EB3656]";
+    } else {
+      return "bg-[#556B6A]";
+    }
+  };
+
+  console.log(`${planName} bg-[${bgColor()}]`);
+
+  return (
+    <div className="singlePlan rounded-xl ">
+      <div
+        className={` box p-8   rounded-xl mx-3 lg:mx-5 my-5 h-[630px]  md:h-[500px] lg:h-[600px] text-white ${bgColor()} `}
+      >
+        <h2 className="text-center text-3xl font-bold ">{planName}</h2>
+
+        <h2 className="text-center text-3xl lg:text-4xl font-medium mt-4 mb-4 lg:mb-8 ">
           ${price}
           <span className="text-base font-normal">/Monthly</span>
         </h2>
-        <div className="h-[280px] ">
-          <h2 className="text-xl font-semibold font-Inter mb-3">FEATURES</h2>
+        <div className="h-[300px] md:h-[260px] lg:h-[280px] ">
           {advantages.map((item, index) => (
             <div
               key={index}
-              className="text-sm mb-1 lg:mb-3 flex items-center  font-Inter  gap-3  "
+              className="mb-1 lg:mb-3 flex items-center     gap-7 "
             >
               {" "}
-              <IoCheckmarkCircle className="text-[#EB3656] mr-4"></IoCheckmarkCircle>{" "}
-              <p className="flex-1 -ml-3 lg:hidden block">
-                {item.slice(0, 90)}{" "}
-              </p>
-              <p className="flex-1 -ml-3 lg:block hidden">{item} </p>
+              <img
+                className="w-[30px]"
+                src="https://i.ibb.co/Xbtd0n3/check-removebg-preview.png"
+              ></img>
+              <p className="lg:text-base md:text-base text-sm">{item} </p>
             </div>
           ))}
         </div>
-        <Link to={`/checkout/${planName}`}>
-          <button className="bg-[#EB3656]   lg:block hidden lg:mt-9 w-full font-Inter font-semibold py-3  rounded-lg">
+        <Link
+          className="lg:mt-20 md:mt-5 mt-32  flex justify-center"
+          to={`/checkout/${planName}`}
+        >
+          <button
+            className={`${buttonColor()}   font-medium py-3 px-7  rounded-lg hover:shadow-lg hover:translate-y-2 transition-all duration-300`}
+          >
             Make Deal
           </button>
         </Link>
-        <Link to={`/checkout/${planName}`}>
-          <button className="bg-[#EB3656]   lg:hidden block  w-[250px] absolute bottom-2 left-10 mx-auto font-Inter font-semibold py-3  rounded-lg">
+        {/* <Link to={`/checkout/${planName}`}>
+          <button className="bg-[#EB3656]   lg:hidden block  w-[250px]  mx-auto   font-semibold py-3  rounded-lg">
             Make Deal
           </button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

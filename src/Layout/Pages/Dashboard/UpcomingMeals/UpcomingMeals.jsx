@@ -27,7 +27,7 @@ const UpcomingMeals = () => {
   return (
     <div>
       <div>
-        <h2 className=" my-12  uppercase text-4xl text-center text-white font-Inter font-extrabold">
+        <h2 className=" my-12  uppercase text-4xl text-center text-white  font-extrabold">
           {upcomingMeals?.length} meals are{" "}
           <span className="text-[#EB3656]"> Upcoming </span>
         </h2>

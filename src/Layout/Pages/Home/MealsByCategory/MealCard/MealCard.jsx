@@ -34,9 +34,9 @@ const MealCard = ({ item }) => {
     <>
       <div className="meal relative h-[330px]  ">
         <img className="h-full w-full rounded-3xl" src={image}></img>
-        <div className="rounded-3xl info bottom-0 absolute w-full bg-[#EB3656]  h-1/3 flex justify-center items-center">
+        <div className="rounded-3xl info bottom-0 absolute w-full bg-[#211718]  h-1/3 flex justify-center items-center">
           <div className="w-[90%]">
-            <h2 className="font-Inter mt-4 text-white text-xl font-bold text-center">
+            <h2 className=" mt-4 text-white text-xl font-bold text-center">
               {name?.split(" ")[0]} {name?.split(" ")[1]}
             </h2>
             <div className=" flex justify-center gap-8">
@@ -46,15 +46,15 @@ const MealCard = ({ item }) => {
                 value={rating}
                 readOnly
               />
-              <p className="font-Inter text-white text-xl font-semibold ">
+              <p className=" text-white text-xl font-semibold ">
                 Price ${price}
               </p>
             </div>
             <div className="flex justify-center">
               <Link to={`/details/${_id}`}>
-                <button className="py-2 px-5 mt-3 invisible text-white  mx-auto rounded font-Inter bg-[#161515]">
-                  Explore More
-                </button>
+                <button className="btnAll py-2 px-5 mt-3 invisible   font-medium   rounded bg-[#EB3656] ">
+                  <span className=""> Explore More</span>
+                </button>{" "}
               </Link>
             </div>
           </div>

@@ -41,7 +41,7 @@ const AllMeals = () => {
 
   return (
     <div>
-      <h2 className=" my-12  uppercase text-4xl text-center text-white font-Inter font-extrabold">
+      <h2 className=" my-12  uppercase text-4xl text-center text-white  font-extrabold">
         Added <span className="text-[#EB3656]"> meals </span>
       </h2>
 
@@ -91,27 +91,27 @@ const AllMeals = () => {
           <tbody>
             {meals.map((meal, index) => (
               <tr key={meal._id}>
-                <th className="text-sm text-[#444] font-normal font-Inter text-center ">
+                <th className="text-sm text-[#444] font-normal  text-center ">
                   {index + 1}
                 </th>
-                <td className="text-sm text-[#444] font-normal font-Inter text-center ">
+                <td className="text-sm text-[#444] font-normal  text-center ">
                   {meal.name}
                 </td>
 
-                <td className="text-sm text-[#444] font-normal font-Inter text-center ">
+                <td className="text-sm text-[#444] font-normal  text-center ">
                   {meal.likes}
                 </td>
-                <td className="text-sm text-[#444] font-normal font-Inter text-center ">
+                <td className="text-sm text-[#444] font-normal  text-center ">
                   {meal.review}
                 </td>
-                <td className="text-sm text-[#444] font-normal font-Inter text-center ">
+                <td className="text-sm text-[#444] font-normal  text-center ">
                   {meal.adminName}
                 </td>
-                <td className="text-sm text-[#444] font-normal font-Inter text-center ">
+                <td className="text-sm text-[#444] font-normal  text-center ">
                   {meal.adminEmail}
                 </td>
 
-                <td className="text-sm text-[#444] font-normal font-Inter text-center ">
+                <td className="text-sm text-[#444] font-normal  text-center ">
                   <Link to={`/dashboard/updateMeal/${meal._id}`}>
                     {" "}
                     <button className="bg-purple-500 p-2 rounded text-[#fff] ">
@@ -120,7 +120,7 @@ const AllMeals = () => {
                   </Link>
                 </td>
 
-                <td className="text-sm text-[#444] font-normal font-Inter text-center ">
+                <td className="text-sm text-[#444] font-normal  text-center ">
                   <button
                     onClick={() => handleDeleteMeal(meal)}
                     className="bg-red-500 p-2 rounded text-[#fff] "
@@ -128,7 +128,7 @@ const AllMeals = () => {
                     Delete
                   </button>
                 </td>
-                <td className="text-sm text-[#444] font-normal font-Inter text-center ">
+                <td className="text-sm text-[#444] font-normal  text-center ">
                   <Link to={`/details/${meal._id}`}>
                     <button className="bg-blue-500 p-2 rounded text-[#fff] ">
                       View Meal

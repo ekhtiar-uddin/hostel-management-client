@@ -28,7 +28,7 @@ const SingleMeal = ({ meal }) => {
         </div>
         <div className="flex justify-center">
           <div className="space-y-1">
-            <h2 className="font-bold font-Inter text-[#000]  text-[22px]">
+            <h2 className="font-bold  text-[#000]  text-[22px]">
               {name?.split(" ")[0]} {name?.split(" ")[1]}
             </h2>
 
@@ -39,10 +39,10 @@ const SingleMeal = ({ meal }) => {
               readOnly
             />
 
-            <p className=" text-center font-Inter">{category}</p>
+            <p className=" text-center ">{category}</p>
           </div>
         </div>
-        <p className="text-[#EB3656] text-center mt-8 pb-10 font-medium  font-Inter text-[19px]">
+        <p className="text-[#EB3656] text-center mt-8 pb-10 font-medium   text-[19px]">
           USD ${price}
         </p>
       </div>

@@ -19,7 +19,7 @@ const UserProfile = () => {
 
   return (
     <div className="">
-      <h2 className=" my-20  uppercase text-4xl text-center text-white font-Inter font-extrabold">
+      <h2 className=" my-20  uppercase text-4xl text-center text-white  font-extrabold">
         You are a{" "}
         <span className="text-[#EB3656]">
           {" "}

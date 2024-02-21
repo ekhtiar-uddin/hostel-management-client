@@ -21,7 +21,7 @@ const SocialLink = () => {
               />
             </div>
             <div>
-              <button className="bg-[#BFFCF9] text-[#000000] py-1.5 px-4 hover:bg-[#870012]  hover:text-white font-semibold font-Inter rounded">
+              <button className="bg-[#BFFCF9] text-[#000000] py-1.5 px-4 hover:bg-[#870012]  hover:text-white font-semibold  rounded">
                 Search
               </button>
             </div>

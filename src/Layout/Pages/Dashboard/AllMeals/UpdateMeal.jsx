@@ -160,7 +160,6 @@ const UpdateMeal = () => {
                 type="number"
                 defaultValue={price}
                 {...register("price")}
-                name=""
                 id=""
                 className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2  "
               />
@@ -218,9 +217,9 @@ const UpdateMeal = () => {
               <span className="">Update Meal</span>
             </button>{" "}
           </form>
-          <h2 className="text-white top-[13.5%] left-[38%] absolute">Rating</h2>
-          <h2 className="text-white top-[13.5%] right-[23%] absolute">Likes</h2>
-          <h2 className="text-white top-[25.5%] left-7 absolute">Reviews</h2>
+          <h2 className="text-white top-[13%] left-[38%] absolute">Rating</h2>
+          <h2 className="text-white top-[13%] right-[23%] absolute">Likes</h2>
+          <h2 className="text-white top-[24.5%] left-7 absolute">Reviews</h2>
         </div>
       </div>
     </div>

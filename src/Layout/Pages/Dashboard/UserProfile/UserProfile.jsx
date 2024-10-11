@@ -17,6 +17,8 @@ const UserProfile = () => {
     },
   });
 
+  console.log(payments);
+
   return (
     <div className="">
       <h2 className=" my-20  uppercase text-4xl text-center text-white  font-extrabold">
@@ -48,20 +50,6 @@ const UserProfile = () => {
           />
         )}
       </div>
-
-      {/* <div>
-        {payments?.[0]?.plan ? (
-          <img
-            className="w-[100px] rounded-full"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTerVlWdDMzEWMBGpW85lvyTZkmyS6Uv417mg&usqp=CAU"
-          ></img>
-        ) : (
-          <img
-            className="w-[100px] rounded-full"
-            src="https://sistemidigestione.biz/wp-content/uploads/2020/04/bronze2.png"
-          ></img>
-        )}
-      </div> */}
     </div>
   );
 };

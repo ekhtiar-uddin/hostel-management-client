@@ -10,8 +10,6 @@ const Checkout = () => {
   const plan = useLoaderData();
   const [item] = plan;
 
-  console.log(plan);
-
   return (
     <div className="mt-20">
       <h2 className="text-3xl lg:text-4xl uppercase text-center mb-10 lg:mb-10  text-white  font-extrabold">

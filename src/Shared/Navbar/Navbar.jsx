@@ -15,8 +15,8 @@ const NavBar = () => {
       <li className="">
         <NavLink
           to="/"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? " text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4 "
@@ -30,8 +30,8 @@ const NavBar = () => {
       <li>
         <NavLink
           to="/allMeals"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
@@ -45,8 +45,8 @@ const NavBar = () => {
       <li>
         <NavLink
           to="/upcomingMeals"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
@@ -64,8 +64,8 @@ const NavBar = () => {
       <li className="">
         <NavLink
           to="/"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm bg-[#101010]  text-[#EB3656]  rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -79,8 +79,8 @@ const NavBar = () => {
       <li>
         <NavLink
           to="/allMeals"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -94,8 +94,8 @@ const NavBar = () => {
       <li>
         <NavLink
           to="/upcomingMeals"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm lg:bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
@@ -108,8 +108,8 @@ const NavBar = () => {
       <li>
         <NavLink
           to="/contact"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
@@ -198,8 +198,8 @@ const NavBar = () => {
             <button className="">
               <NavLink
                 to="/login"
-                className={({ isActive, isPending }) =>
-                  isPending
+                className={({ isActive, isLoading }) =>
+                  isLoading
                     ? "pending"
                     : isActive
                     ? "text-sm bg-[#870012] text-white  rounded-full  font-semibold py-2 px-4"

@@ -1,14 +1,22 @@
-import React from "react";
-
 const SingleUpcoming = ({ item }) => {
-  const { name, category, image, price, postTime } = item;
+  const { name, category, image, likes, price, postTime } = item;
   return (
     <div className="bg-[#2C2C2C] rounded-3xl p-4 relative">
       <p className="bg-[#161515]  text-sm absolute py-1 w-[87%] top-4 rounded-t-xl px-1 text-center">
         {postTime}
       </p>
+
       <div className="">
-        <img className="w-full h-[200px] rounded-3xl" src={image}></img>
+        <div
+          style={{
+            backgroundImage: `URL(${image})`,
+          }}
+          className="flex  items-center justify-center bg-no-repeat bg-cover w-full h-[200px]  rounded-3xl"
+        >
+          <h2 className=" bg-[#870012] px-3 py-1 rounded text-white   font-semibold ">
+            Likes {likes}
+          </h2>
+        </div>
       </div>
 
       <div className=" ">

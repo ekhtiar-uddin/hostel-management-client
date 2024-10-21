@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const SingleReviewUser = ({ item, handleDeleteReview }) => {
-  const { title, img, likeNumber, reviewNumbers, review, userEmail } = item;
+  const { title, img, likes, reviewCount, detailsId } = item;
   return (
     <div className="bg-[#2C2C2C] flex gap-4 rounded-3xl ">
       <div className="">
@@ -14,8 +14,8 @@ const SingleReviewUser = ({ item, handleDeleteReview }) => {
             {title?.split(" ")[0]} {title?.split(" ")[1]}
           </h2>
           <div className="flex  gap-4">
-            <p>{likeNumber} likes</p>
-            <p>{reviewNumbers} reviews</p>
+            <p>{likes} likes</p>
+            <p>{reviewCount} reviews</p>
           </div>
         </div>
         <div className="flex items-center gap-2 mt-3 text-[#000000]">

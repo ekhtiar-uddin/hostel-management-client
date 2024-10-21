@@ -23,7 +23,6 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
           Swal.fire({
             position: "top-center",
             icon: "success",

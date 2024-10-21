@@ -35,8 +35,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/adminProfile"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center  gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -51,8 +51,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/manageUsers"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -67,8 +67,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/addMeal"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -82,8 +82,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/allMeals"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -97,8 +97,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/allReviews"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -113,8 +113,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/serveMeals"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -129,8 +129,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/upcomingMeals"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -144,8 +144,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/analytics"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -160,8 +160,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -180,8 +180,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/userProfile"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -196,8 +196,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/requestedMeals"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -212,8 +212,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/userReviews"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
@@ -228,8 +228,8 @@ const Dashboard = () => {
       <li className="w-[220px]  mx-auto">
         <NavLink
           to="/"
-          className={({ isActive, isPending }) =>
-            isPending
+          className={({ isActive, isLoading }) =>
+            isLoading
               ? "pending"
               : isActive
               ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"

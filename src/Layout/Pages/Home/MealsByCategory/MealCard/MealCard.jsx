@@ -23,8 +23,6 @@ const MealCard = ({ item }) => {
     _id,
   } = item;
 
-  console.log("sam rating", rating);
-
   const { user } = UseAuth();
   const navigate = useNavigate();
   const location = useLocation();

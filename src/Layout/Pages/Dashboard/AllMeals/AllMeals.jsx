@@ -9,8 +9,6 @@ const AllMeals = () => {
   // { name, category,price,postTime,rating,likes,review,adminName,adminEmail,ingredient,description,
   //     image, _id }
 
-  console.log("newAllMeals", meals);
-
   const handleDeleteMeal = (meal) => {
     Swal.fire({
       title: "Are you sure?",
@@ -23,7 +21,7 @@ const AllMeals = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await axiosPublic.delete(`/meals/${meal._id}`);
-        // console.log(res.data);
+
         if (res.data.deletedCount > 0) {
           // refetch to update the ui
           refetch();

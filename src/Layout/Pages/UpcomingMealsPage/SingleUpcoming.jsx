@@ -1,15 +1,17 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { useState } from "react";
-import { AiOutlineLike } from "react-icons/ai";
+import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "../../../../src/Css/App.css";
 import UseAuth from "../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../Hooks/UseAxiosPublic";
-const SingleUpcoming = ({ meal }) => {
+const SingleUpcoming = ({ meal, upcomingRefetch }) => {
   const { user } = UseAuth();
   const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
+  const userEmail = user?.email;
+
   const {
     name,
     category,
@@ -24,35 +26,56 @@ const SingleUpcoming = ({ meal }) => {
     description,
     image,
     _id,
+    toggle,
   } = meal;
-  const [isLiked, setIsLiked] = useState(false);
-  const handleLikeClick = () => {
-    if (user) {
-      setIsLiked(!isLiked);
-      const mealId = _id;
-      const title = name;
-      const state = isLiked;
-      const mealInfo = { title, mealId, state };
-      axiosPublic.post("/likedMealsUpcoming", mealInfo).then((data) => {
-        //    refetch() ;
-        console.log(data.data);
-      });
-    } else {
+
+  const handleLikeClick = async () => {
+    if (!user) {
       navigate("/login");
     }
-  };
-  const likeButtonStyle = {
-    color: isLiked ? "green" : "black",
+    if (likes < 10) {
+      await axiosPublic
+        .patch(`/upcomingToggle/${_id}`, { isLiked: toggle })
+        .then(() => {
+          upcomingRefetch();
+        })
+        .catch((err) => console.log(err));
+
+      await axiosPublic
+        .patch(`/UpcominglikedMeals/${_id}`, { userLiked: toggle })
+        .then(() => {
+          upcomingRefetch();
+        })
+        .catch((err) => console.log(err));
+    } else {
+      await axiosPublic
+        .post("/addToProductionList", {
+          name,
+          category,
+          image,
+          likes,
+          price,
+          postTime,
+        })
+        .then((res) => {
+          if (res.data.insertedId) {
+            toast.success("added to upcoming");
+          }
+        });
+    }
   };
 
   return (
     <div className=" upcomingCard">
       <div className="">
-        <img className="" src={image}></img>
+        <img className="h-[370px] w-full" src={image}></img>
       </div>
 
       <h2 className="absolute top-3 right-3 bg-[#870012] px-2 rounded text-white  max-w-min  font-semibold mb-2">
         {category}
+      </h2>
+      <h2 className="absolute top-3 left-3 bg-[#870012] px-2 rounded text-white   font-semibold mb-2">
+        Likes {likes}
       </h2>
 
       <div
@@ -74,13 +97,16 @@ const SingleUpcoming = ({ meal }) => {
           </div>
         </div>
         <div className="flex justify-center">
-          <button
-            className="text-white transition-all duration-200 hover:bg-[#870012] bg-[#EB3656] px-6  py-2 rounded flex justify-center items-center "
-            onClick={handleLikeClick}
-            style={likeButtonStyle}
-          >
-            <AiOutlineLike className=" text-white text-xl "></AiOutlineLike>
-          </button>
+          {toggle && (
+            <button onClick={handleLikeClick}>
+              <MdFavorite className=" text-5xl text-[#EB3656]" />
+            </button>
+          )}
+          {!toggle && (
+            <button onClick={handleLikeClick}>
+              <MdOutlineFavoriteBorder className=" text-5xl text-[#EB3656]" />
+            </button>
+          )}
         </div>
       </div>
     </div>

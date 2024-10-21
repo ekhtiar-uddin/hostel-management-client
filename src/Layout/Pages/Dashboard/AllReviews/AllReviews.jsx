@@ -1,9 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import UseAuth from "../../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../../Hooks/UseAxiosPublic";
 import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
 import UseMeal from "../../../../Hooks/UseMeal";
+import UseReview from "../../../../Hooks/UseReview";
 import SingleReview from "./SingleReview";
 
 const AllReviews = () => {
@@ -11,17 +11,7 @@ const AllReviews = () => {
   const axiosPublic = useAxiosPublic();
   const { user } = UseAuth();
   const axiosSecure = UseAxiosSecure();
-  const {
-    data: reviews = [],
-    isPending: loading,
-    refetch,
-  } = useQuery({
-    queryKey: ["reviews"],
-    queryFn: async () => {
-      const res = await axiosSecure.get("/reviews");
-      return res.data;
-    },
-  });
+  const [reviews, , refetchReviews] = UseReview();
 
   const handleDeleteReview = (review) => {
     Swal.fire({
@@ -35,7 +25,7 @@ const AllReviews = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await axiosPublic.delete(`/reviews/${review._id}`);
-        // console.log(res.data);
+
         if (res.data.deletedCount > 0) {
           // refetch to update the ui
           refetch();
@@ -51,34 +41,48 @@ const AllReviews = () => {
     });
   };
 
-  const uniqueTitles = [...new Set(reviews.map((review) => review.title))];
-  // console.log("uniqueTitles", uniqueTitles);
+  const titleReviews = reviews.reduce((acc, review) => {
+    const exist = acc.find((item) => item.title === review.title);
+    if (exist) {
+      exist.reviewCount += 1;
+    } else {
+      acc.push({
+        detailsId: review.detailsId,
+        _id: review._id,
+        title: review.title,
+        reviewCount: 1,
+        likes: review.likeNumber,
+        img: review.img,
+      });
+    }
+    return acc;
+  }, []);
 
-  const mostReviewedReviews = uniqueTitles.map((title) => {
-    const reviewsWithTitle = reviews.filter((review) => review.title === title);
+  // const uniqueTitles = [...new Set(reviews.map((review) => review.title))];
 
-    console.log("title-review", reviewsWithTitle);
+  // const mostReviewedReviews = uniqueTitles.map((title) => {
+  //   const reviewsWithTitle = reviews.filter((review) => review.title === title);
 
-    const mostReviewedItem = reviewsWithTitle.reduce((first, second) =>
-      first.reviewNumbers > second.reviewNumbers ? first : second
-    );
-    return mostReviewedItem;
-  });
+  //   const mostReviewedItem = reviewsWithTitle.reduce((first, second) =>
+  //     first.reviewNumbers > second.reviewNumbers ? first : second
+  //   );
+  //   return mostReviewedItem;
+  // });
 
   return (
     <div>
       <h2 className=" my-12  uppercase text-4xl text-center text-white  font-extrabold">
-        Review From <span className="text-[#EB3656]"> Users </span>
+        {reviews?.length} Review From{" "}
+        <span className="text-[#EB3656]"> Users </span>
       </h2>
 
       <div className="">
         <div className="grid grid-cols-6 gap-4">
-          {mostReviewedReviews.map((item, index) => (
+          {titleReviews.map((item, index) => (
             <SingleReview
               key={item._id}
               handleDeleteReview={handleDeleteReview}
               item={item}
-              reviews={reviews}
             ></SingleReview>
           ))}
         </div>

@@ -16,7 +16,6 @@ const Login = () => {
 
   const { signInUser, user, googleSignIn } = useContext(AuthContext);
 
-  console.log(user);
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -27,13 +26,11 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     const email = data.email;
     const password = data.password;
 
     signInUser(email, password)
       .then((res) => {
-        console.log("from sign in", res.user);
         new Swal("Login Successful!", "Welcome back!", "success");
         navigate("/");
       })
@@ -46,7 +43,6 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((res) => {
-        console.log(res.user);
         new Swal("Login Successful!", "Welcome back!", "success");
         navigate("/");
       })

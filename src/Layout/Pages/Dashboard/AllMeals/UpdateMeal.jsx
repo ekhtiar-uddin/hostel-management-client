@@ -27,7 +27,6 @@ const UpdateMeal = () => {
     _id,
   } = mealInfo;
 
-  console.log("reviews form user", review);
   const formattedDate = moment(postTime, "MMM Do YY").format("YYYY-MM-DD");
 
   const defaultIngredients = ingredient.join(", ");
@@ -44,7 +43,7 @@ const UpdateMeal = () => {
     }
 
     const formattedDateTime = moment(data.date).format("MMM Do YY");
-    console.log(formattedDateTime);
+
     const ingredientsArray = data.ingredients
       .split(", ")
       .map((ingredient) => ingredient.trim());
@@ -64,13 +63,11 @@ const UpdateMeal = () => {
       image: data.image,
     };
 
-    console.log(updatedMealInfo);
-
     const updateMealRes = await axiosSecure.put(
       `/updateMeals/${_id}`,
       updatedMealInfo
     );
-    console.log(updateMealRes.data);
+
     if (updateMealRes.data.modifiedCount > 0) {
       Swal.fire({
         position: "top-end",

@@ -14,7 +14,7 @@ const ServeMeals = () => {
   const axiosPublic = useAxiosPublic();
   const {
     data: allRequests = [],
-    isPending: loading,
+    isLoading: loading,
     refetch,
   } = useQuery({
     queryKey: ["requestedMeals"],
@@ -25,7 +25,6 @@ const ServeMeals = () => {
   });
   const handleServeMeal = (request) => {
     axiosSecure.patch(`/requestedMeals/${request._id}`).then((res) => {
-      console.log(res.data);
       if (res.data.modifiedCount > 0) {
         refetch();
         Swal.fire({
@@ -38,8 +37,6 @@ const ServeMeals = () => {
       }
     });
   };
-
-  console.log("rightNow", allRequests);
 
   return (
     <div>

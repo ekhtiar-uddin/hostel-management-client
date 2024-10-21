@@ -22,7 +22,6 @@ const Register = () => {
     logOut,
   } = useContext(AuthContext);
 
-  console.log(user);
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -33,14 +32,11 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     const email = data.email;
     const password = data.password;
 
     createUser(email, password)
       .then((res) => {
-        console.log(res.user);
-
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
             //create user entry in the database
@@ -53,7 +49,6 @@ const Register = () => {
             axiosPublic
               .post("/users", userInfo)
               .then((res) => {
-                console.log(res.data);
                 if (res.data.insertedId) {
                   reset();
                   new Swal(
@@ -77,7 +72,6 @@ const Register = () => {
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((res) => {
-        console.log(res.user);
         navigate("/");
         const userInfo = {
           email: res.user?.email,
@@ -85,7 +79,6 @@ const Register = () => {
           photoURL: res.user?.photoURL,
         };
         axiosPublic.post("/users", userInfo).then((res) => {
-          console.log(res.data);
           navigate("/");
         });
         new Swal("Register Successful!", "Thank You!", "success");

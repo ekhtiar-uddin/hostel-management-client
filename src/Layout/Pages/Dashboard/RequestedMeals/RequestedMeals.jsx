@@ -17,40 +17,12 @@ const RequestedMeals = () => {
       .get(url)
 
       .then((res) => {
-        console.log("result", res.data);
         setRequestedMeals(res.data);
       })
       .catch((err) => {
         console.log("error", err);
       });
   }, [url]);
-
-  // const { data: items = [], refetch } = useQuery({
-  //   queryKey: ["users"],
-  //   queryFn: async () => {
-  //     const res = await axiosSecure.get(
-  //       `/requestedMeals?userEmail=${user?.email}`
-  //     );
-
-  //     return res.data;
-  //   },
-  // });
-
-  // console.log("items Now", items);
-
-  // const {
-  //   data: requestedMeals = [],
-  //   isPending: loading,
-  //   refetch,
-  // } = useQuery({
-  //   queryKey: ["requestedMeals"],
-  //   queryFn: async () => {
-  //     const res = await axiosSecure.get(
-  //       `/requestedMeals?userEmail=${user?.email}`
-  //     );
-  //     return res.data;
-  //   },
-  // });
 
   const handleDeleteRequest = (meal) => {
     Swal.fire({
@@ -64,7 +36,7 @@ const RequestedMeals = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await axiosSecure.delete(`/requestedMeals/${meal._id}`);
-        // console.log(res.data);
+
         if (res.data.deletedCount > 0) {
           // refetch to update the ui
 
@@ -72,7 +44,6 @@ const RequestedMeals = () => {
             (item) => item._id !== meal._id
           );
           setRequestedMeals(newRequestedArray);
-          console.log("new after delete", newRequestedArray);
 
           Swal.fire({
             position: "top-end",

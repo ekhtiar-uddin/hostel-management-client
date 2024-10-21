@@ -1,9 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import UseAuth from "../../../Hooks/UseAuth";
-
 import Lottie from "lottie-react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import UseAuth from "../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../Hooks/UseAxiosPublic";
 import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import banner from "../../../assets/bannerAnimation/Animation - 1707063121384.json";
@@ -12,10 +11,11 @@ import SingleUpcoming from "./SingleUpcoming";
 const AllUpcomingMeals = () => {
   const { user } = UseAuth();
   const axiosPublic = useAxiosPublic();
+
   const {
     data: upcomingMeals = [],
-    isPending: loading,
-    refetch,
+    isLoading: loading,
+    refetch: upcomingRefetch,
   } = useQuery({
     queryKey: ["upcomingMeals"],
     queryFn: async () => {
@@ -66,7 +66,12 @@ const AllUpcomingMeals = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {upcomingMeals?.map((meal) => (
-            <SingleUpcoming key={meal._id} meal={meal}></SingleUpcoming>
+            <SingleUpcoming
+              key={meal._id}
+              upcomingMeals={upcomingMeals}
+              upcomingRefetch={upcomingRefetch}
+              meal={meal}
+            ></SingleUpcoming>
           ))}
         </div>
       </div>

@@ -1,22 +1,22 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./UseAxiosPublic";
 
-const UseMeal = () => {
+const UseMealDetails = (id) => {
   const axiosPublic = useAxiosPublic();
 
   const {
-    data: meals = [],
+    data: mealDetails = {},
     isLoading: loading,
     refetch,
   } = useQuery({
-    queryKey: ["meals"],
+    queryKey: ["mealDetails"],
     queryFn: async () => {
-      const res = await axiosPublic.get("/meals");
+      const res = await axiosPublic.get(`/meals/${id}`);
       return res.data;
     },
   });
 
-  return [meals, loading, refetch];
+  return [mealDetails, loading, refetch];
 };
 
-export default UseMeal;
+export default UseMealDetails;

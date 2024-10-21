@@ -24,8 +24,6 @@ const SinglePlan = ({ plan }) => {
     }
   };
 
-  console.log(`${planName} bg-[${bgColor()}]`);
-
   return (
     <div className="singlePlan rounded-xl ">
       <div

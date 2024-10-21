@@ -9,7 +9,7 @@ const Membership = () => {
   const axiosPublic = useAxiosPublic();
   const {
     data: plansInfo = [],
-    isPending: loading,
+    isLoading: loading,
     refetch,
   } = useQuery({
     queryKey: ["plans"],

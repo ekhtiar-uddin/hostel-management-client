@@ -1,23 +1,25 @@
+import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import Lottie from "lottie-react";
 import { useState } from "react";
 import "react-awesome-button/dist/styles.css";
-import { useLoaderData, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-import UseAuth from "../../../../../Hooks/UseAuth";
-import useAxiosPublic from "../../../../../Hooks/UseAxiosPublic";
-import UseMeal from "../../../../../Hooks/UseMeal";
-
-import { Rating } from "@smastrom/react-rating";
-import { useQuery } from "@tanstack/react-query";
-import Lottie from "lottie-react";
 import { useForm } from "react-hook-form";
-import { AiOutlineLike } from "react-icons/ai";
+import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
+import { RiVerifiedBadgeLine } from "react-icons/ri";
 import { TiTick } from "react-icons/ti";
+import { useNavigate, useParams } from "react-router-dom";
+import { Bounce, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import UseAuth from "../../../../../Hooks/UseAuth";
+import useAxiosPublic from "../../../../../Hooks/UseAxiosPublic";
 import UseAxiosSecure from "../../../../../Hooks/UseAxiosSecure";
+import UseMealDetails from "../../../../../Hooks/UseMealDetails";
+import UseReviewTitle from "../../../../../Hooks/UseReviewTitle";
 import SocialLink from "../../../../../Shared/SocialLinks/SocialLink";
 import banner from "../../../../../assets/bannerAnimation/is5WNsFx8i.json";
 import Footer from "../../Footer/Footer";
@@ -26,8 +28,9 @@ const MealDetail = () => {
   const navigate = useNavigate();
   const axiosSecure = UseAxiosSecure();
   const axiosPublic = useAxiosPublic();
-  const [meals, loading] = UseMeal();
-  const mealDetail = useLoaderData();
+  const { id } = useParams();
+  const [mealDetails, loading, refetch] = UseMealDetails(id);
+  const [toggle, setToggle] = useState(true);
   const {
     name,
     category,
@@ -42,39 +45,25 @@ const MealDetail = () => {
     description,
     image,
     _id,
-  } = mealDetail;
+  } = mealDetails;
 
-  console.log("details", mealDetail);
+  const [allReviews, , refetchReviews] = UseReviewTitle(name);
 
   const { register, handleSubmit } = useForm();
 
-  const { data: allReviews = [], refetch } = useQuery({
-    queryKey: ["reviews"],
-    queryFn: async () => {
-      const res = await axiosPublic.get(`/reviews?title=${name}`);
-      return res.data;
-    },
-  });
-
-  const [isLiked, setIsLiked] = useState(false);
   const handleLikeClick = () => {
     if (user) {
-      setIsLiked(!isLiked);
       const mealId = _id;
-      const title = name;
-      const state = isLiked;
-      const mealInfo = { title, mealId, state };
-      axiosPublic.post("/likedMeals", mealInfo).then((data) => {
-        refetch();
-      });
+      axiosPublic
+        .patch(`/likedMeals/${mealId}`, { userLiked: toggle })
+        .then(() => {
+          refetch();
+          setToggle(!toggle);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      navigate("/login");
     }
-    // else{
-    //   navigate('/login')
-    // }
-  };
-
-  const likeButtonStyle = {
-    color: isLiked ? "#939A00" : "black",
   };
 
   const handleMealRequest = () => {
@@ -120,33 +109,45 @@ const MealDetail = () => {
   };
 
   const onSubmit = async (data) => {
-    console.log(data);
     const userEmail = user?.email;
     const title = name;
     const likeNumber = likes;
-    const reviewNumbers = allReviews.length + 1;
-    const review = data.review;
+    const reviewTitle = data.review;
     const detailsId = _id;
     const img = image;
     const reviewInfo = {
       title,
       likeNumber,
-      reviewNumbers,
-      review,
+      reviewTitle,
       userEmail,
       detailsId,
       img,
     };
+
     axiosSecure.post(`/reviews`, reviewInfo).then((data) => {
       if (data.data.insertedId) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "You have added a Review",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        refetch();
+        axiosSecure
+          .patch(`/increaseReview/${_id}`)
+          .then(() => {})
+          .catch((err) => console.log(err));
+        refetchReviews();
+        toast(
+          <div className="flex items-center gap-2 ">
+            {" "}
+            <RiVerifiedBadgeLine className="text-xl text-black"></RiVerifiedBadgeLine>{" "}
+            You have added a Review!
+          </div>,
+          {
+            position: "bottom-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          }
+        );
       }
     });
   };
@@ -177,13 +178,16 @@ const MealDetail = () => {
                   >
                     Make Request
                   </button>
-                  <button
-                    className="text-2xl p-2 text-white transition-all duration-200 hover:bg-[#870012] bg-[#EB3656] rounded flex justify-center items-center "
-                    onClick={handleLikeClick}
-                    style={likeButtonStyle}
-                  >
-                    <AiOutlineLike className="text-white"></AiOutlineLike>
-                  </button>
+                  {toggle && (
+                    <button onClick={handleLikeClick}>
+                      <MdOutlineFavoriteBorder className=" text-5xl text-[#EB3656]" />
+                    </button>
+                  )}
+                  {!toggle && (
+                    <button onClick={handleLikeClick}>
+                      <MdFavorite className=" text-5xl text-[#EB3656]" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -215,7 +219,7 @@ const MealDetail = () => {
                   Ingredients :
                 </h2>
                 <div className="flex  flex-wrap items-center  mx-auto justify-center ">
-                  {ingredient.slice(0, 4).map((item, index) => (
+                  {ingredient?.slice(0, 4).map((item, index) => (
                     <span
                       key={index}
                       className="mr-3 text-center text-sm lg:text-[17px]  font-medium  flex items-center gap-2"
@@ -263,7 +267,7 @@ const MealDetail = () => {
                 Ingredients :
               </h2>
               <div className="flex  flex-wrap items-center  mx-auto justify-center ">
-                {ingredient.slice(0, 4).map((item, index) => (
+                {ingredient?.slice(0, 4).map((item, index) => (
                   <span
                     key={index}
                     className="mr-3 text-center text-sm lg:text-[17px]  font-medium  flex items-center gap-2"

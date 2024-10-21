@@ -26,12 +26,11 @@ const AddMeal = () => {
     }
 
     const formattedDateTime = format(date, "MMMM d 'at' h:mm a");
-    console.log(formattedDateTime);
+
     const ingredientsArray = data.ingredients
       .split(", ")
       .map((ingredient) => ingredient.trim());
 
-    const defaultRating = 0;
     const defaultLikes = 0;
     const defaultReviews = 0;
 
@@ -40,17 +39,18 @@ const AddMeal = () => {
       category: data.category,
       price: parseFloat(data.price),
       postTime: formattedDateTime,
-      rating: data.rating ? parseFloat(data.rating) : defaultLikes,
-      likes: data.like ? parseFloat(data.like) : defaultLikes,
-      review: data.review ? parseFloat(data.review) : defaultReviews,
+      rating: parseFloat(data.rating),
+      likes: defaultLikes,
+      review: defaultReviews,
       adminName: data.adminName,
       adminEmail: data.adminEmail,
       ingredient: ingredientsArray,
       description: data.description,
       image: data.image,
+      toggle: false,
     };
     const mealRes = await axiosPublic.post("/meals", mealInfo);
-    console.log(mealRes.data);
+
     if (mealRes.data.insertedId) {
       Swal.fire({
         position: "top-end",
@@ -72,11 +72,13 @@ const AddMeal = () => {
     }
 
     const formattedDateTime = format(date, "MMMM d 'at' h:mm a");
-    console.log(formattedDateTime);
+
     const ingredientsArray = data.ingredients
       .split(", ")
       .map((ingredient) => ingredient.trim());
-    console.log(ingredientsArray);
+
+    const defaultLikes = 0;
+    const defaultReviews = 0;
 
     const upcomingMealInfo = {
       name: data.name,
@@ -84,20 +86,21 @@ const AddMeal = () => {
       price: parseFloat(data.price),
       postTime: formattedDateTime,
       rating: parseFloat(data.rating),
-      likes: parseFloat(data.like),
-      review: parseFloat(data.review),
+      likes: defaultLikes,
+      review: defaultReviews,
       adminName: data.adminName,
       adminEmail: data.adminEmail,
       ingredient: ingredientsArray,
       description: data.description,
       image: data.image,
+      toggle: false,
     };
-    console.log(data);
+
     const upcomingMealRes = await axiosPublic.post(
       "/upcomingMeals",
       upcomingMealInfo
     );
-    console.log(upcomingMealRes.data);
+
     if (upcomingMealRes.data.insertedId) {
       Swal.fire({
         position: "top-end",
@@ -164,25 +167,6 @@ const AddMeal = () => {
                 placeholder="Rating"
                 {...register("rating")}
                 className="outline-none rounded-lg bg-[#161515]    pl-2 border border-[#BFFCF9] py-2 mb-7  w-full"
-              />
-
-              <input
-                type="number"
-                placeholder="Likes"
-                {...register("like")}
-                name=""
-                id=""
-                className="outline-none rounded-lg bg-[#161515]    pl-2 border border-[#BFFCF9] py-2 mb-7  w-full"
-              />
-            </div>
-            <div className="flex w-full gap-4 mb-6">
-              <input
-                type="number"
-                placeholder="Reviews"
-                {...register("review")}
-                name=""
-                id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2 mb-7 "
               />
               <input
                 type="number"

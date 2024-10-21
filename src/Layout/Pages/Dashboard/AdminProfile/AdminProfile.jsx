@@ -17,8 +17,6 @@ const AdminProfile = () => {
     },
   });
 
-  console.log("nowAdmin", payments?.[0]?.plan);
-
   return (
     <div className="">
       <h2 className=" my-20  uppercase text-4xl text-center text-white  font-extrabold">

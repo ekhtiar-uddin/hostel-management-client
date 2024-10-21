@@ -63,31 +63,7 @@ const CheckOutForm = ({ item }) => {
       console.log("confirm-error");
     } else {
       console.log("payment intent", paymentIntent);
-      //   if(paymentIntent.status === 'succeeded'){
-      //     setTransactionId(paymentIntent.id)
-      //     // same the payment into database
-      //     const payment = {
-      //       email : user.email ,
-      //       price : totalPrice ,
-      //       date : new Date() ,//utc date convert needed
-      //       transactionId : paymentIntent.id ,
-      //       status : 'pending'
-      //     }
-      //     const res = await axiosSecure.post('/payments', payment) ;
-      //     console.log('payment saved', res.data);
 
-      //         if (res.data?.paymentResult?.insertedId) {
-      //             Swal.fire({
-      //                 position: "top-end",
-      //                 icon: "success",
-      //                 title: "Thank you",
-      //                 showConfirmButton: false,
-      //                 timer: 1500
-      //             });
-      //             // navigate('/dashboard/paymentHistory')
-
-      //   }
-      // }
       if (item?.planName === "Gold") {
         Swal.fire({
           imageUrl:

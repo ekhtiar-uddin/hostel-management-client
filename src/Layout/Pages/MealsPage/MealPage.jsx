@@ -28,12 +28,9 @@ const MealPage = () => {
 
   const bestRatingMeals = meals.filter((item) => item?.rating > 3);
 
-  console.log("best", bestRatingMeals);
-
   const filteredMeals = allMeals.filter(
     (meal) => meal.category === selectedOption.value
   );
-  console.log(filteredMeals);
 
   const options = [
     { value: "Breakfast", label: "Breakfast" },
@@ -42,7 +39,6 @@ const MealPage = () => {
   ];
 
   const onSubmit = async (data) => {
-    console.log(data);
     setSearch(data.title);
   };
   const settings = {

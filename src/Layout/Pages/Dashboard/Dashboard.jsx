@@ -20,6 +20,8 @@ const Dashboard = () => {
   const [isAdmin] = UseAdmin();
   const { user } = UseAuth();
 
+  console.log(isAdmin);
+
   const axiosSecure = UseAxiosSecure();
 
   const { data: payments } = useQuery({

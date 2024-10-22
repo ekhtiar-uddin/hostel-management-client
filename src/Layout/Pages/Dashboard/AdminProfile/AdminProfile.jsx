@@ -12,7 +12,7 @@ const AdminProfile = () => {
   const { data: payments } = useQuery({
     queryKey: ["payments", user?.email],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/payments/${user.email}`);
+      const res = await axiosSecure.get(`/payments/${user?.email}`);
       return res.data;
     },
   });

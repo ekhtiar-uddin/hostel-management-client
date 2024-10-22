@@ -94,6 +94,7 @@ const AddMeal = () => {
       description: data.description,
       image: data.image,
       toggle: false,
+      likedUsers: [],
     };
 
     const upcomingMealRes = await axiosPublic.post(

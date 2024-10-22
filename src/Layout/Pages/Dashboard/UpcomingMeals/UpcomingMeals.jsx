@@ -1,26 +1,13 @@
-import { useQuery } from "@tanstack/react-query";
 import UseAuth from "../../../../Hooks/UseAuth";
-import UseMeal from "../../../../Hooks/UseMeal";
 
 import useAxiosPublic from "../../../../Hooks/UseAxiosPublic";
+import UseFetch from "../../../../Hooks/UseFetch";
 import SingleUpcoming from "./SingleUpcoming";
 
 const UpcomingMeals = () => {
-  const [meals, , ,] = UseMeal();
-
   const { user } = UseAuth();
   const axiosPublic = useAxiosPublic();
-  const {
-    data: productionMeals = [],
-    isLoading: loading,
-    refetch,
-  } = useQuery({
-    queryKey: ["productionMeals"],
-    queryFn: async () => {
-      const res = await axiosPublic.get("/productionMeals");
-      return res.data;
-    },
-  });
+  const [productionMeals, loading, refetch] = UseFetch("/productionMeals");
 
   return (
     <div>

@@ -5,6 +5,8 @@ import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import Footer from "../Home/Footer/Footer";
 import CheckOutForm from "./checkOutForm";
 
+console.log(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
+
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
 const Checkout = () => {
   const plan = useLoaderData();

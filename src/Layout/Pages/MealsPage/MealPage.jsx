@@ -1,15 +1,14 @@
 import { useState } from "react";
 import "react-awesome-button/dist/styles.css";
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { BsSearch } from "react-icons/bs";
 import Select from "react-select";
-
-import { Helmet } from "react-helmet";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import useFilterSearch from "../../../Hooks/useFilterSearch";
 import UseMeal from "../../../Hooks/UseMeal";
-import UseMealsItem from "../../../Hooks/UseMealsItem";
 import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import Footer from "../Home/Footer/Footer";
 import SingleBestRating from "./SingleBestRating";
@@ -19,10 +18,9 @@ const MealPage = () => {
   const [search, setSearch] = useState("");
 
   const [asc, setAsc] = useState(true);
-  const allMeals = UseMealsItem(asc, search);
+  const allMeals = useFilterSearch(asc, search);
   const [meals] = UseMeal();
 
-  // const [meals , , , ] = UseMeal(asc) ;
   const [selectedOption, setSelectedOption] = useState("Dinner");
   const categoryValue = selectedOption.value;
 

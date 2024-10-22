@@ -1,28 +1,13 @@
-import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
-import UseAuth from "../../../../Hooks/UseAuth";
-import useAxiosPublic from "../../../../Hooks/UseAxiosPublic";
 import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
-import UseMeal from "../../../../Hooks/UseMeal";
+import UseFetchSecure from "../../../../Hooks/UseFetchSecure";
 import SingleServe from "./SingleServe";
 
 const ServeMeals = () => {
-  const [meals, , ,] = UseMeal();
   const axiosSecure = UseAxiosSecure();
 
-  const { user } = UseAuth();
-  const axiosPublic = useAxiosPublic();
-  const {
-    data: allRequests = [],
-    isLoading: loading,
-    refetch,
-  } = useQuery({
-    queryKey: ["requestedMeals"],
-    queryFn: async () => {
-      const res = await axiosSecure.get("/requestedMeals");
-      return res.data;
-    },
-  });
+  const [allRequests, loading, refetch] = UseFetchSecure("/requestedMeals");
+
   const handleServeMeal = (request) => {
     axiosSecure.patch(`/requestedMeals/${request._id}`).then((res) => {
       if (res.data.modifiedCount > 0) {

@@ -31,11 +31,9 @@ const Analytics = () => {
   const [plans, setPlans] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://hostel-management-server-six.vercel.app/payments")
-      .then((res) => {
-        setPlans(res.data);
-      });
+    axios.get("http://localhost:5000/payments").then((res) => {
+      setPlans(res.data);
+    });
   }, []);
 
   const silver = plans.filter((item) => item.plan === "Silver");

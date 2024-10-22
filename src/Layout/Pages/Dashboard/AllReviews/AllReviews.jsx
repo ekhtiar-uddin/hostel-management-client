@@ -2,16 +2,14 @@ import Swal from "sweetalert2";
 import UseAuth from "../../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../../Hooks/UseAxiosPublic";
 import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
-import UseMeal from "../../../../Hooks/UseMeal";
-import UseReview from "../../../../Hooks/UseReview";
+import UseFetch from "../../../../Hooks/UseFetch";
 import SingleReview from "./SingleReview";
 
 const AllReviews = () => {
-  const [meals, , ,] = UseMeal();
   const axiosPublic = useAxiosPublic();
   const { user } = UseAuth();
   const axiosSecure = UseAxiosSecure();
-  const [reviews, , refetchReviews] = UseReview();
+  const [reviews, , refetchReviews] = UseFetch("/reviews");
 
   const handleDeleteReview = (review) => {
     Swal.fire({
@@ -24,11 +22,10 @@ const AllReviews = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const res = await axiosPublic.delete(`/reviews/${review._id}`);
+        const res = await axiosSecure.delete(`/reviews/${review._id}`);
 
         if (res.data.deletedCount > 0) {
-          // refetch to update the ui
-          refetch();
+          refetchReviews();
           Swal.fire({
             position: "top-end",
             icon: "success",
@@ -41,7 +38,7 @@ const AllReviews = () => {
     });
   };
 
-  const titleReviews = reviews.reduce((acc, review) => {
+  const titleReviews = reviews?.reduce((acc, review) => {
     const exist = acc.find((item) => item.title === review.title);
     if (exist) {
       exist.reviewCount += 1;
@@ -57,17 +54,6 @@ const AllReviews = () => {
     }
     return acc;
   }, []);
-
-  // const uniqueTitles = [...new Set(reviews.map((review) => review.title))];
-
-  // const mostReviewedReviews = uniqueTitles.map((title) => {
-  //   const reviewsWithTitle = reviews.filter((review) => review.title === title);
-
-  //   const mostReviewedItem = reviewsWithTitle.reduce((first, second) =>
-  //     first.reviewNumbers > second.reviewNumbers ? first : second
-  //   );
-  //   return mostReviewedItem;
-  // });
 
   return (
     <div>

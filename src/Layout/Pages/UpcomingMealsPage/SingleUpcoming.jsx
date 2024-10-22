@@ -1,5 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { useEffect, useState } from "react";
 import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -11,7 +12,9 @@ const SingleUpcoming = ({ meal, upcomingRefetch }) => {
   const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
   const userEmail = user?.email;
-
+  const [toggle, setToggle] = useState(false);
+  const userId = user?.uid;
+  const [productions, setProductions] = useState([]);
   const {
     name,
     category,
@@ -26,44 +29,88 @@ const SingleUpcoming = ({ meal, upcomingRefetch }) => {
     description,
     image,
     _id,
-    toggle,
+    likedUsers,
   } = meal;
+
+  useEffect(() => {
+    const arr = JSON.parse(localStorage.getItem("productions"));
+    setProductions(arr);
+  }, []);
 
   const handleLikeClick = async () => {
     if (!user) {
       navigate("/login");
+      return;
     }
-    if (likes < 10) {
-      await axiosPublic
-        .patch(`/upcomingToggle/${_id}`, { isLiked: toggle })
-        .then(() => {
-          upcomingRefetch();
-        })
-        .catch((err) => console.log(err));
+    const newLikesCount = toggle ? likes - 1 : likes + 1;
+    await axiosPublic
+      .patch(`/upcomingToggle/${_id}`, { isLiked: toggle })
+      .then(() => {
+        upcomingRefetch();
+        setToggle(!toggle);
+      })
+      .catch((err) => console.log(err));
 
-      await axiosPublic
-        .patch(`/UpcominglikedMeals/${_id}`, { userLiked: toggle })
-        .then(() => {
-          upcomingRefetch();
-        })
-        .catch((err) => console.log(err));
-    } else {
-      await axiosPublic
-        .post("/addToProductionList", {
-          name,
-          category,
-          image,
-          likes,
-          price,
-          postTime,
-        })
-        .then((res) => {
-          if (res.data.insertedId) {
-            toast.success("added to upcoming");
-          }
-        });
+    await axiosPublic
+      .patch(`/upcominglikeAddRemove/${_id}`, {
+        userLiked: toggle,
+        uid: userId,
+      })
+      .then((res) => {
+        upcomingRefetch();
+        let arr = JSON.parse(localStorage.getItem("likesData")) || [];
+        const isMatch = arr?.find((item) => item.id === _id);
+        if (!isMatch) {
+          const all = [...arr, { id: _id }];
+          localStorage.setItem("likesData", JSON.stringify(all));
+        } else {
+          const filtered = arr.filter((item) => item.id !== _id);
+          localStorage.setItem("likesData", JSON.stringify(filtered));
+        }
+      })
+      .catch((err) => console.log(err));
+
+    console.log("inside hanlde", newLikesCount);
+
+    if (newLikesCount >= 10) {
+      console.log("inside", productions);
+      const isExist = productions?.find((item) => item.mealId === _id);
+      if (!isExist) {
+        await axiosPublic
+          .post("/addToProductionList", {
+            name,
+            category,
+            image,
+            likes: newLikesCount,
+            price,
+            postTime,
+            mealId: _id,
+          })
+          .then((res) => {
+            if (res.data?.result?.insertedId) {
+              toast.success("added to upcoming");
+              setProductions(res.data?.allProductions);
+              localStorage.setItem(
+                "productions",
+                JSON.stringify(res.data?.allProductions)
+              );
+            }
+          });
+      }
     }
   };
+
+  console.log("produc", productions);
+
+  useEffect(() => {
+    const likesData = JSON.parse(localStorage.getItem("likesData"));
+    const isMatch = likesData?.find((item) => item.id === _id);
+    if (isMatch) {
+      setToggle(true);
+    } else {
+      setToggle(false);
+    }
+  }, [_id]);
 
   return (
     <div className=" upcomingCard">

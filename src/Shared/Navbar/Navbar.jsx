@@ -123,6 +123,7 @@ const NavBar = () => {
   );
   const handleLogOut = () => {
     logOut();
+    localStorage.removeItem("likesData");
     navigate("/");
   };
   return (

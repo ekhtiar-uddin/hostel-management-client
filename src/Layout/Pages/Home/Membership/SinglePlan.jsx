@@ -36,7 +36,7 @@ const SinglePlan = ({ plan }) => {
           <span className="text-base font-normal">/Monthly</span>
         </h2>
         <div className="h-[300px] md:h-[260px] lg:h-[280px] ">
-          {advantages.map((item, index) => (
+          {advantages?.map((item, index) => (
             <div
               key={index}
               className="mb-1 lg:mb-3 flex items-center     gap-7 "
@@ -60,11 +60,6 @@ const SinglePlan = ({ plan }) => {
             Make Deal
           </button>
         </Link>
-        {/* <Link to={`/checkout/${planName}`}>
-          <button className="bg-[#EB3656]   lg:hidden block  w-[250px]  mx-auto   font-semibold py-3  rounded-lg">
-            Make Deal
-          </button>
-        </Link> */}
       </div>
     </div>
   );

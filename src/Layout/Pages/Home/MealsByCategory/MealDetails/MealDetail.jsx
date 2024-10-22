@@ -1,7 +1,7 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import Lottie from "lottie-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "react-awesome-button/dist/styles.css";
 import { useForm } from "react-hook-form";
 import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
@@ -18,7 +18,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import UseAuth from "../../../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../../../Hooks/UseAxiosPublic";
 import UseAxiosSecure from "../../../../../Hooks/UseAxiosSecure";
-import UseMealDetails from "../../../../../Hooks/UseMealDetails";
+import UseFetch from "../../../../../Hooks/UseFetch";
 import UseReviewTitle from "../../../../../Hooks/UseReviewTitle";
 import SocialLink from "../../../../../Shared/SocialLinks/SocialLink";
 import banner from "../../../../../assets/bannerAnimation/is5WNsFx8i.json";
@@ -29,8 +29,9 @@ const MealDetail = () => {
   const axiosSecure = UseAxiosSecure();
   const axiosPublic = useAxiosPublic();
   const { id } = useParams();
-  const [mealDetails, loading, refetch] = UseMealDetails(id);
+  const [mealDetails, loading, refetch] = UseFetch(`/meals/${id}`);
   const [toggle, setToggle] = useState(true);
+
   const {
     name,
     category,
@@ -47,8 +48,12 @@ const MealDetail = () => {
     _id,
   } = mealDetails;
 
-  const [allReviews, , refetchReviews] = UseReviewTitle(name);
-
+  const [allReviews, loadingReview, refetchReviews] = UseReviewTitle(name);
+  useEffect(() => {
+    if (name) {
+      refetchReviews();
+    }
+  }, [name, refetchReviews]);
   const { register, handleSubmit } = useForm();
 
   const handleLikeClick = () => {
@@ -282,11 +287,9 @@ const MealDetail = () => {
           </div>
         </div>
       </div>
-
       <h2 className=" uppercase text-center  mt-10 text-white text-3xl lg:text-4xl font-bold ">
         Add Your <span className="text-[#EB3656]">Thoughts</span> Here{" "}
       </h2>
-
       <div className="flex lg:flex-row flex-col-reverse items-center justify-center lg:gap-20">
         <div>
           <div className="flex-1">
@@ -313,24 +316,24 @@ const MealDetail = () => {
           <Lottie animationData={banner} loop={true} />
         </div>
       </div>
-
       <div className="">
         <h2 className=" uppercase text-center my-10 text-white text-2xl lg:text-4xl font-bold ">
           Word from our <span className="text-[#EB3656]">customers</span>{" "}
         </h2>
         <div className="">
           <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-            {allReviews.map((item) => (
-              <SwiperSlide className=" text-white " key={item._id}>
-                <div className="bg-white lg:w-9/12 h-[40vh] lg:h-[20vh] mx-auto rounded-xl flex justify-center items-center">
-                  <p className="mx-10 text-black"> {item.review}</p>
-                </div>
-              </SwiperSlide>
-            ))}
+            {loadingReview
+              ? "Loading"
+              : allReviews?.map((item) => (
+                  <SwiperSlide className=" text-white " key={item._id}>
+                    <div className="bg-white lg:w-9/12 h-[40vh] lg:h-[20vh] mx-auto rounded-xl flex justify-center items-center">
+                      <p className="mx-10 text-black"> {item?.reviewTitle}</p>
+                    </div>
+                  </SwiperSlide>
+                ))}
           </Swiper>
         </div>
       </div>
-
       <Footer></Footer>
       <SocialLink></SocialLink>
     </div>

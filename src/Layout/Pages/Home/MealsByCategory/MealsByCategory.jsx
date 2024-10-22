@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-// import "react-tabs/style/react-tabs.css";
 import UseMeal from "../../../../Hooks/UseMeal";
 import "../MealsByCategory/TabCss/Tab.css";
 import MealTab from "./MealTab/MealTab";
@@ -9,11 +8,11 @@ const MealsByCategory = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [meals, loading, refetch] = UseMeal();
 
-  const breakfast = meals.filter((item) => item.category === "Breakfast");
-  const lunch = meals.filter((item) => item.category === "Lunch");
+  const breakfast = meals?.filter((item) => item.category === "Breakfast");
+  const lunch = meals?.filter((item) => item.category === "Lunch");
 
-  const dinner = meals.filter((item) => item.category === "Dinner");
-  // mx-16  lg:mx-64
+  const dinner = meals?.filter((item) => item.category === "Dinner");
+
   return (
     <div className="mt-10">
       <h2 className="text-3xl  lg:text-4xl uppercase mb-6 font-bold text-center text-white ">

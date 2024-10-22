@@ -1,26 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import UseAuth from "../../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../../Hooks/UseAxiosPublic";
-import UseMeal from "../../../../Hooks/UseMeal";
+import UseFetch from "../../../../Hooks/UseFetch";
 import SingleReviewUser from "./SingleReviewUser";
 
 const UserReviews = () => {
-  const [meals, , ,] = UseMeal();
-
   const { user } = UseAuth();
   const axiosPublic = useAxiosPublic();
-  const {
-    data: reviews = [],
-    isLoading: loading,
-    refetch,
-  } = useQuery({
-    queryKey: ["reviews"],
-    queryFn: async () => {
-      const res = await axiosPublic.get(`/reviews?userEmail=${user?.email}`);
-      return res.data;
-    },
-  });
+  const [reviews, loading, refetch] = UseFetch(
+    `/reviews?userEmail=${user?.email}`
+  );
 
   const titleReviews = reviews.reduce((acc, review) => {
     const exist = acc.find((item) => item.title === review.title);
@@ -39,8 +28,6 @@ const UserReviews = () => {
     return acc;
   }, []);
 
-  // console.log(titleReviews);
-
   const handleDeleteReview = (review) => {
     Swal.fire({
       title: "Are you sure?",
@@ -55,7 +42,6 @@ const UserReviews = () => {
         const res = await axiosPublic.delete(`/reviews/${review._id}`);
 
         if (res.data.deletedCount > 0) {
-          // refetch to update the ui
           refetch();
           Swal.fire({
             position: "top-end",

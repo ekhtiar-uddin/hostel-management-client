@@ -16,11 +16,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive, isLoading }) =>
-            isLoading
-              ? "pending"
-              : isActive
-              ? " text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4 "
-              : " text-sm hover:bg-[#101010] text-white   rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+            isLoading ? "pending" : isActive ? "navInActive " : "navActive"
           }
         >
           Home
@@ -31,11 +27,7 @@ const NavBar = () => {
         <NavLink
           to="/allMeals"
           className={({ isActive, isLoading }) =>
-            isLoading
-              ? "pending"
-              : isActive
-              ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
-              : " text-sm hover:bg-[#101010] text-white   rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
           }
         >
           Meals
@@ -46,11 +38,7 @@ const NavBar = () => {
         <NavLink
           to="/upcomingMeals"
           className={({ isActive, isLoading }) =>
-            isLoading
-              ? "pending"
-              : isActive
-              ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] text-white   rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
           }
         >
           Upcoming Meals
@@ -65,11 +53,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive, isLoading }) =>
-            isLoading
-              ? "pending"
-              : isActive
-              ? "text-sm bg-[#101010]  text-[#EB3656]  rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] text-white  rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
           }
         >
           Home
@@ -80,11 +64,7 @@ const NavBar = () => {
         <NavLink
           to="/allMeals"
           className={({ isActive, isLoading }) =>
-            isLoading
-              ? "pending"
-              : isActive
-              ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] text-white  rounded-full transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
           }
         >
           Meals
@@ -95,11 +75,7 @@ const NavBar = () => {
         <NavLink
           to="/upcomingMeals"
           className={({ isActive, isLoading }) =>
-            isLoading
-              ? "pending"
-              : isActive
-              ? "text-sm lg:bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] text-white  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
           }
         >
           Upcoming Meals
@@ -109,11 +85,7 @@ const NavBar = () => {
         <NavLink
           to="/contact"
           className={({ isActive, isLoading }) =>
-            isLoading
-              ? "pending"
-              : isActive
-              ? "text-sm bg-[#101010] text-[#EB3656]  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] text-white  rounded-full  font-semibold py-1 lg:py-2 lg:px-4"
+            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
           }
         >
           Contact Us
@@ -121,6 +93,7 @@ const NavBar = () => {
       </li>
     </>
   );
+
   const handleLogOut = () => {
     logOut();
     localStorage.removeItem("likesData");
@@ -128,15 +101,15 @@ const NavBar = () => {
   };
   return (
     <>
-      <div className="py-4 flex  items-center justify-between">
-        <div className="flex  items-center gap-2">
+      <div className="py-4 addFlexBetween items-center">
+        <div className="addFlexItems gap-2">
           <div className="dropdown">
             <div tabIndex={0} role="button" className=" lg:hidden">
-              <FaBars className="text-2xl text-[#EB3656]"></FaBars>
+              <FaBars className="text-2xl text-p1"></FaBars>
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content z-[1] shadow  rounded-box bg-[#2C2C2C] w-52 text-[#EB3656] absolute -right-[140px] top-0"
+              className="menu menu-sm dropdown-content z-[1] shadow  rounded-box bg-[#2C2C2C] w-52 text-p1 absolute -right-[140px] top-0"
             >
               {user ? navLinks : navlinksBeforeLogin}
             </ul>
@@ -150,7 +123,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        <div className="flex items-center">
+        <div className="addFlexItems">
           <ul className="hidden  lg:flex gap-5">
             {user ? navLinks : navlinksBeforeLogin}
           </ul>
@@ -159,11 +132,11 @@ const NavBar = () => {
         <div>
           {user ? (
             <div className="dropdown lg:block dropdown-end">
-              <div className="flex gap-3 items-center">
+              <div className="addFlexItems gap-3 ">
                 <div>
                   <button
                     onClick={handleLogOut}
-                    className="text-sm flex items-center gap-1  font-semibold text-[#BFFCF9] hover:text-[#EB3656]"
+                    className="text-sm addFlexItems gap-1  font-semibold text-p2 hover:text-p1"
                   >
                     Logout{" "}
                     <HiOutlineLogout className="text-xl"></HiOutlineLogout>
@@ -171,7 +144,7 @@ const NavBar = () => {
                 </div>
 
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="w-[60px] rounded-full text-white">
+                  <div className="w-[60px] rounded-full ">
                     <img src={user?.photoURL} alt={user?.displayName} />
                   </div>
                 </label>
@@ -180,16 +153,16 @@ const NavBar = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box bg-[#2C2C2C]  "
               >
-                <li className=" hover:bg-[#161515] py-1 px-4 rounded-xl text-white  text-center">
+                <li className=" hover:bg-[#161515] py-1 px-4 rounded-xl   text-center">
                   {user?.displayName}
                 </li>
                 {user && isAdmin && (
-                  <li className="hover:bg-[#161515] px-4   rounded-xl text-white  ">
+                  <li className="hover:bg-[#161515] px-4   rounded-xl   ">
                     <Link to="/dashboard/adminProfile"> Dashboard</Link>
                   </li>
                 )}
                 {user && !isAdmin && (
-                  <li className="hover:bg-[#161515] px-4   rounded-xl text-white  ">
+                  <li className="hover:bg-[#161515] px-4   rounded-xl   ">
                     <Link to="/dashboard/userProfile">Dashboard</Link>
                   </li>
                 )}
@@ -203,8 +176,8 @@ const NavBar = () => {
                   isLoading
                     ? "pending"
                     : isActive
-                    ? "text-sm bg-[#870012] text-white  rounded-full  font-semibold py-2 px-4"
-                    : " text-sm hover:bg-[#870012] bg-[#EB3656] text-white   rounded-full  font-semibold py-2 px-4"
+                    ? "text-sm bg-[#870012]   rounded-full  font-semibold py-2 px-4"
+                    : " text-sm hover:bg-[#870012] bg-p1    rounded-full  font-semibold py-2 px-4"
                 }
               >
                 Join Now

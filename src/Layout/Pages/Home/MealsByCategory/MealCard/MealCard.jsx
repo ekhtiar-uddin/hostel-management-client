@@ -2,7 +2,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import "react-awesome-button/dist/styles.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import "../../../../../Css/App.css";
+
 import UseAuth from "../../../../../Hooks/UseAuth";
 import UseAxiosSecure from "../../../../../Hooks/UseAxiosSecure";
 import "../MealCard/MealCard.css";
@@ -32,25 +32,23 @@ const MealCard = ({ item }) => {
     <>
       <div className="meal relative h-[330px]  ">
         <img className="h-full w-full rounded-3xl" src={image}></img>
-        <div className="rounded-3xl info bottom-0 absolute w-full bg-[#211718]  h-1/3 flex justify-center items-center">
+        <div className="rounded-3xl info bottom-0 absolute w-full bg-[#211718]  h-1/3 addFlex">
           <div className="w-[90%]">
-            <h2 className=" mt-4 text-white text-xl font-bold text-center">
+            <h2 className=" mt-4  text-xl font-bold text-center">
               {name?.split(" ")[0]} {name?.split(" ")[1]}
             </h2>
-            <div className=" flex justify-center gap-8">
+            <div className=" addFlexJustify gap-8">
               <Rating
                 className=""
                 style={{ maxWidth: 100 }}
                 value={rating}
                 readOnly
               />
-              <p className=" text-white text-xl font-semibold ">
-                Price ${price}
-              </p>
+              <p className="  text-xl font-semibold ">Price ${price}</p>
             </div>
-            <div className="flex justify-center">
+            <div className="addFlexJustify">
               <Link to={`/details/${_id}`}>
-                <button className="btnAll py-2 px-5 mt-3 invisible   font-medium   rounded bg-[#EB3656] ">
+                <button className="btnAll py-2 px-5 mt-3 invisible   font-medium   rounded bg-p1 ">
                   <span className=""> Explore More</span>
                 </button>{" "}
               </Link>

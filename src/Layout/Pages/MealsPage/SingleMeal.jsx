@@ -26,7 +26,7 @@ const SingleMeal = ({ meal }) => {
             src={image}
           ></img>
         </div>
-        <div className="flex justify-center">
+        <div className="addFlexJustify">
           <div className="space-y-1">
             <h2 className="font-bold  text-[#000]  text-[22px]">
               {name?.split(" ")[0]} {name?.split(" ")[1]}
@@ -42,7 +42,7 @@ const SingleMeal = ({ meal }) => {
             <p className=" text-center ">{category}</p>
           </div>
         </div>
-        <p className="text-[#EB3656] text-center mt-8 pb-10 font-medium   text-[19px]">
+        <p className="text-p1 text-center mt-8 pb-10 font-medium   text-[19px]">
           USD ${price}
         </p>
       </div>

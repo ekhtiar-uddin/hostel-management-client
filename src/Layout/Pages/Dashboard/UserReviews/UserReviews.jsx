@@ -57,9 +57,9 @@ const UserReviews = () => {
 
   return (
     <div>
-      <h2 className=" my-12  uppercase text-4xl text-center text-white  font-extrabold">
+      <h2 className=" my-12  dashboardTitle">
         You have reviewed{" "}
-        <span className="text-[#EB3656]"> {titleReviews?.length} meals </span>
+        <span className="text-p1"> {titleReviews?.length} meals </span>
       </h2>
 
       <div className="">

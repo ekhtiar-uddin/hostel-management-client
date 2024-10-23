@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../../../../Css/App.css";
 
 const SinglePlan = ({ plan }) => {
   const { planName, advantages, description, price } = plan;
@@ -18,7 +17,7 @@ const SinglePlan = ({ plan }) => {
     if (planName === "Sliver") {
       return "bg-[#556B6A]";
     } else if (planName === "Gold") {
-      return "bg-[#EB3656]";
+      return "bg-p1";
     } else {
       return "bg-[#556B6A]";
     }
@@ -27,7 +26,7 @@ const SinglePlan = ({ plan }) => {
   return (
     <div className="singlePlan rounded-xl ">
       <div
-        className={` box p-8   rounded-xl mx-3 lg:mx-5 my-5 h-[630px]  md:h-[500px] lg:h-[600px] text-white ${bgColor()} `}
+        className={` box p-8   rounded-xl mx-3 lg:mx-5 my-5 h-[630px]  md:h-[500px] lg:h-[600px]  ${bgColor()} `}
       >
         <h2 className="text-center text-3xl font-bold ">{planName}</h2>
 
@@ -37,10 +36,7 @@ const SinglePlan = ({ plan }) => {
         </h2>
         <div className="h-[300px] md:h-[260px] lg:h-[280px] ">
           {advantages?.map((item, index) => (
-            <div
-              key={index}
-              className="mb-1 lg:mb-3 flex items-center     gap-7 "
-            >
+            <div key={index} className="mb-1 lg:mb-3 addFlexItems     gap-7 ">
               {" "}
               <img
                 className="w-[30px]"
@@ -51,7 +47,7 @@ const SinglePlan = ({ plan }) => {
           ))}
         </div>
         <Link
-          className="lg:mt-20 md:mt-5 mt-32  flex justify-center"
+          className="lg:mt-20 md:mt-5 mt-32  addFlexJustify"
           to={`/checkout/${planName}`}
         >
           <button

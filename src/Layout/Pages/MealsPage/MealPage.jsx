@@ -53,22 +53,22 @@ const MealPage = () => {
         <title>Meals | CampusBite</title>
       </Helmet>
       <div className="">
-        <h2 className="text-white my-16 text-3xl lg:text-4xl text-center   font-extrabold  uppercase">
-          Eat Quality <span className="text-[#EB3656]"> Food</span>
+        <h2 className=" my-16 text-3xl lg:text-4xl text-center   font-extrabold  uppercase">
+          Eat Quality <span className="text-p1"> Food</span>
         </h2>
 
         <div className="flex flex-col-reverse lg:flex-row gap-10">
-          <div className=" flex items-center lg:w-1/2 ">
+          <div className=" addFlexItems lg:w-1/2 ">
             <div
               className=" 
             "
             >
-              <p className="text-center  text-2xl uppercase my-8 text-white  font-bold">
-                <span className="text-[#EB3656]">Welcome</span> to CampusBite
-                Meals page{" "}
+              <p className="text-center  text-2xl uppercase my-8   font-bold">
+                <span className="text-p1">Welcome</span> to CampusBite Meals
+                page{" "}
               </p>
 
-              <p className="mb-7 text-white  font-medium">
+              <p className="mb-7   font-medium">
                 We fuel campus life with delicious bites! Our mission is to
                 provide a world of diverse, healthy, and convenient food options
                 to keep you energized throughout your busy day. Whether you're
@@ -82,30 +82,30 @@ const MealPage = () => {
 
               <div className="">
                 <div className="space-y-2 mb-5 ">
-                  <div className="flex items-center gap-2">
+                  <div className="addFlexItems gap-2">
                     <img
                       className="w-[30px]"
                       src="https://i.ibb.co/qxknKhC/checkmark.png"
                     ></img>
-                    <p className=" text-white text-sm  font-medium">
+                    <p className="  text-sm  font-medium">
                       The food here uses 100% natural preservatives
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="addFlexItems gap-2">
                     <img
                       className="w-[30px] "
                       src="https://i.ibb.co/qxknKhC/checkmark.png"
                     ></img>
-                    <p className=" text-white text-sm  font-medium">
+                    <p className="  text-sm  font-medium">
                       The package here is very up to date and safe
                     </p>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="addFlexItems gap-2">
                     <img
                       className="w-[30px]"
                       src="https://i.ibb.co/qxknKhC/checkmark.png"
                     ></img>
-                    <p className=" text-white text-sm  font-medium">
+                    <p className="  text-sm  font-medium">
                       A comfortable place to hang out with your friends.
                     </p>
                   </div>
@@ -114,20 +114,20 @@ const MealPage = () => {
               <div className=" lg:w-2/3 mx-auto  mt-10 ">
                 <form
                   onSubmit={handleSubmit(onSubmit)}
-                  className=" flex bg-white rounded-3xl"
+                  className=" flex  "
                   action=""
                 >
                   <input
                     {...register("title", { required: true })}
                     name="title"
                     id="field-id"
-                    className="pl-4 rounded-l-3xl w-full outline-none"
+                    className="pl-4 rounded-l w-full outline-none"
                     type="text"
                     placeholder="Find Food"
                   />
                   <button
                     type="submit"
-                    className="bg-[#BFFCF9] rounded-3xl text-[#000000] hover:bg-[#870012] transition-all duration-150  hover:text-white flex items-center  justify-center w-[200px] h-[45px]  lg:h-[50px] text-lg font-semibold "
+                    className="bg-p2 rounded-r  hover:text-white text-[#000000] hover:bg-[#870012] transition-all duration-150  hover: addFlex  w-[200px] h-[45px]  lg:h-[50px] text-lg font-semibold "
                   >
                     {" "}
                     <BsSearch></BsSearch>
@@ -163,8 +163,8 @@ const MealPage = () => {
         </div>
 
         <div className="border-b mt-10 lg:mt-20 mb-12 border-[#444] pb-10">
-          <h2 className="text-white text-3xl uppercase lg:text-4xl text-center   font-extrabold  ">
-            Our <span className="text-[#EB3656]"> Specials</span>
+          <h2 className=" text-3xl uppercase lg:text-4xl text-center   font-extrabold  ">
+            Our <span className="text-p1"> Specials</span>
           </h2>
         </div>
 
@@ -192,7 +192,7 @@ const MealPage = () => {
                   </h2>
                   <button
                     onClick={() => setAsc(!asc)}
-                    className="cursor-pointer w-full  py-2 rounded button  bg-[#161515] hover:bg-[#444] text-white"
+                    className="cursor-pointer w-full  py-2 rounded button  bg-[#161515] hover:bg-[#444] "
                   >
                     {asc ? "High to Low" : "Low to High"}{" "}
                   </button>

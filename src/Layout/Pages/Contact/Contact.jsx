@@ -1,13 +1,12 @@
 import emailjs from "@emailjs/browser";
+import Lottie from "lottie-react";
 import { useRef } from "react";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
-
-import Lottie from "lottie-react";
-import "../../../../src/Css/App.css";
 import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import banner from "../../../assets/bannerAnimation/UXsWHFSAaz.json";
 import Footer from "../Home/Footer/Footer";
+
 const Contact = () => {
   const form = useRef();
 
@@ -42,136 +41,103 @@ const Contact = () => {
       <Helmet>
         <title>Contact | CampusBite</title>
       </Helmet>
-      <div
-        className="flex lg:flex-row flex-col-reverse justify-center gap-10 lg:gap-20
-   "
-      >
-        <div className="">
+      <div className="addFlexJustify flex-col-reverse lg:flex-row gap-10 lg:gap-20">
+        <div>
           <form ref={form} onSubmit={sendEmail} className="container">
-            <div className="flex gap-5  lg:gap-10  justify-between container">
+            <div className="addFlexBetween gap-5 lg:gap-10 container">
               <div className="relative">
                 <input
-                  className="outline-none rounded-lg bg-[#161515] w-full lg:w-[300px]  pl-2 border border-[#BFFCF9] py-2 mb-7 text-white"
+                  className="inputAndTextarea lg:w-[300px] py-2 mb-7"
                   type="text"
                   name="first-name"
-                  id=""
                   required
                 />
-
-                <label className="mb-4 absolute left-3 top-2 text-white  font-semibold transition-all duration-200  ">
-                  First Name
-                </label>
+                <label className="labelContact">First Name</label>
               </div>
               <div className="relative">
                 <input
-                  className="outline-none rounded-lg bg-[#161515] w-full lg:w-[300px] text-white  pl-2 border border-[#BFFCF9] py-2 mb-7"
+                  className="inputAndTextarea lg:w-[300px] py-2 mb-7"
                   type="text"
                   name="last-name"
-                  id=""
                   required
                 />
-                <label className="mb-4 absolute left-3 top-2 text-white  font-semibold  transition-all duration-200 ">
-                  Last Name
-                </label>
+                <label className="labelContact">Last Name</label>
               </div>
             </div>
-            <div className="relative ">
+            <div className="relative">
               <input
-                className="outline-none rounded-lg text-white bg-[#161515] w-full  pl-2 border border-[#BFFCF9] py-2 mb-7 "
+                className="inputAndTextarea py-2 mb-7"
                 type="email"
                 name="user_email"
-                id=""
                 required
               />
-              <label className=" font-semibold  mb-4 absolute left-3 top-2 text-white transition-all duration-200 ">
-                Email
-              </label>
+              <label className="labelContact">Email</label>
             </div>
-            <div className="relative ">
+            <div className="relative">
               <input
-                className="outline-none rounded-lg w-full text-white bg-[#161515]  pl-2 border border-[#BFFCF9] py-2 mb-7"
+                className="inputAndTextarea py-2 mb-7"
                 type="number"
                 name="user-phone"
-                id=""
                 required
               />
-              <label className=" font-semibold  mb-4 absolute left-3 top-2 text-white transition-all duration-200 ">
-                Phone
-              </label>
+              <label className="labelContact">Phone</label>
             </div>
-            <div className="  font-semibold text-sm mb-8  text-white ">
-              <h4 className="mb-2">
+            <div className=" text-sm font-medium  mb-8">
+              <h4 className="mb-2 font-semibold">
                 You are <span className="text-[#CC0018]">*</span>
               </h4>
               <input
-                className="mr-2 "
+                className="mr-2"
                 type="radio"
                 value="Student"
                 name="info"
-                id="student"
-              />{" "}
-              <span className=" font-medium text-sm mr-2">Student</span>
+              />
+              <span className="mr-2 ">Student</span>
               <input
                 className="mr-2"
                 type="radio"
                 value="Faculty"
                 name="info"
-                id="faculty"
               />
-              <span htmlFor="faculty" className=" font-medium text-sm mr-2">
-                {" "}
-                Faculty
-              </span>
-              <input
-                className="mr-2"
-                type="radio"
-                value="Staff"
-                name="info"
-              />{" "}
-              <span className=" font-medium text-sm"> Staff</span> <br />
+              <span className="mr-2 ">Faculty</span>
+              <input className="mr-2" type="radio" value="Staff" name="info" />
+              <span className="">Staff</span> <br />
               <input
                 className="mr-2"
                 type="radio"
                 value="Alumnus"
                 name="info"
-              />{" "}
-              <span className=" font-medium text-sm mr-2"> Alumnus</span>
-              <input
-                className="mr-2"
-                type="radio"
-                value="Other"
-                name="info"
-              />{" "}
-              <span className=" font-medium text-sm"> Other</span> <br />
+              />
+              <span className="mr-2 ">Alumnus</span>
+              <input className="mr-2" type="radio" value="Other" name="info" />
+              <span className="">Other</span>
             </div>
-            <div className="relative ">
+            <div className="relative">
               <textarea
-                className=" mb-4 outline-none rounded-lg text-white bg-[#161515] pl-2 border border-[#BFFCF9] w-full"
+                className="inputAndTextarea mb-4"
                 name="message"
-                id=""
                 cols="50"
                 rows="5"
                 required
               ></textarea>
-              <label className="mb-4 absolute transition-all duration-200  left-3 top-2 text-white  font-semibold ">
+              <label className="labelContact">
                 Question <span className="text-[#CC0018]">*</span>
               </label>
             </div>
-            <button className="btnAll mt-4 px-4 lg:px-6 py-1 lg:py-2   font-medium  transition-all duration-200 rounded bg-[#EB3656] ">
-              <span className="">Send Message</span>
-            </button>{" "}
+            <button className="btnRegular">
+              <span>Send Message</span>
+            </button>
           </form>
         </div>
 
-        <div className="">
-          {" "}
+        <div>
           <Lottie animationData={banner} loop={true} />
         </div>
       </div>
 
-      <Footer></Footer>
+      <Footer />
 
-      <SocialLink></SocialLink>
+      <SocialLink />
     </div>
   );
 };

@@ -1,5 +1,3 @@
-import React from "react";
-
 const SingleRequest = ({ item, handleDeleteRequest }) => {
   const { title, likeNumber, status, reviews, img } = item;
   return (
@@ -23,7 +21,7 @@ const SingleRequest = ({ item, handleDeleteRequest }) => {
 
       <div
         onClick={() => handleDeleteRequest(item)}
-        className="absolute cursor-pointer bottom-0 left-0 rounded-t-[20px]   text-center w-full py-2 rounded bg-[#EB3656] hover:bg-[#870012] transition-all duration-300 items-center   font-medium  text-sm  text-white"
+        className="absolute cursor-pointer bottom-0 left-0 rounded-t-[20px]   text-center w-full py-2 rounded bg-p1 hover:bg-[#870012] transition-all duration-300    font-medium  text-sm  "
       >
         Delete
       </div>

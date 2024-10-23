@@ -31,9 +31,11 @@ const Analytics = () => {
   const [plans, setPlans] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/payments").then((res) => {
-      setPlans(res.data);
-    });
+    axios
+      .get("https://hostel-management-server-six.vercel.app/payments")
+      .then((res) => {
+        setPlans(res.data);
+      });
   }, []);
 
   const silver = plans.filter((item) => item.plan === "Silver");
@@ -46,18 +48,18 @@ const Analytics = () => {
     { name: "Group C", value: platinum?.length },
   ];
 
-  const COLORS = ["#BFFCF9", "#EB3656", "#2C2C2C"];
+  const COLORS = ["#BFFCF9", "#EB3656", "#f6f6f6"];
 
   return (
     <div className="">
       <h2 className="text-3xl lg:text-4xl  font-extrabold text-center">
         MEMBERSHIP ANALYTICS
       </h2>
-      <h2 className="text-xl uppercase  font-extrabold text-center text-[#EB3656] my-2">
+      <h2 className="text-xl uppercase  font-extrabold text-center text-p1 my-2">
         __Statistics of Meal Plan__
       </h2>
 
-      <div className="border-t-2 border-[#BFFCF9] mt-10 flex justify-center">
+      <div className="border-t-2 border-p2 mt-10 addFlexJustify">
         <PieChart width={500} height={500}>
           <Pie
             data={data}
@@ -78,19 +80,19 @@ const Analytics = () => {
         </PieChart>
       </div>
 
-      <div className="flex justify-center">
+      <div className="addFlex">
         <div className="flex flex-col lg:flex-row md:flex-row md:gap-6 lg:gap-14 gap-6">
-          <div className="flex items-center gap-4">
-            <h4 className="text-[#FFF]  text-lg font-semibold ">Silver </h4>
-            <div className="w-[100px] h-[12px] bg-[#BFFCF9]"> </div>
+          <div className="addFlexItems gap-4">
+            <h4 className=" text-lg font-semibold ">Silver </h4>
+            <div className="w-[100px] h-[12px] bg-p2"> </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <h4 className="text-[#FFF]  text-lg font-semibold ">Gold </h4>
-            <div className="w-[100px] h-[12px] bg-[#EB3656]"> </div>
+          <div className="addFlexItems gap-4">
+            <h4 className="  text-lg font-semibold ">Gold </h4>
+            <div className="w-[100px] h-[12px] bg-p1"> </div>
           </div>
-          <div className="flex items-center gap-4">
-            <h4 className="text-[#FFF]  text-lg font-semibold ">Platinum </h4>
+          <div className="addFlexItems gap-4">
+            <h4 className="  text-lg font-semibold ">Platinum </h4>
             <div className="w-[100px] h-[12px] bg-[#2C2C2C]"> </div>
           </div>
         </div>

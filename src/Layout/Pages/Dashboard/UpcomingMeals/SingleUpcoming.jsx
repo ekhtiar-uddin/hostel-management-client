@@ -11,9 +11,9 @@ const SingleUpcoming = ({ item }) => {
           style={{
             backgroundImage: `URL(${image})`,
           }}
-          className="flex  items-center justify-center bg-no-repeat bg-cover w-full h-[200px]  rounded-3xl"
+          className="addFlex bg-no-repeat bg-cover w-full h-[200px]  rounded-3xl"
         >
-          <h2 className=" bg-[#870012] px-3 py-1 rounded text-white   font-semibold ">
+          <h2 className=" bg-[#870012] px-3 py-1 rounded    font-semibold ">
             Likes {likes}
           </h2>
         </div>
@@ -24,7 +24,7 @@ const SingleUpcoming = ({ item }) => {
           <h2 className=" mt-3  text-lg font-semibold">
             {name?.split(" ")[0]} {name?.split(" ")[1]}
           </h2>
-          <div className="flex justify-between ">
+          <div className="addFlexBetween ">
             <p> {category} </p>
             <p>
               {" "}
@@ -32,8 +32,8 @@ const SingleUpcoming = ({ item }) => {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2 mt-3 text-[#000000]">
-          <button className=" w-full rounded bg-[#EB3656] hover:bg-[#870012] transition-all duration-300 items-center py-1  font-medium  text-sm  text-white">
+        <div className="addFlexItems gap-2 mt-3 ">
+          <button className=" w-full rounded bg-p1 hover:bg-[#870012] transition-all duration-300  py-1  font-medium  text-sm  ">
             Production
           </button>
         </div>

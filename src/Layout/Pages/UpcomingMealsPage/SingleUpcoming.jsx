@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import "../../../../src/Css/App.css";
+
 import UseAuth from "../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../Hooks/UseAxiosPublic";
 const SingleUpcoming = ({ meal, upcomingRefetch }) => {
@@ -118,10 +118,10 @@ const SingleUpcoming = ({ meal, upcomingRefetch }) => {
         <img className="h-[370px] w-full" src={image}></img>
       </div>
 
-      <h2 className="absolute top-3 right-3 bg-[#870012] px-2 rounded text-white  max-w-min  font-semibold mb-2">
+      <h2 className="absolute top-3 right-3 bg-[#870012] px-2 rounded   max-w-min  font-semibold mb-2">
         {category}
       </h2>
-      <h2 className="absolute top-3 left-3 bg-[#870012] px-2 rounded text-white   font-semibold mb-2">
+      <h2 className="absolute top-3 left-3 bg-[#870012] px-2 rounded    font-semibold mb-2">
         Likes {likes}
       </h2>
 
@@ -129,13 +129,13 @@ const SingleUpcoming = ({ meal, upcomingRefetch }) => {
         style={{
           backgroundColor: "rgba(11, 11, 11, 0.80)",
         }}
-        className=" upcomingCardContent bg-blend-overlay   text-white "
+        className=" upcomingCardContent bg-blend-overlay    "
       >
         <h2 className="  pt-1 text-center text-2xl  font-semibold">
           {name?.split(" ")[0]} {name?.split(" ")[1]}
         </h2>
 
-        <div className="flex gap-4 justify-center items-center">
+        <div className="addFlex gap-4 ">
           <p className=" font-semibold">
             $ <span className="text-xl">{price}</span>{" "}
           </p>
@@ -143,15 +143,15 @@ const SingleUpcoming = ({ meal, upcomingRefetch }) => {
             <Rating style={{ maxWidth: 80 }} value={rating} readOnly />
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="addFlexJustify">
           {toggle && (
             <button onClick={handleLikeClick}>
-              <MdFavorite className=" text-5xl text-[#EB3656]" />
+              <MdFavorite className=" text-5xl text-p1" />
             </button>
           )}
           {!toggle && (
             <button onClick={handleLikeClick}>
-              <MdOutlineFavoriteBorder className=" text-5xl text-[#EB3656]" />
+              <MdOutlineFavoriteBorder className=" text-5xl text-p1" />
             </button>
           )}
         </div>

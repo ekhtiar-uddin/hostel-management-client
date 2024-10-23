@@ -93,15 +93,15 @@ const Register = () => {
       </Helmet>
       <div className=" my-20 ">
         <div className="bg-white flex lg:flex-row flex-col-reverse  rounded-3xl lg:w-2/3 lg:h-[550px]  mx-auto">
-          <div className="flex-1 py-20 lg:py-0 text-[#FFF] lg:rounded-t-3xl rounded-t-[90px]    lg:rounded-tr-[170px] lg:rounded-br-[100px] bg-[#EB3656] flex justify-center items-center rounded-3xl">
+          <div className="flex-1 py-20 lg:py-0 text-[#FFF] lg:rounded-t-3xl rounded-t-[90px]    lg:rounded-tr-[170px] lg:rounded-br-[100px] bg-p1 addFlex rounded-3xl">
             <div className="">
               <h2 className="mb-4 text-3xl  font-bold  text-center">Login</h2>
               <p className="text-center mb-4  ">
                 Already have an account? You can
               </p>
-              <div className="flex justify-center ">
+              <div className="addFlexJustify ">
                 <Link to="/login">
-                  <button className="px-4 lg:px-8 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none  text-white rounded">
+                  <button className="px-4 lg:px-8 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none   rounded">
                     SIGN IN
                   </button>
                 </Link>{" "}
@@ -113,12 +113,12 @@ const Register = () => {
             <h2 className="lg:my-5 text-[#000] text-2xl lg:text-3xl  font-bold  text-center">
               Create Account With
             </h2>
-            <div className="flex lg:flex-row flex-col gap-5 items-center justify-center">
+            <div className="addFlex  lg:flex-row flex-col gap-5 ">
               <div
                 onClick={handleGoogleLogin}
-                className="cursor-pointer justify-center flex items-center lg:gap-2 lg:mb-3 mt-2 py-2 px-5 rounded text-base border "
+                className="cursor-pointer addFlex lg:gap-2 lg:mb-3 mt-2 py-2 px-5 rounded text-base border "
               >
-                <div className="flex items-center gap-2">
+                <div className="addFlexItems gap-2">
                   <FcGoogle className="text-2xl"></FcGoogle>
                 </div>
               </div>
@@ -219,8 +219,8 @@ const Register = () => {
                 </a>
               </div>
 
-              <div className="flex justify-center  mt-3">
-                <button className="px-4 lg:px-10 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656]  text-white rounded">
+              <div className="addFlexJustify  mt-3">
+                <button className="px-4 lg:px-10 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 bg-p1   rounded">
                   Continue
                 </button>
               </div>

@@ -58,9 +58,9 @@ const RequestedMeals = () => {
   };
   return (
     <div>
-      <h2 className=" my-12  uppercase text-4xl text-center text-white  font-extrabold">
+      <h2 className=" my-12 dashboardTitle">
         You have{" "}
-        <span className="text-[#EB3656]">
+        <span className="text-p1">
           {" "}
           requested {requestedMeals?.length} Meals{" "}
         </span>
@@ -77,61 +77,6 @@ const RequestedMeals = () => {
           ))}
         </div>
       </div>
-      {/* 
-      <div>
-        <table className="table border w-full">
-  
-          <thead className="">
-            <tr>
-              <th className="text-center text-lg font-serif text-[#444]">#</th>
-              <th className="text-center text-lg font-serif text-[#444]">
-                Title
-              </th>
-              <th className="text-center text-lg font-serif text-[#444]">
-                Likes
-              </th>
-              <th className="text-center text-lg font-serif text-[#444]">
-                Reviews
-              </th>
-              <th className="text-center text-lg font-serif text-[#444]">
-                Status
-              </th>
-              <th className="text-center text-lg font-serif text-[#444]">
-                Cancel
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {requestedMeals?.map((meal, index) => (
-              <tr key={meal._id}>
-                <td className="text-sm text-[#444] font-normal  ">
-                  {index + 1}
-                </td>
-                <td className="text-sm text-[#444] font-normal  text-center">
-                  {meal.title}
-                </td>
-                <td className="text-sm text-[#444] font-normal  text-center">
-                  {meal.likeNumber}
-                </td>
-                <td className="text-sm text-[#444] font-normal  text-center">
-                  {meal.reviews}
-                </td>
-                <td className="text-sm text-[#444] font-normal  text-center">
-                  Pending
-                </td>
-                <td className="text-sm text-[#444] font-normal  text-center">
-                  <button
-                    onClick={() => handleDeleteRequest(meal)}
-                    className="text-sm text-[#444] font-normal  px-5 py-2  bg-red-600 rounded"
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div> */}
     </div>
   );
 };

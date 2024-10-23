@@ -20,7 +20,7 @@ const Dashboard = () => {
   const [isAdmin] = UseAdmin();
   const { user } = UseAuth();
 
-  console.log(isAdmin);
+  // console.log(isAdmin);
 
   const axiosSecure = UseAxiosSecure();
 
@@ -41,8 +41,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center  gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm flex items-center  gap-2 hover:bg-[#101010] text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems  gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm addFlexItems  gap-2 hover:bg-[#101010]   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaPray></FaPray>
@@ -57,8 +57,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaUser></FaUser>
@@ -73,8 +73,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaMedal></FaMedal>
@@ -88,8 +88,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaListAlt></FaListAlt>
@@ -103,8 +103,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaRedRiver></FaRedRiver>
@@ -119,8 +119,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaServer></FaServer>
@@ -135,8 +135,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaUpload></FaUpload>
@@ -150,8 +150,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaUpload></FaUpload>
@@ -166,8 +166,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaEye></FaEye>
@@ -186,8 +186,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaPray></FaPray>
@@ -202,8 +202,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaRegQuestionCircle></FaRegQuestionCircle>
@@ -218,8 +218,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaRecordVinyl></FaRecordVinyl>
@@ -234,8 +234,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm flex items-center gap-2 bg-[#101010]  text-[#EB3656]  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] flex items-center gap-2 text-white  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
           }
         >
           <FaEye></FaEye>
@@ -246,10 +246,10 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="bg-[#161515] text-white">
+    <div className="bg-[#161515] ">
       <div className="flex">
         <div className="w-[300px] rounded-r-3xl min-h-screen bg-[#2C2C2C] ">
-          <div className=" flex justify-center mx-10 items-center   my-5">
+          <div className=" addFlex mx-10    my-5">
             <img className="w-[50px] lg:w-[70px]" src={img}></img>
           </div>
 

@@ -64,9 +64,9 @@ const Login = () => {
             </h2>
             <div
               onClick={handleGoogleLogin}
-              className="cursor-pointer justify-center flex items-center gap-2 mb-3 mt-2 py-2 w-[100px] mx-auto px-2 rounded text-base border"
+              className="cursor-pointer justify-center addFlexItems gap-2 mb-3 mt-2 py-2 w-[100px] mx-auto px-2 rounded text-base border"
             >
-              <div className="flex items-center gap-2">
+              <div className="addFlexItems gap-2">
                 <FcGoogle className="text-2xl"></FcGoogle>
               </div>
             </div>
@@ -127,9 +127,9 @@ const Login = () => {
                     className="text-xl cursor-pointer absolute right-14 lg:right-2 bottom-3"
                   >
                     {showPassword ? (
-                      <AiFillEye className="text-[#EB3656]"></AiFillEye>
+                      <AiFillEye className="text-p1"></AiFillEye>
                     ) : (
-                      <AiFillEyeInvisible className="text-[#EB3656]"></AiFillEyeInvisible>
+                      <AiFillEyeInvisible className="text-p1"></AiFillEyeInvisible>
                     )}
                   </span>
                 </div>
@@ -146,15 +146,15 @@ const Login = () => {
                 </a>
               </div>
 
-              <div className="flex justify-center  mt-3">
-                <button className="px-4 lg:px-10 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656]  text-white rounded">
+              <div className="addFlexJustify  mt-3">
+                <button className="px-4 lg:px-10 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 bg-p1   rounded">
                   Continue
                 </button>
               </div>
             </form>
           </div>
 
-          <div className="flex-1  py-20 lg:py-0 text-[#FFF]  lg:rounded-tl-[170px] lg:rounded-bl-[100px] bg-[#EB3656] flex justify-center items-center rounded-3xl lg:rounded-t-3xl rounded-t-[90px]">
+          <div className="flex-1  py-20 lg:py-0 text-[#FFF]  lg:rounded-tl-[170px] lg:rounded-bl-[100px] bg-p1 addFlex rounded-3xl lg:rounded-t-3xl rounded-t-[90px]">
             <div className="">
               <h2 className="mb-4 text-2xl lg:text-3xl  font-bold  text-center">
                 Create Account
@@ -162,9 +162,9 @@ const Login = () => {
               <p className="text-center lg:text-base text-sm mb-4  ">
                 Don't have an account?{" "}
               </p>
-              <div className="flex justify-center ">
+              <div className="addFlexJustify ">
                 <Link to="/register">
-                  <button className="px-4 lg:px-8 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none  text-white rounded">
+                  <button className="px-4 lg:px-8 py-1 lg:py-2   font-medium hover:bg-[#870012] transition-all duration-200 border border-[#fff] hover:border-none   rounded">
                     SIGN UP
                   </button>
                 </Link>{" "}

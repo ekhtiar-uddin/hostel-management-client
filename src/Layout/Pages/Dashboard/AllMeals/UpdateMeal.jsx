@@ -81,17 +81,17 @@ const UpdateMeal = () => {
 
   return (
     <div className=" h-full">
-      <div className="flex h-full justify-center gap-10 items-center">
+      <div className="addFlex h-full  gap-10 ">
         <div>
-          <h2 className="text-4xl   font-extrabold text-center uppercase">
-            Update <span className="text-[#EB3656]">Meal</span>{" "}
+          <h2 className="dashboardTitle">
+            Update <span className="text-p1">Meal</span>{" "}
           </h2>
 
           <Lottie className="w-[400px]" animationData={banner} loop={true} />
         </div>
 
         <div className="w-3/6 relative">
-          <form className="w-full text-[#BFFCF9]">
+          <form className="w-full text-p2">
             <div className="flex gap-5 w-full mb-6">
               <div className=" w-full">
                 <input
@@ -100,7 +100,7 @@ const UpdateMeal = () => {
                   type="text"
                   defaultValue={name}
                   placeholder="Meal Name"
-                  className="outline-none rounded-lg bg-[#161515]  w-full pl-2 border  border-[#BFFCF9] py-2 "
+                  className="outline-none rounded-lg bg-[#161515]  w-full pl-2 border  border-p2 py-2 "
                 />
               </div>
 
@@ -108,7 +108,7 @@ const UpdateMeal = () => {
                 <select
                   defaultValue={category}
                   {...register("category", { required: true })}
-                  className="outline-none rounded-lg bg-[#161515] w-full pl-2 border   border-[#BFFCF9] py-2 "
+                  className="outline-none rounded-lg bg-[#161515] w-full pl-2 border   border-p2 py-2 "
                 >
                   <option disabled value="default">
                     Select a category{" "}
@@ -124,14 +124,14 @@ const UpdateMeal = () => {
                 type="date"
                 defaultValue={formattedDate}
                 {...register("date")}
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] py-2 w-full "
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 py-2 w-full "
               />
 
               <input
                 type="number"
                 defaultValue={rating}
                 {...register("rating")}
-                className="outline-none  rounded-lg bg-[#161515]   pl-2 border border-[#BFFCF9] py-2 w-full"
+                className="outline-none  rounded-lg bg-[#161515]   pl-2 border border-p2 py-2 w-full"
               />
 
               <input
@@ -141,7 +141,7 @@ const UpdateMeal = () => {
                 {...register("like")}
                 name=""
                 id=""
-                className="outline-none rounded-lg bg-[#161515]   pl-2 border border-[#BFFCF9] py-2 w-full"
+                className="outline-none rounded-lg bg-[#161515]   pl-2 border border-p2 py-2 w-full"
               />
             </div>
             <div className="flex w-full gap-4 mt-6">
@@ -151,14 +151,14 @@ const UpdateMeal = () => {
                 {...register("review")}
                 name=""
                 id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2"
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2"
               />
               <input
                 type="number"
                 defaultValue={price}
                 {...register("price")}
                 id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2  "
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2  "
               />
             </div>
             <div className="flex w-full gap-4 mt-12">
@@ -169,7 +169,7 @@ const UpdateMeal = () => {
                 defaultValue={user?.displayName}
                 name=""
                 id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2 mb-7 "
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2 mb-7 "
               />
               <input
                 type="text"
@@ -178,7 +178,7 @@ const UpdateMeal = () => {
                 {...register("adminEmail")}
                 name=""
                 id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2 mb-7 "
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2 mb-7 "
               />
             </div>
             <div className="flex gap-5 w-full">
@@ -186,7 +186,7 @@ const UpdateMeal = () => {
                 {...register("ingredients")}
                 defaultValue={defaultIngredients}
                 placeholder="Ingredients"
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] py-2 mb-7  w-full"
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 py-2 mb-7  w-full"
               ></textarea>
 
               <textarea
@@ -195,7 +195,7 @@ const UpdateMeal = () => {
                 cols="10"
                 rows="5"
                 placeholder="Description"
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] mb-7 py-2 w-full"
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 mb-7 py-2 w-full"
               ></textarea>
             </div>
             <div className="w-full">
@@ -204,19 +204,19 @@ const UpdateMeal = () => {
                 type="text"
                 defaultValue={image}
                 placeholder="imageURL"
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border w-full border-[#BFFCF9] py-2 mb-7 "
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border w-full border-p2 py-2 mb-7 "
               />
             </div>
             <button
               onClick={handleSubmit(onSubmitUpdateMeal)}
-              className="btnAll mt-4 px-4 lg:px-6 py-1 lg:py-2   font-medium  transition-all duration-200 rounded bg-[#EB3656] "
+              className="btnAll mt-4 px-4 lg:px-6 py-1 lg:py-2   font-medium  transition-all duration-200 rounded bg-p1 "
             >
               <span className="">Update Meal</span>
             </button>{" "}
           </form>
-          <h2 className="text-white top-[13%] left-[38%] absolute">Rating</h2>
-          <h2 className="text-white top-[13%] right-[23%] absolute">Likes</h2>
-          <h2 className="text-white top-[24.5%] left-7 absolute">Reviews</h2>
+          <h2 className=" top-[13%] left-[38%] absolute">Rating</h2>
+          <h2 className=" top-[13%] right-[23%] absolute">Likes</h2>
+          <h2 className=" top-[24.5%] left-7 absolute">Reviews</h2>
         </div>
       </div>
     </div>

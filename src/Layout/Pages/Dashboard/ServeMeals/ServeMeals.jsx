@@ -25,8 +25,8 @@ const ServeMeals = () => {
 
   return (
     <div>
-      <h2 className=" my-12  uppercase text-4xl text-center text-white  font-extrabold">
-        Requests From <span className="text-[#EB3656]"> Users </span>
+      <h2 className=" my-12 dashboardTitle">
+        Requests From <span className="text-p1"> Users </span>
       </h2>
 
       <div className="">

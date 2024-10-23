@@ -6,6 +6,149 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply bg-[#161515];
+  }
+
+  body {
+    @apply bg-[#161515] font-Inter tracking-[-0.03em] text-white;
+  }
+  input {
+    @apply tracking-[-0.03em];
+  }
+
+  button {
+    @apply tracking-[-0.03em];
+  }
+}
+
 .slick-slide > div {
   margin: 0 5px;
+}
+
+.meal:hover .info {
+  height: 330px;
+  transition: 0.3s;
+}
+
+.meal:hover .button {
+  visibility: visible;
+}
+
+.container div input:focus ~ label,
+.container div input:valid ~ label {
+  top: -35px;
+  font-size: 14px;
+  left: 0px;
+  margin-top: 10px;
+}
+
+.container div textarea:focus ~ label {
+  top: -35px;
+  font-size: 14px;
+  left: 0px;
+  margin-top: 10px;
+}
+
+/* upcoming meals page css */
+
+.upcomingCard {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.upcomingCard:hover img {
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}
+.upcomingCardContent {
+  height: 0;
+  width: 100%;
+  background: linear-gradient(transparent, #4c82f6 58 58%);
+  position: absolute;
+  left: 0;
+  bottom: -220px;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+.upcomingCard:hover .upcomingCardContent {
+  height: 100%;
+}
+
+/*  */
+
+.btnAll {
+  position: relative;
+  display: inline-flex;
+  color: white;
+
+  overflow: hidden;
+}
+
+.btnAll:hover span {
+  color: #000000;
+}
+.btnAll span {
+  z-index: 1;
+}
+
+.btnAll::before {
+  content: "";
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  background-color: #bffcf9;
+  border-top-right-radius: 50px;
+  transition: width 0.5s, height 0.5s;
+}
+
+.btnAll:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* contact us */
+
+@layer utilities {
+  .inputAndTextarea {
+    @apply outline-none rounded-lg bg-[#161515] pl-2 border border-p2  w-full;
+  }
+
+  .labelContact {
+    @apply absolute left-3 top-2  font-semibold transition-all duration-200;
+  }
+
+  .btnRegular {
+    @apply mt-4 px-4 lg:px-6 py-1 lg:py-2 font-medium rounded bg-p1 transition-all duration-200 btnAll;
+  }
+
+  .dashboardTitle {
+    @apply text-4xl font-extrabold text-center uppercase;
+  }
+
+  .addFlex {
+    @apply flex justify-center items-center;
+  }
+  .addFlexItems {
+    @apply flex items-center;
+  }
+
+  .addFlexJustify {
+    @apply flex justify-center;
+  }
+  .addFlexBetween {
+    @apply flex justify-between;
+  }
+
+  .navInActive {
+    @apply text-sm rounded-full font-semibold py-1 lg:py-2 lg:px-4 bg-[#101010] text-p1 transition-all duration-150;
+  }
+  .navActive {
+    @apply text-sm rounded-full font-semibold py-1 lg:py-2 lg:px-4 hover:bg-[#101010] transition-all duration-150;
+  }
 }

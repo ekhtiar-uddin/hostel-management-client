@@ -15,13 +15,13 @@ const MealsByCategory = () => {
 
   return (
     <div className="mt-10">
-      <h2 className="text-3xl  lg:text-4xl uppercase mb-6 font-bold text-center text-white ">
-        <span className="text-[#EB3656] ">Explore</span> meals
+      <h2 className="text-3xl  lg:text-4xl uppercase mb-6 font-bold text-center  ">
+        <span className="text-p1 ">Explore</span> meals
       </h2>
 
       <Tabs className="">
         <div className="bg-[#101010] lg:w-[550px]  my-5 mx-auto py-3 rounded">
-          <TabList className="flex gap-3 items-center lg:gap-5 justify-center">
+          <TabList className="addFlex gap-3  lg:gap-5 ">
             <Tab
               className={`cursor-pointer  lg:px-7 py-1 px-3 rounded lg:py-2   ${
                 activeTab === 0 ? "active" : "inActive"

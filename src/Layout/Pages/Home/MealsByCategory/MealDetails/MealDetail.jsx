@@ -137,7 +137,7 @@ const MealDetail = () => {
           .catch((err) => console.log(err));
         refetchReviews();
         toast(
-          <div className="flex items-center gap-2 ">
+          <div className="addFlexItems gap-2 ">
             {" "}
             <RiVerifiedBadgeLine className="text-xl text-black"></RiVerifiedBadgeLine>{" "}
             You have added a Review!
@@ -161,36 +161,36 @@ const MealDetail = () => {
     <div>
       <div className=" my-20">
         <div className="relative">
-          <div className="flex  gap-5 lg:flex-row flex-col-reverse justify-between ">
-            <div className="flex justify-center lg:w-1/2  lg:items-center">
+          <div className="flex  gap-5 lg:flex-row flex-col-reverse  ">
+            <div className="addFlexJustify lg:w-1/2  lg:items-center">
               <div className="">
-                <div className="flex justify-center mb-5">
+                <div className="addFlexJustify mb-5">
                   <Rating style={{ maxWidth: 180 }} value={rating} readOnly />
                 </div>
-                <h2 className="text-3xl lg:text-4xl text-center text-white  font-extrabold mb-5">
-                  <span className=" text-[#EB3656] uppercase ">
+                <h2 className="text-3xl lg:text-4xl text-center   font-extrabold mb-5">
+                  <span className=" text-p1 uppercase ">
                     {" "}
                     {name?.split(" ")[0]} {name?.split(" ")[1]}
                   </span>
                 </h2>
-                <p className=" text-center  mt-2 text-white">
+                <p className=" text-center  mt-2 ">
                   {description?.slice(0, 210)}
                 </p>
-                <div className="mt-8 flex items-center justify-center gap-2">
+                <div className="mt-8 addFlex  gap-2">
                   <button
                     onClick={handleMealRequest}
-                    className=" px-8 py-2   font-medium hover:bg-[#870012] transition-all duration-200 bg-[#EB3656] rounded text-white"
+                    className=" px-8 py-2   font-medium hover:bg-[#870012] transition-all duration-200 bg-p1 rounded "
                   >
                     Make Request
                   </button>
                   {toggle && (
                     <button onClick={handleLikeClick}>
-                      <MdOutlineFavoriteBorder className=" text-5xl text-[#EB3656]" />
+                      <MdOutlineFavoriteBorder className=" text-5xl text-p1" />
                     </button>
                   )}
                   {!toggle && (
                     <button onClick={handleLikeClick}>
-                      <MdFavorite className=" text-5xl text-[#EB3656]" />
+                      <MdFavorite className=" text-5xl text-p1" />
                     </button>
                   )}
                 </div>
@@ -201,7 +201,7 @@ const MealDetail = () => {
               className="border lg:hidden border-[#444] bg-[#161515]  rounded-xl 
              "
             >
-              <div className="py-7 px-4 text-white">
+              <div className="py-7 px-4 ">
                 <div className="flex gap-3 lg:gap-5 justify-center">
                   <h2 className=" lg:text-xl mb-2   font-medium  text-center">
                     {postTime}
@@ -223,11 +223,11 @@ const MealDetail = () => {
                 <h2 className="text-xl lg:text-2xl mb-2   font-bold  text-center">
                   Ingredients :
                 </h2>
-                <div className="flex  flex-wrap items-center  mx-auto justify-center ">
+                <div className="addFlex flex-wrap   mx-auto ">
                   {ingredient?.slice(0, 4).map((item, index) => (
                     <span
                       key={index}
-                      className="mr-3 text-center text-sm lg:text-[17px]  font-medium  flex items-center gap-2"
+                      className="mr-3 text-center text-sm lg:text-[17px]  font-medium  addFlexItems gap-2"
                     >
                       {" "}
                       <TiTick className="hidden lg:block text-2xl text-[#870012]"></TiTick>{" "}
@@ -250,8 +250,8 @@ const MealDetail = () => {
             className="border border-[#444] bg-[#161515]  rounded-xl 
             lg:w-2/3  absolute lg:bottom-0 hidden lg:block"
           >
-            <div className="py-7 text-white">
-              <div className="flex gap-3 lg:gap-5 justify-center">
+            <div className="py-7 ">
+              <div className="addFlexJustify gap-3 lg:gap-5 ">
                 <h2 className=" lg:text-xl mb-2   font-medium  text-center">
                   {postTime}
                 </h2>{" "}
@@ -271,11 +271,11 @@ const MealDetail = () => {
               <h2 className="text-xl lg:text-2xl mb-2   font-bold  text-center">
                 Ingredients :
               </h2>
-              <div className="flex  flex-wrap items-center  mx-auto justify-center ">
+              <div className="addFlex  flex-wrap   mx-auto  ">
                 {ingredient?.slice(0, 4).map((item, index) => (
                   <span
                     key={index}
-                    className="mr-3 text-center text-sm lg:text-[17px]  font-medium  flex items-center gap-2"
+                    className="mr-3 text-center text-sm lg:text-[17px]  font-medium  addFlexItems gap-2"
                   >
                     {" "}
                     <TiTick className="hidden lg:block text-2xl text-[#870012]"></TiTick>{" "}
@@ -287,10 +287,10 @@ const MealDetail = () => {
           </div>
         </div>
       </div>
-      <h2 className=" uppercase text-center  mt-10 text-white text-3xl lg:text-4xl font-bold ">
-        Add Your <span className="text-[#EB3656]">Thoughts</span> Here{" "}
+      <h2 className=" uppercase text-center  mt-10  text-3xl lg:text-4xl font-bold ">
+        Add Your <span className="text-p1">Thoughts</span> Here{" "}
       </h2>
-      <div className="flex lg:flex-row flex-col-reverse items-center justify-center lg:gap-20">
+      <div className="addFlex lg:flex-row flex-col-reverse   lg:gap-20">
         <div>
           <div className="flex-1">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -302,8 +302,8 @@ const MealDetail = () => {
                 rows="6"
               ></textarea>
 
-              <div className="flex justify-center lg:justify-normal">
-                <button className="btnAll mt-4 px-6 lg:px-8 py-1 lg:py-2   font-medium  transition-all duration-200 rounded bg-[#EB3656] ">
+              <div className="addFlexJustify lg:justify-normal">
+                <button className="btnAll mt-4 px-6 lg:px-8 py-1 lg:py-2   font-medium  transition-all duration-200 rounded bg-p1 ">
                   <span className=""> Make Review</span>
                 </button>{" "}
               </div>
@@ -317,16 +317,16 @@ const MealDetail = () => {
         </div>
       </div>
       <div className="">
-        <h2 className=" uppercase text-center my-10 text-white text-2xl lg:text-4xl font-bold ">
-          Word from our <span className="text-[#EB3656]">customers</span>{" "}
+        <h2 className=" uppercase text-center my-10  text-2xl lg:text-4xl font-bold ">
+          Word from our <span className="text-p1">customers</span>{" "}
         </h2>
         <div className="">
           <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
             {loadingReview
               ? "Loading"
               : allReviews?.map((item) => (
-                  <SwiperSlide className=" text-white " key={item._id}>
-                    <div className="bg-white lg:w-9/12 h-[40vh] lg:h-[20vh] mx-auto rounded-xl flex justify-center items-center">
+                  <SwiperSlide className="  " key={item._id}>
+                    <div className="bg-white lg:w-9/12 h-[40vh] lg:h-[20vh] mx-auto rounded-xl addFlex">
                       <p className="mx-10 text-black"> {item?.reviewTitle}</p>
                     </div>
                   </SwiperSlide>

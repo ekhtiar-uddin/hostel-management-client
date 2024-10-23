@@ -1,4 +1,3 @@
-import React from "react";
 import { FaUsers } from "react-icons/fa";
 
 const SingleUser = ({ user, handleMakeAdmin }) => {
@@ -12,15 +11,15 @@ const SingleUser = ({ user, handleMakeAdmin }) => {
       ></img>
       <h2 className="text-center mt-2  text-lg font-semibold">{name}</h2>
       <p className="text-center   text-sm ">{email}</p>
-      <div className="flex justify-center  mt-3 text-[#000000]">
+      <div className="addFlexJustify  mt-3 text-[#000000]">
         {user.role === "admin" ? (
-          <span className="bg-[#BFFCF9] top-[80px] right-[40px] absolute text-sm px-2 py-1 rounded">
+          <span className="bg-p2 top-[80px] right-[40px] absolute text-sm px-2 py-1 rounded">
             Admin
           </span>
         ) : (
           <button
             onClick={() => handleMakeAdmin(user)}
-            className=" px-4 py-1 rounded bg-[#BFFCF9] flex items-center gap-2 text-sm"
+            className=" px-4 py-1 rounded bg-p2 addFlexItems gap-2 text-sm"
           >
             Make Admin
             <FaUsers className=" text-2xl  transition-all duration-200 text-[#870012] "></FaUsers>{" "}

@@ -132,8 +132,8 @@ const CheckOutForm = ({ item }) => {
         />
 
         <button
-          className="mt-5 w-full py-2 rounded-lg text-white 
-           font-semibold cursor-pointer hover:bg-[#EB3656] bg-[#870012] "
+          className="mt-5 w-full py-2 rounded-lg  
+           font-semibold cursor-pointer hover:bg-p1 bg-[#870012] "
           type="submit"
         >
           {" "}

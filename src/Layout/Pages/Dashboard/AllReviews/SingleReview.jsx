@@ -18,15 +18,15 @@ const SingleReview = ({ item, handleDeleteReview, reviews }) => {
             <p>{reviewCount} reviews</p>
           </div>
         </div>
-        <div className="flex items-center gap-2 mt-3 text-[#000000]">
+        <div className="addFlexItems gap-2 mt-3 ">
           <button
             onClick={() => handleDeleteReview(item)}
-            className=" w-full rounded bg-[#EB3656] hover:bg-[#870012] transition-all duration-300 items-center py-1  font-medium  text-sm  text-white"
+            className=" w-full rounded  bg-p1 hover:bg-[#870012] transition-all duration-300  py-1  font-medium  text-sm  "
           >
             Delete
           </button>
           <Link className="w-full" to={`/details/${item.detailsId}`}>
-            <button className="py-1  hover:text-[#FFF]   font-medium  text-sm w-full bg-[#BFFCF9] transition-all text-[#000000] duration-300 hover:bg-[#870012] rounded">
+            <button className="py-1  hover:text-[#FFF]   font-medium  text-sm w-full bg-p2 transition-all text-[#000000] duration-300 hover:bg-[#870012] rounded">
               View Meal
             </button>
           </Link>

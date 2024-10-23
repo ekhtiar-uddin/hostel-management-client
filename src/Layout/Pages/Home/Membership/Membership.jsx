@@ -20,10 +20,10 @@ const Membership = () => {
   });
   return (
     <div className="mt-16 lg:mt-20 ">
-      <h2 className="text-3xl lg:text-4xl uppercase  font-bold  text-white mb-2 text-center">
-        <span className="text-[#EB3656]">Choose</span> Your Plan
+      <h2 className="text-3xl lg:text-4xl uppercase  font-bold   mb-2 text-center">
+        <span className="text-p1">Choose</span> Your Plan
       </h2>
-      <p className="text-white  text-center">
+      <p className="  text-center">
         These are the cost effective and valuable for your growth
       </p>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-6 py-20">

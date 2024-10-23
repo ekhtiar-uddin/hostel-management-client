@@ -19,9 +19,8 @@ const AdminProfile = () => {
 
   return (
     <div className="">
-      <h2 className=" my-20  uppercase text-4xl text-center text-white  font-extrabold">
-        You are a{" "}
-        <span className="text-[#EB3656]"> {payments?.[0]?.plan} Users </span>
+      <h2 className=" my-20 dashboardTitle">
+        You are a <span className="text-p1"> {payments?.[0]?.plan} Users </span>
       </h2>
 
       <div>
@@ -45,20 +44,6 @@ const AdminProfile = () => {
           />
         )}
       </div>
-
-      {/* <div>
-        {payments?.[0]?.plan ? (
-          <img
-            className="w-[100px] rounded-full"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTerVlWdDMzEWMBGpW85lvyTZkmyS6Uv417mg&usqp=CAU"
-          ></img>
-        ) : (
-          <img
-            className="w-[100px] rounded-full"
-            src="https://sistemidigestione.biz/wp-content/uploads/2020/04/bronze2.png"
-          ></img>
-        )}
-      </div> */}
     </div>
   );
 };

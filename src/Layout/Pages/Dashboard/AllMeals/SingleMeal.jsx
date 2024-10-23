@@ -14,21 +14,21 @@ const SingleMeal = ({ item, handleDeleteMeal }) => {
       </div>
 
       <div className="p-2  ">
-        <div className="flex items-center gap-2 mt-3 text-[#000000]">
+        <div className="addFlexItems gap-2 mt-3 ">
           <Link to={`/dashboard/updateMeal/${item._id}`}>
             {" "}
-            <button className=" px-4 py-1 rounded bg-[#BFFCF9] flex items-center gap-2 text-sm  ">
+            <button className="text-[#000000] px-4 py-1 rounded bg-p2 addFlexItems gap-2 text-sm  ">
               Update
             </button>
           </Link>
           <button
             onClick={() => handleDeleteMeal(item)}
-            className=" px-4 py-1 rounded bg-[#EB3656] flex items-center gap-2 text-sm text-white"
+            className=" px-4 py-1 rounded  bg-p1 addFlexItems gap-2 text-sm "
           >
             Delete
           </button>
           <Link to={`/details/${item._id}`}>
-            <button className=" px-4 py-1 rounded bg-[#161515] flex items-center gap-2 text-sm text-[#EB3656]">
+            <button className=" px-4 py-1 rounded bg-[#161515] addFlexItems gap-2 text-sm ">
               Details
             </button>
           </Link>
@@ -46,10 +46,6 @@ const SingleMeal = ({ item, handleDeleteMeal }) => {
           <h2 className="  text-sm  font-medium">{adminEmail}</h2>
         </div>
       </div>
-
-      {/* <div className="bg-[#BFFCF9] h-[7vh] rounded-tr-[70px] rounded-tl-[90px]">
-        ksdjdk
-      </div> */}
     </div>
   );
 };

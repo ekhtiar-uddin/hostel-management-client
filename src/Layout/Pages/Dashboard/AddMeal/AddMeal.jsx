@@ -115,17 +115,17 @@ const AddMeal = () => {
 
   return (
     <div className=" h-full">
-      <div className="flex h-full justify-center gap-10 items-center">
+      <div className="addFlex h-full  gap-10 ">
         <div>
-          <h2 className="text-4xl   font-extrabold text-center uppercase">
-            Add a <span className="text-[#EB3656]">Meal</span>{" "}
+          <h2 className="dashboardTitle">
+            Add a <span className="text-p1">Meal</span>{" "}
           </h2>
 
           <Lottie className="w-[400px]" animationData={banner} loop={true} />
         </div>
 
         <div className="w-3/6 ">
-          <form className="w-full text-[#BFFCF9]">
+          <form className="w-full text-p2">
             <div className="flex gap-5 w-full mb-8">
               <div className=" w-full">
                 <input
@@ -133,7 +133,7 @@ const AddMeal = () => {
                   required
                   type="text"
                   placeholder="Meal Name"
-                  className="outline-none rounded-lg bg-[#161515]  w-full pl-2 border  border-[#BFFCF9] py-2 "
+                  className="outline-none rounded-lg bg-[#161515]  w-full pl-2 border  border-p2 py-2 "
                 />
               </div>
 
@@ -145,7 +145,7 @@ const AddMeal = () => {
                     required: true,
                     validate: (value) => value !== "default",
                   })}
-                  className="outline-none rounded-lg bg-[#161515] w-full pl-2 border border-[#BFFCF9] py-2"
+                  className="outline-none rounded-lg bg-[#161515] w-full pl-2 border border-p2 py-2"
                 >
                   <option value="default" disabled>
                     Select Category
@@ -160,20 +160,20 @@ const AddMeal = () => {
               <input
                 type="datetime-local"
                 {...register("date", { required: true })}
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] py-2 mb-7  w-full "
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 py-2 mb-7  w-full "
               />
 
               <input
                 type="number"
                 placeholder="Rating"
                 {...register("rating")}
-                className="outline-none rounded-lg bg-[#161515]    pl-2 border border-[#BFFCF9] py-2 mb-7  w-full"
+                className="outline-none rounded-lg bg-[#161515]    pl-2 border border-p2 py-2 mb-7  w-full"
               />
               <input
                 type="number"
                 placeholder="Price"
                 {...register("price", { required: true })}
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2 mb-7 "
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2 mb-7 "
               />
             </div>
             <div className="flex w-full gap-4 ">
@@ -184,7 +184,7 @@ const AddMeal = () => {
                 defaultValue={user?.displayName}
                 name=""
                 id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2 mb-7 "
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2 mb-7 "
               />
               <input
                 type="text"
@@ -193,20 +193,20 @@ const AddMeal = () => {
                 {...register("adminEmail")}
                 name=""
                 id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] w-full py-2 mb-7 "
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2 mb-7 "
               />
             </div>
             <div className="flex gap-5 w-full">
               <textarea
                 {...register("ingredients", { required: true })}
                 placeholder="Ingredients"
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] py-2 mb-7  w-full"
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 py-2 mb-7  w-full"
               ></textarea>
 
               <textarea
                 {...register("description", { required: true })}
                 placeholder="Description"
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-[#BFFCF9] py-2 mb-7  w-full"
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 py-2 mb-7  w-full"
               ></textarea>
             </div>
             <div className="w-full">
@@ -214,7 +214,7 @@ const AddMeal = () => {
                 {...register("image", { required: true })}
                 type="text"
                 placeholder="imageURL"
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border w-full border-[#BFFCF9] py-2 mb-7 "
+                className="outline-none rounded-lg bg-[#161515]  pl-2 border w-full border-p2 py-2 mb-7 "
               />
             </div>
             <div>
@@ -253,13 +253,13 @@ const AddMeal = () => {
             </div>
             <button
               onClick={handleSubmit(onSubmitAddMeal)}
-              className="btnAll mt-4 px-6 lg:px-8 py-1 lg:py-2     font-medium  transition-all duration-200 rounded bg-[#EB3656] "
+              className="btnAll mt-4 px-6 lg:px-8 py-1 lg:py-2     font-medium  transition-all duration-200 rounded bg-p1 "
             >
               <span className=""> Add Meal</span>
             </button>{" "}
             <button
               onClick={handleSubmit(onSubmitUpcomingMeal)}
-              className="btnAll ml-4 mt-4 px-6 lg:px-8 py-1 lg:py-2     font-medium  transition-all duration-200 rounded bg-[#EB3656] "
+              className="btnAll ml-4 mt-4 px-6 lg:px-8 py-1 lg:py-2     font-medium  transition-all duration-200 rounded bg-p1 "
             >
               <span className=""> Add To Upcoming</span>
             </button>{" "}

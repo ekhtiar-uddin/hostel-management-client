@@ -12,7 +12,7 @@ const AdminRoute = ({ children }) => {
 
   if (loading || isAdminLoading) {
     return (
-      <div className="flex justify-center items-center lg:h-[70vh]">
+      <div className="addFlex lg:h-[70vh]">
         {" "}
         <Lottie className="w-[300px]" animationData={banner} loop={true} />{" "}
       </div>

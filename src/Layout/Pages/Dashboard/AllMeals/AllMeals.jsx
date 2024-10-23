@@ -36,8 +36,8 @@ const AllMeals = () => {
 
   return (
     <div>
-      <h2 className=" my-12  uppercase text-4xl text-center text-white  font-extrabold">
-        Added <span className="text-[#EB3656]"> meals </span>
+      <h2 className="my-12 dashboardTitle">
+        Added <span className="text-p1"> meals </span>
       </h2>
 
       <div className="">

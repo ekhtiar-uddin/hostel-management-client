@@ -139,7 +139,7 @@ const MealDetail = () => {
         toast(
           <div className="addFlexItems gap-2 ">
             {" "}
-            <RiVerifiedBadgeLine className="text-xl text-black"></RiVerifiedBadgeLine>{" "}
+            <RiVerifiedBadgeLine className="text-xl text-p4"></RiVerifiedBadgeLine>{" "}
             You have added a Review!
           </div>,
           {
@@ -167,8 +167,8 @@ const MealDetail = () => {
                 <div className="addFlexJustify mb-5">
                   <Rating style={{ maxWidth: 180 }} value={rating} readOnly />
                 </div>
-                <h2 className="text-3xl lg:text-4xl text-center   font-extrabold mb-5">
-                  <span className=" text-p1 uppercase ">
+                <h2 className="text-3xl lg:text-4xl text-center   font-bold mb-5">
+                  <span className=" text-p1  ">
                     {" "}
                     {name?.split(" ")[0]} {name?.split(" ")[1]}
                   </span>
@@ -179,7 +179,7 @@ const MealDetail = () => {
                 <div className="mt-8 addFlex  gap-2">
                   <button
                     onClick={handleMealRequest}
-                    className=" px-8 py-2   font-medium hover:bg-[#870012] transition-all duration-200 bg-p1 rounded "
+                    className=" px-8 py-2   font-medium hover:bg-p2transition-all duration-200 bg-p1 rounded "
                   >
                     Make Request
                   </button>
@@ -206,14 +206,14 @@ const MealDetail = () => {
                   <h2 className=" lg:text-xl mb-2   font-medium  text-center">
                     {postTime}
                   </h2>{" "}
-                  <span className="hidden lg:block text-[#870012] ext-xl mb-2   font-medium  text-center">
+                  <span className="hidden lg:block text-p2ext-xl mb-2   font-medium  text-center">
                     ||
                   </span>
                   <h2 className=" lg:text-xl mb-2   font-medium  text-center">
                     <span className="lg:block hidden"> Total</span> Review{" "}
                     {allReviews?.length}
                   </h2>
-                  <span className="hidden lg:block text-[#870012] ext-xl mb-2   font-medium  text-center">
+                  <span className="hidden lg:block text-p2ext-xl mb-2   font-medium  text-center">
                     ||
                   </span>
                   <h2 className=" lg:text-xl mb-2   font-medium  text-center">
@@ -255,13 +255,13 @@ const MealDetail = () => {
                 <h2 className=" lg:text-xl mb-2   font-medium  text-center">
                   {postTime}
                 </h2>{" "}
-                <span className="hidden lg:block text-[#870012] ext-xl mb-2   font-medium  text-center">
+                <span className="hidden lg:block text-p2ext-xl mb-2   font-medium  text-center">
                   ||
                 </span>
                 <h2 className=" lg:text-xl mb-2   font-medium  text-center">
                   Total Review {allReviews?.length}
                 </h2>
-                <span className="hidden lg:block text-[#870012] ext-xl mb-2   font-medium  text-center">
+                <span className="hidden lg:block text-p2ext-xl mb-2   font-medium  text-center">
                   ||
                 </span>
                 <h2 className=" lg:text-xl mb-2   font-medium  text-center">
@@ -287,7 +287,7 @@ const MealDetail = () => {
           </div>
         </div>
       </div>
-      <h2 className=" uppercase text-center  mt-10  text-3xl lg:text-4xl font-bold ">
+      <h2 className="  text-center  mt-10  text-3xl lg:text-4xl font-bold ">
         Add Your <span className="text-p1">Thoughts</span> Here{" "}
       </h2>
       <div className="addFlex lg:flex-row flex-col-reverse   lg:gap-20">
@@ -317,7 +317,7 @@ const MealDetail = () => {
         </div>
       </div>
       <div className="">
-        <h2 className=" uppercase text-center my-10  text-2xl lg:text-4xl font-bold ">
+        <h2 className="  text-center my-10  text-2xl lg:text-4xl font-bold ">
           Word from our <span className="text-p1">customers</span>{" "}
         </h2>
         <div className="">
@@ -327,7 +327,7 @@ const MealDetail = () => {
               : allReviews?.map((item) => (
                   <SwiperSlide className="  " key={item._id}>
                     <div className="bg-white lg:w-9/12 h-[40vh] lg:h-[20vh] mx-auto rounded-xl addFlex">
-                      <p className="mx-10 text-black"> {item?.reviewTitle}</p>
+                      <p className="mx-10 text-p4"> {item?.reviewTitle}</p>
                     </div>
                   </SwiperSlide>
                 ))}

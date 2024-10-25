@@ -83,7 +83,7 @@ const UpdateMeal = () => {
     <div className=" h-full">
       <div className="addFlex h-full  gap-10 ">
         <div>
-          <h2 className="dashboardTitle">
+          <h2 className="headTitle">
             Update <span className="text-p1">Meal</span>{" "}
           </h2>
 

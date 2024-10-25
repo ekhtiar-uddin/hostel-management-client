@@ -31,8 +31,8 @@ const ManageUsers = () => {
 
   return (
     <div>
-      <h2 className=" my-12 dashboardTitle">
-        all user <span className="text-p1"> data </span>
+      <h2 className=" my-12 headTitle">
+        All user <span className="text-p1"> data </span>
       </h2>
 
       {/* todo : membership pending */}

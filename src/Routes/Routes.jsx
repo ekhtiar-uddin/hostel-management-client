@@ -167,7 +167,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "requestedMeals",
-        element: <RequestedMeals></RequestedMeals>,
+        element: (
+          <PrivateRoute>
+            <RequestedMeals></RequestedMeals>
+          </PrivateRoute>
+        ),
       },
       {
         path: "userReviews",

@@ -1,51 +1,41 @@
+import imgTwo from "/assets/add-user.png";
+import imgThree from "/assets/dietitian.png";
+import imgOne from "/assets/restaurant.png";
+
 const HowWork = () => {
   return (
     <div className="my-16 lg:my-36">
-      <h2 className="text-3xl lg:text-4xl uppercase text-center mb-10 lg:mb-20    font-extrabold">
-        How it <span className=" text-p1 "> Works</span>
+      <h2 className="text-3xl lg:text-4xl  text-center mb-10 lg:mb-14 font-semibold">
+        How it <span className=" text-p1 "> works</span>
       </h2>
 
       <div className="flex lg:flex-row flex-col gap-10">
         <div className="border transition-all duration-150 hover:border-p1 p-10 rounded-xl">
-          <img
-            className="w-[100px] mx-auto"
-            src="https://i.ibb.co/Lkzyv0b/restaurant-1.png"
-          ></img>
-          <h2 className="  font-bold mt-7 mb-3 text-2xl text-center">
+          <img className="w-[100px] mx-auto" src={imgOne}></img>
+          <h2 className="font-bold mt-7 mb-3 text-2xl text-center">
             Choose Plan
           </h2>
-          <p className="  ">
-            Select the perfect meal plan that fits your taste and dietary
-            preferences. Tailor your dining experience to your liking with our
-            diverse options, ensuring a month of culinary satisfaction.
+          <p className="">
+            Select a meal plan that fits your taste. Tailor your dining
+            experience with our diverse options for culinary satisfaction.
           </p>
         </div>
         <div className="border transition-all duration-150 hover:border-p1 p-10 rounded-xl">
-          <img
-            className="w-[100px] mx-auto"
-            src="https://i.ibb.co/TY22fSW/dietitian.png"
-          ></img>
-          <h2 className="  font-bold mt-7 mb-3 text-2xl text-center">
+          <img className="w-[100px] mx-auto" src={imgTwo}></img>
+          <h2 className="font-bold mt-7 mb-3 text-2xl text-center">
             Choose Nutritionist
           </h2>
-          <p className="  ">
-            Personalize your wellness journey by picking a dedicated
-            nutritionist. Our experts will guide you towards healthier food
-            choices, offering support and knowledge to enhance your overall
-            well-being.
+          <p className="">
+            Personalize your journey by picking a nutritionist. Our experts
+            guide you towards healthier choices to enhance well-being.
           </p>
         </div>
         <div className="border transition-all duration-150 hover:border-p1 p-10 rounded-xl">
-          <img
-            className="w-[100px] mx-auto"
-            src="https://i.ibb.co/gP3JbXP/add-user.png"
-          ></img>
-          <h2 className="  font-bold mt-7 mb-3 text-2xl text-center">Signup</h2>
-          <p className="  ">
-            Embark on a seamless culinary adventure – sign up now! Join our
-            community, unlock exclusive benefits, and enjoy the convenience of
-            stress-free, delicious meals delivered right to your doorstep every
-            month.
+          <img className="w-[100px] mx-auto" src={imgThree}></img>
+          <h2 className="font-bold mt-7 mb-3 text-2xl text-center">Signup</h2>
+          <p className="">
+            Sign up for a seamless culinary adventure! Join our community and
+            enjoy stress-free, delicious meals delivered monthly.
           </p>
         </div>
       </div>

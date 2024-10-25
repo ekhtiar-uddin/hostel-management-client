@@ -58,11 +58,11 @@ const RequestedMeals = () => {
   };
   return (
     <div>
-      <h2 className=" my-12 dashboardTitle">
+      <h2 className=" my-12 headTitle">
         You have{" "}
         <span className="text-p1">
           {" "}
-          requested {requestedMeals?.length} Meals{" "}
+          requested {requestedMeals?.length} meals{" "}
         </span>
       </h2>
 

@@ -16,7 +16,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive, isLoading }) =>
-            isLoading ? "pending" : isActive ? "navInActive " : "navActive"
+            isLoading ? "pending" : isActive ? "navActive" : "navInActive"
           }
         >
           Home
@@ -27,7 +27,7 @@ const NavBar = () => {
         <NavLink
           to="/allMeals"
           className={({ isActive, isLoading }) =>
-            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
+            isLoading ? "pending" : isActive ? "navActive" : "navInActive"
           }
         >
           Meals
@@ -38,7 +38,7 @@ const NavBar = () => {
         <NavLink
           to="/upcomingMeals"
           className={({ isActive, isLoading }) =>
-            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
+            isLoading ? "pending" : isActive ? "navActive" : "navInActive"
           }
         >
           Upcoming Meals
@@ -53,7 +53,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive, isLoading }) =>
-            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
+            isLoading ? "pending" : isActive ? "navActive" : "navInActive"
           }
         >
           Home
@@ -64,7 +64,7 @@ const NavBar = () => {
         <NavLink
           to="/allMeals"
           className={({ isActive, isLoading }) =>
-            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
+            isLoading ? "pending" : isActive ? "navActive" : "navInActive"
           }
         >
           Meals
@@ -75,7 +75,7 @@ const NavBar = () => {
         <NavLink
           to="/upcomingMeals"
           className={({ isActive, isLoading }) =>
-            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
+            isLoading ? "pending" : isActive ? "navActive" : "navInActive"
           }
         >
           Upcoming Meals
@@ -85,7 +85,7 @@ const NavBar = () => {
         <NavLink
           to="/contact"
           className={({ isActive, isLoading }) =>
-            isLoading ? "pending" : isActive ? "navInActive" : "navActive"
+            isLoading ? "pending" : isActive ? "navActive" : "navInActive"
           }
         >
           Contact Us
@@ -101,7 +101,7 @@ const NavBar = () => {
   };
   return (
     <>
-      <div className="py-4 addFlexBetween items-center">
+      <div className="pt-6 addFlexBetween items-center">
         <div className="addFlexItems gap-2">
           <div className="dropdown">
             <div tabIndex={0} role="button" className=" lg:hidden">
@@ -109,17 +109,20 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content z-[1] shadow  rounded-box bg-[#2C2C2C] w-52 text-p1 absolute -right-[140px] top-0"
+              className="menu menu-sm 
+              dropdown-content z-[1] shadow  
+              rounded-box bg-p3 w-52 text-p1 absolute -right-[140px] top-0"
             >
               {user ? navLinks : navlinksBeforeLogin}
             </ul>
           </div>
 
           <div className="">
-            <img
+            {/* <img
               className="w-[50px] lg:w-[70px]"
-              src="https://i.ibb.co/Zfz6Pjz/Campusbite-2.png"
-            ></img>
+              src="https://i.ibb.co/Zfz6Pjz/Mealvy.-2.png"
+            ></img> */}
+            <h2 className="text-2xl font-semibold text-p1">Mealvy.</h2>
           </div>
         </div>
 
@@ -136,7 +139,8 @@ const NavBar = () => {
                 <div>
                   <button
                     onClick={handleLogOut}
-                    className="text-sm addFlexItems gap-1  font-semibold text-p2 hover:text-p1"
+                    className="addFlexItems gap-1 
+                     font-semibold text-p1 hover:text-p5"
                   >
                     Logout{" "}
                     <HiOutlineLogout className="text-xl"></HiOutlineLogout>
@@ -151,18 +155,24 @@ const NavBar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box bg-[#2C2C2C]  "
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box bg-p3  w-[140px]"
               >
-                <li className=" hover:bg-[#161515] py-1 px-4 rounded-xl   text-center">
+                <li className=" hover:bg-p1 hover:text-p4 py-1   rounded-xl   text-center ">
                   {user?.displayName}
                 </li>
                 {user && isAdmin && (
-                  <li className="hover:bg-[#161515] px-4   rounded-xl   ">
+                  <li
+                    className="hover:bg-p1 hover:text-p4 
+                   rounded-xl  w-[70%] mx-auto "
+                  >
                     <Link to="/dashboard/adminProfile"> Dashboard</Link>
                   </li>
                 )}
                 {user && !isAdmin && (
-                  <li className="hover:bg-[#161515] px-4   rounded-xl   ">
+                  <li
+                    className="hover:bg-p1 hover:text-p4  
+                   rounded-xl w-[70%] mx-auto  "
+                  >
                     <Link to="/dashboard/userProfile">Dashboard</Link>
                   </li>
                 )}
@@ -176,11 +186,11 @@ const NavBar = () => {
                   isLoading
                     ? "pending"
                     : isActive
-                    ? "text-sm bg-[#870012]   rounded-full  font-semibold py-2 px-4"
-                    : " text-sm hover:bg-[#870012] bg-p1    rounded-full  font-semibold py-2 px-4"
+                    ? "border border-p5  rounded-full  font-semibold py-2.5 px-6"
+                    : "border border-p5  rounded-full  font-semibold py-2.5 px-6"
                 }
               >
-                Join Now
+                join now
               </NavLink>
             </button>
           )}

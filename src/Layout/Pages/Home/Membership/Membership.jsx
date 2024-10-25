@@ -20,13 +20,13 @@ const Membership = () => {
   });
   return (
     <div className="mt-16 lg:mt-20 ">
-      <h2 className="text-3xl lg:text-4xl uppercase  font-bold   mb-2 text-center">
-        <span className="text-p1">Choose</span> Your Plan
+      <h2 className="text-3xl lg:text-4xl   font-bold text-center">
+        <span className="text-p1">Choose</span> your plan
       </h2>
       <p className="  text-center">
         These are the cost effective and valuable for your growth
       </p>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-6 py-20">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10">
         {plansInfo?.map((plan) => (
           <SinglePlan key={plan._id} plan={plan}></SinglePlan>
         ))}

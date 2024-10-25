@@ -1,8 +1,8 @@
 const SingleUpcoming = ({ item }) => {
   const { name, category, image, likes, price, postTime } = item;
   return (
-    <div className="bg-[#2C2C2C] rounded-3xl p-4 relative">
-      <p className="bg-[#161515]  text-sm absolute py-1 w-[87%] top-4 rounded-t-xl px-1 text-center">
+    <div className="bg-d2 rounded-3xl p-4 relative">
+      <p className="bg-d1  text-sm absolute py-1 w-[87%] top-4 rounded-t-xl px-1 text-center">
         {postTime}
       </p>
 
@@ -13,7 +13,7 @@ const SingleUpcoming = ({ item }) => {
           }}
           className="addFlex bg-no-repeat bg-cover w-full h-[200px]  rounded-3xl"
         >
-          <h2 className=" bg-[#870012] px-3 py-1 rounded    font-semibold ">
+          <h2 className=" bg-p2px-3 py-1 rounded    font-semibold ">
             Likes {likes}
           </h2>
         </div>
@@ -33,9 +33,7 @@ const SingleUpcoming = ({ item }) => {
           </div>
         </div>
         <div className="addFlexItems gap-2 mt-3 ">
-          <button className=" w-full rounded bg-p1 hover:bg-[#870012] transition-all duration-300  py-1  font-medium  text-sm  ">
-            Production
-          </button>
+          <button className=" w-full updateBtn addFlex">Production</button>
         </div>
       </div>
     </div>

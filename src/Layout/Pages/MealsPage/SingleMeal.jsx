@@ -19,7 +19,7 @@ const SingleMeal = ({ meal }) => {
   } = meal;
   return (
     <div className="">
-      <div className=" bg-[#fff]   rounded-3xl ">
+      <div className=" bg-p6   rounded-3xl ">
         <div>
           <img
             className="rounded-3xl p-3 mx-auto  w-full h-[150px]"
@@ -28,13 +28,13 @@ const SingleMeal = ({ meal }) => {
         </div>
         <div className="addFlexJustify">
           <div className="space-y-1">
-            <h2 className="font-bold  text-[#000]  text-[22px]">
+            <h2 className="font-semibold   text-xl">
               {name?.split(" ")[0]} {name?.split(" ")[1]}
             </h2>
 
             <Rating
               className="mx-auto"
-              style={{ maxWidth: 130 }}
+              style={{ maxWidth: 110 }}
               value={rating}
               readOnly
             />

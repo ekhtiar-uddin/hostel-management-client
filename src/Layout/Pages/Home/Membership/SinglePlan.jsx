@@ -1,63 +1,57 @@
 import { Link } from "react-router-dom";
-
+import imgOne from "/assets/checkOne.png";
+import imgTwo from "/assets/checkTwo.png";
 const SinglePlan = ({ plan }) => {
   const { planName, advantages, description, price } = plan;
 
   const bgColor = () => {
     if (planName === "Sliver") {
-      return "bg-[#272C2C]";
+      return "bg-[#00403f]";
     } else if (planName === "Gold") {
-      return "bg-[#411C23]";
+      return "bg-p1 text-p4";
     } else {
-      return "bg-[#272C2C]";
-    }
-  };
-
-  const buttonColor = () => {
-    if (planName === "Sliver") {
-      return "bg-[#556B6A]";
-    } else if (planName === "Gold") {
-      return "bg-p1";
-    } else {
-      return "bg-[#556B6A]";
+      return "bg-[#00403f]";
     }
   };
 
   return (
-    <div className="singlePlan rounded-xl ">
-      <div
-        className={` box p-8   rounded-xl mx-3 lg:mx-5 my-5 h-[630px]  md:h-[500px] lg:h-[600px]  ${bgColor()} `}
-      >
-        <h2 className="text-center text-3xl font-bold ">{planName}</h2>
+    <>
+      <div className={` p-8   rounded-xl mx-3 lg:mx-5 my-5  ${bgColor()} `}>
+        <h2 className="text-center text-2xl font-medium ">{planName}</h2>
 
-        <h2 className="text-center text-3xl lg:text-4xl font-medium mt-4 mb-4 lg:mb-8 ">
+        <h2 className="text-center text-5xl lg:text-6xl font-medium mt-4 mb-4 lg:mb-8 ">
           ${price}
-          <span className="text-base font-normal">/Monthly</span>
+          <span className="text-xl font-normal ">/monthly</span>
         </h2>
-        <div className="h-[300px] md:h-[260px] lg:h-[280px] ">
+        <div className=" ">
           {advantages?.map((item, index) => (
             <div key={index} className="mb-1 lg:mb-3 addFlexItems     gap-7 ">
               {" "}
               <img
                 className="w-[30px]"
-                src="https://i.ibb.co/Xbtd0n3/check-removebg-preview.png"
+                src={planName === "Gold" ? imgOne : imgTwo}
               ></img>
               <p className="lg:text-base md:text-base text-sm">{item} </p>
             </div>
           ))}
         </div>
         <Link
-          className="lg:mt-20 md:mt-5 mt-32  addFlexJustify"
+          className="lg:mt-10 md:mt-5 mt-10  addFlexJustify"
           to={`/checkout/${planName}`}
         >
           <button
-            className={`${buttonColor()}   font-medium py-3 px-7  rounded-lg hover:shadow-lg hover:translate-y-2 transition-all duration-300`}
+            className={`border border-white
+               ${
+                 planName === "Gold"
+                   ? "border-none font-semibold bg-p3 text-white "
+                   : ""
+               }   font-medium py-3 px-10  rounded-full hover:shadow-lg hover:translate-y-2 transition-all duration-300`}
           >
             Make Deal
           </button>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 

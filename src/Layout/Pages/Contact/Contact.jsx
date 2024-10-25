@@ -39,7 +39,7 @@ const Contact = () => {
   return (
     <div className="mt-20">
       <Helmet>
-        <title>Contact | CampusBite</title>
+        <title>Contact | Mealvy.</title>
       </Helmet>
       <div className="addFlexJustify flex-col-reverse lg:flex-row gap-10 lg:gap-20">
         <div>
@@ -47,7 +47,8 @@ const Contact = () => {
             <div className="addFlexBetween gap-5 lg:gap-10 container">
               <div className="relative">
                 <input
-                  className="inputAndTextarea lg:w-[300px] py-2 mb-7"
+                  className="inputAndTextarea 
+                   lg:w-[300px] "
                   type="text"
                   name="first-name"
                   required
@@ -56,7 +57,7 @@ const Contact = () => {
               </div>
               <div className="relative">
                 <input
-                  className="inputAndTextarea lg:w-[300px] py-2 mb-7"
+                  className="inputAndTextarea lg:w-[300px] "
                   type="text"
                   name="last-name"
                   required
@@ -66,7 +67,7 @@ const Contact = () => {
             </div>
             <div className="relative">
               <input
-                className="inputAndTextarea py-2 mb-7"
+                className="inputAndTextarea "
                 type="email"
                 name="user_email"
                 required
@@ -75,7 +76,7 @@ const Contact = () => {
             </div>
             <div className="relative">
               <input
-                className="inputAndTextarea py-2 mb-7"
+                className="inputAndTextarea "
                 type="number"
                 name="user-phone"
                 required
@@ -84,7 +85,7 @@ const Contact = () => {
             </div>
             <div className=" text-sm font-medium  mb-8">
               <h4 className="mb-2 font-semibold">
-                You are <span className="text-[#CC0018]">*</span>
+                You are <span className="text-p1">*</span>
               </h4>
               <input
                 className="mr-2"
@@ -114,17 +115,17 @@ const Contact = () => {
             </div>
             <div className="relative">
               <textarea
-                className="inputAndTextarea mb-4"
+                className="inputAndTextarea mb-2"
                 name="message"
                 cols="50"
                 rows="5"
                 required
               ></textarea>
               <label className="labelContact">
-                Question <span className="text-[#CC0018]">*</span>
+                Question <span className="text-p1">*</span>
               </label>
             </div>
-            <button className="btnRegular">
+            <button className="btnAllGlobal bg-p1 ">
               <span>Send Message</span>
             </button>
           </form>

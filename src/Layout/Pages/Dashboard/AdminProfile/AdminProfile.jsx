@@ -19,8 +19,9 @@ const AdminProfile = () => {
 
   return (
     <div className="">
-      <h2 className=" my-20 dashboardTitle">
-        You are a <span className="text-p1"> {payments?.[0]?.plan} Users </span>
+      <h2 className=" my-20 headTitle">
+        You are a{" "}
+        <span className="text-p1 lowercase"> {payments?.[0]?.plan} users </span>
       </h2>
 
       <div>

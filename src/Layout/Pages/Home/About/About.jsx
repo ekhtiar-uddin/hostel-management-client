@@ -3,31 +3,26 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="my-10 lg:my-20">
-      <h2 className="text-3xl lg:text-4xl uppercase text-center lg:mb-16    font-extrabold">
-        About <span className=" text-p1 "> CampusBite</span>
-      </h2>
-      <div className="addFlexBetween lg:flex-row flex-col-reverse gap-10  ">
+      <div className="addFlexBetween lg:flex-row flex-col-reverse gap-16 lg:gap-10  ">
         <div className="flex-1">
+          <h2 className="text-3xl lg:text-4xl mb-8   lg:mb-10 font-bold">
+            About <span className=" text-p1 "> Mealvy.</span>
+          </h2>
           <p className="  lg:mt-10   font-medium">
-            Beyond being a meal service, CampusBite is a community hub. Connect
-            with fellow students through exclusive events and shared culinary
-            adventures, fostering bonds that go beyond the lecture halls. Our
-            mission is to bring students together over the joy of good food,
-            enhancing your college experience. Streamline your life with
-            CampusBite's user-friendly website and mobile app. Easily manage
-            your subscription, customize preferences, and track deliveries
-            effortlessly.
+            Mealvy. is a community hub for students, connecting peers through
+            events and culinary experiences that enhance college life. Our
+            user-friendly website and app let you easily manage subscriptions,
+            customize preferences, and track deliveries.
           </p>
           <p className="  mt-5 lg:mt-10   font-medium ">
-            Join us in redefining student dining – where convenience meets
-            community, and each meal becomes a celebration of your academic
-            journey. Experience the difference with CampusBite, where we're not
-            just serving meals; we're creating moments that enrich your college
-            life.
+            Join us in redefining student dining—where convenience meets
+            community, and every meal celebrates your academic journey.
+            Experience the difference with Mealvy. and create moments that
+            enrich your college experience.
           </p>
 
           <Link to={`/contact`}>
-            <button className="btnAll mt-7 lg:mt-12 px-4 lg:px-8 py-2 lg:py-2     font-medium  transition-all duration-200 rounded bg-p1 ">
+            <button className="btnAllGlobal bg-p1 mt-8">
               <span className=""> Contact Us</span>
             </button>{" "}
           </Link>
@@ -35,7 +30,7 @@ const About = () => {
 
         <div className="flex-1 mt-10">
           <img
-            className="border-b-8 border-[#870012] rounded-[100px] w-[600px]"
+            className="border-b-8 border-p1 rounded-[100px] w-[600px]"
             src="https://i.ibb.co/wsw6Z03/menu-3356828-1280.jpg"
           ></img>
         </div>

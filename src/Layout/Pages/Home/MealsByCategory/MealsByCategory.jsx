@@ -3,10 +3,29 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import UseMeal from "../../../../Hooks/UseMeal";
 import "../MealsByCategory/TabCss/Tab.css";
 import MealTab from "./MealTab/MealTab";
-
+import imgOne from "/assets/breakfast.jpeg";
+import imgThree from "/assets/dinner.jpg";
+import imgTwo from "/assets/lunch.jpg";
 const MealsByCategory = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [meals, loading, refetch] = UseMeal();
+  const tabs = [
+    {
+      id: 1,
+      category: "Breakfast",
+      img: `${imgOne}`,
+    },
+    {
+      id: 2,
+      category: "Lunch",
+      img: `${imgTwo}`,
+    },
+    {
+      id: 3,
+      category: "Dinner",
+      img: `${imgThree}`,
+    },
+  ];
 
   const breakfast = meals?.filter((item) => item.category === "Breakfast");
   const lunch = meals?.filter((item) => item.category === "Lunch");
@@ -15,52 +34,47 @@ const MealsByCategory = () => {
 
   return (
     <div className="mt-10">
-      <h2 className="text-3xl  lg:text-4xl uppercase mb-6 font-bold text-center  ">
-        <span className="text-p1 ">Explore</span> meals
+      <h2
+        className="text-3xl  mb-4 font-semibold 
+       "
+      >
+        <span className="text-p1 ">Explore</span> our meals
       </h2>
+      <p>
+        Discover a variety of flavorful meals crafted for students. Our meals
+        are quick, nutritious, and perfect for busy days on campus.{" "}
+        <br className="lg:block hidden" />
+        Enjoy delicious, balanced options made to keep you energized and focused
+        all day long.
+      </p>
 
       <Tabs className="">
-        <div className="bg-[#101010] lg:w-[550px]  my-5 mx-auto py-3 rounded">
-          <TabList className="addFlex gap-3  lg:gap-5 ">
+        <TabList className="my-10 addFlexItems gap-4  lg:gap-12 ">
+          {tabs.map(({ id, category, img }) => (
             <Tab
-              className={`cursor-pointer  lg:px-7 py-1 px-3 rounded lg:py-2   ${
-                activeTab === 0 ? "active" : "inActive"
-              }`}
-              onClick={() => setActiveTab(0)}
+              key={id}
+              className={`cursor-pointer border-none outline-none  ${
+                activeTab === id ? "active" : ""
+              }  `}
+              onClick={() => setActiveTab(id)}
             >
-              All Meals
+              <div className="flex flex-col   items-center gap-2">
+                <img
+                  className={` w-[100px] h-[100px] rounded-full`}
+                  src={img}
+                  alt=""
+                />
+                <span className="text-lg"> {category}</span>
+              </div>
             </Tab>
+          ))}
+        </TabList>
 
-            <Tab
-              className={`cursor-pointer rounded lg:px-7 lg:py-2 py-1 px-3    ${
-                activeTab === 1 ? "active" : "inActive"
-              }`}
-              onClick={() => setActiveTab(1)}
-            >
-              Breakfast
-            </Tab>
-
-            <Tab
-              className={`cursor-pointer rounded lg:px-7 lg:py-2 py-1 px-3   ${
-                activeTab === 2 ? "active" : "inActive"
-              }`}
-              onClick={() => setActiveTab(2)}
-            >
-              Lunch
-            </Tab>
-            <Tab
-              className={`cursor-pointer rounded lg:px-7 lg:py-2 py-1 px-3   ${
-                activeTab === 3 ? "active" : "inActive"
-              }`}
-              onClick={() => setActiveTab(3)}
-            >
-              Dinner
-            </Tab>
-          </TabList>
-        </div>
-        <TabPanel>
-          <MealTab items={meals}></MealTab>
-        </TabPanel>
+        {activeTab === 0 && (
+          <TabPanel>
+            <MealTab items={meals}></MealTab>
+          </TabPanel>
+        )}
 
         <TabPanel>
           <MealTab items={breakfast}></MealTab>

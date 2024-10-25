@@ -100,8 +100,6 @@ const SingleUpcoming = ({ meal, upcomingRefetch }) => {
     }
   };
 
-  console.log("produc", productions);
-
   useEffect(() => {
     const likesData = JSON.parse(localStorage.getItem("likesData"));
     const isMatch = likesData?.find((item) => item.id === _id);
@@ -115,13 +113,13 @@ const SingleUpcoming = ({ meal, upcomingRefetch }) => {
   return (
     <div className=" upcomingCard">
       <div className="">
-        <img className="h-[370px] w-full" src={image}></img>
+        <img className=" h-[370px] w-full" src={image}></img>
       </div>
 
-      <h2 className="absolute top-3 right-3 bg-[#870012] px-2 rounded   max-w-min  font-semibold mb-2">
+      <h2 className="absolute top-3 right-3 bg-p6  px-2 rounded   max-w-min  font-semibold mb-2">
         {category}
       </h2>
-      <h2 className="absolute top-3 left-3 bg-[#870012] px-2 rounded    font-semibold mb-2">
+      <h2 className="absolute top-3 left-3 bg-p6   px-2 rounded    font-semibold mb-2">
         Likes {likes}
       </h2>
 

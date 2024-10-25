@@ -1,7 +1,7 @@
 const SingleRequest = ({ item, handleDeleteRequest }) => {
   const { title, likeNumber, status, reviews, img } = item;
   return (
-    <div className="bg-[#2C2C2C]  rounded-3xl relative ">
+    <div className="bg-d2  rounded-3xl relative ">
       <div className="">
         <img
           className="w-full h-[150px] rounded-t-lg rounded-b-[30px]"
@@ -21,7 +21,8 @@ const SingleRequest = ({ item, handleDeleteRequest }) => {
 
       <div
         onClick={() => handleDeleteRequest(item)}
-        className="absolute cursor-pointer bottom-0 left-0 rounded-t-[20px]   text-center w-full py-2 rounded bg-p1 hover:bg-[#870012] transition-all duration-300    font-medium  text-sm  "
+        className="absolute cursor-pointer bottom-0 left-0 rounded-t-[20px]  
+         text-center w-full py-2 rounded bg-p5  text-p4  font-medium  text-sm  "
       >
         Delete
       </div>

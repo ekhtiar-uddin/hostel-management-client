@@ -36,7 +36,7 @@ const AllMeals = () => {
 
   return (
     <div>
-      <h2 className="my-12 dashboardTitle">
+      <h2 className="my-12 headTitle">
         Added <span className="text-p1"> meals </span>
       </h2>
 

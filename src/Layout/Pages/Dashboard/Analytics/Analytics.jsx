@@ -48,18 +48,18 @@ const Analytics = () => {
     { name: "Group C", value: platinum?.length },
   ];
 
-  const COLORS = ["#BFFCF9", "#EB3656", "#f6f6f6"];
+  const COLORS = ["#f67e7f", "#53e6af", "#252b43"];
 
   return (
     <div className="">
-      <h2 className="text-3xl lg:text-4xl  font-extrabold text-center">
-        MEMBERSHIP ANALYTICS
+      <h2 className="text-3xl lg:text-4xl  font-bold text-center">
+        Membership analytics
       </h2>
-      <h2 className="text-xl uppercase  font-extrabold text-center text-p1 my-2">
-        __Statistics of Meal Plan__
+      <h2 className="text-xl   font-bold text-center text-p1 my-2">
+        __Statistics of meal plan__
       </h2>
 
-      <div className="border-t-2 border-p2 mt-10 addFlexJustify">
+      <div className="border-t-2 border-p1 mt-10 addFlexJustify">
         <PieChart width={500} height={500}>
           <Pie
             data={data}
@@ -84,7 +84,7 @@ const Analytics = () => {
         <div className="flex flex-col lg:flex-row md:flex-row md:gap-6 lg:gap-14 gap-6">
           <div className="addFlexItems gap-4">
             <h4 className=" text-lg font-semibold ">Silver </h4>
-            <div className="w-[100px] h-[12px] bg-p2"> </div>
+            <div className="w-[100px] h-[12px] bg-p5"> </div>
           </div>
 
           <div className="addFlexItems gap-4">
@@ -93,7 +93,7 @@ const Analytics = () => {
           </div>
           <div className="addFlexItems gap-4">
             <h4 className="  text-lg font-semibold ">Platinum </h4>
-            <div className="w-[100px] h-[12px] bg-[#2C2C2C]"> </div>
+            <div className="w-[100px] h-[12px] bg-d2"> </div>
           </div>
         </div>
       </div>

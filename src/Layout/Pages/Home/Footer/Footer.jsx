@@ -3,7 +3,7 @@ const Footer = () => {
     <div className="mb-10">
       <div className="addFlexJustify lg:flex-row flex-col  gap-20 pt-20">
         <div className="w-[330px] lg:w-[350px]">
-          <div className="border-b-4 pb-1 mb-4  border-p2">
+          <div className="border-b-4 pb-1 mb-4  border-p1">
             <h2 className=" text-[22px] font-bold  ">About Us</h2>
           </div>
           <ul className="flex flex-col space-y-2">
@@ -20,7 +20,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className=" w-[330px] lg:w-[350px]">
-          <div className="border-b-4 pb-1 mb-4  border-p2">
+          <div className="border-b-4 pb-1 mb-4  border-p1">
             <h2 className="text-[22px] font-bold  ">Plans & Points</h2>
           </div>
           <ul className="flex flex-col space-y-2">
@@ -36,7 +36,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className=" w-[330px] lg:w-[350px]">
-          <div className="border-b-4 pb-1 mb-4  border-p2">
+          <div className="border-b-4 pb-1 mb-4  border-p1">
             <h2 className="text-[22px] font-bold  ">Catering</h2>
           </div>
           <ul className="flex flex-col space-y-2">
@@ -52,7 +52,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className=" w-[330px] lg:w-[350px]">
-          <div className="border-b-4 pb-1 mb-4  border-p2">
+          <div className="border-b-4 pb-1 mb-4  border-p1">
             <h2 className="text-[22px] font-bold  ">For Parents</h2>
           </div>
           <ul className="flex flex-col space-y-2">

@@ -13,6 +13,7 @@ import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import Footer from "../Home/Footer/Footer";
 import SingleBestRating from "./SingleBestRating";
 import SingleMeal from "./SingleMeal";
+import img from "/assets/checkmark.png";
 const MealPage = () => {
   const { register, handleSubmit } = useForm();
   const [search, setSearch] = useState("");
@@ -50,89 +51,48 @@ const MealPage = () => {
   return (
     <div className="">
       <Helmet>
-        <title>Meals | CampusBite</title>
+        <title>Meals | Mealvy.</title>
       </Helmet>
       <div className="">
-        <h2 className=" my-16 text-3xl lg:text-4xl text-center   font-extrabold  uppercase">
-          Eat Quality <span className="text-p1"> Food</span>
-        </h2>
-
-        <div className="flex flex-col-reverse lg:flex-row gap-10">
-          <div className=" addFlexItems lg:w-1/2 ">
+        <div className="mt-24  addFlexItems  flex-col-reverse lg:flex-row gap-10">
+          <div className=" lg:w-1/2 ">
             <div
               className=" 
             "
             >
-              <p className="text-center  text-2xl uppercase my-8   font-bold">
-                <span className="text-p1">Welcome</span> to CampusBite Meals
-                page{" "}
+              <p className="  text-4xl  my-8   font-bold">
+                <span className="text-p1">Eat</span> quality food{" "}
               </p>
 
               <p className="mb-7   font-medium">
                 We fuel campus life with delicious bites! Our mission is to
-                provide a world of diverse, healthy, and convenient food options
-                to keep you energized throughout your busy day. Whether you're
-                craving a hearty meal or a quick snack between classes, we've
-                got you covered. From fresh salads to mouthwatering sandwiches
-                and everything in between, our menu has something for everyone.
-                Say goodbye to boring cafeteria food and hello to a culinary
-                adventure right on campus. Join us at CampusBite and let your
-                taste buds explore!
+                provide healthy and convenient food options to keep you
+                energized. From fresh salads to mouthwatering sandwiches, our
+                menu has something for everyone. Say goodbye to boring cafeteria
+                food and hello to a culinary adventure at Mealvy!
               </p>
 
               <div className="">
                 <div className="space-y-2 mb-5 ">
                   <div className="addFlexItems gap-2">
-                    <img
-                      className="w-[30px]"
-                      src="https://i.ibb.co/qxknKhC/checkmark.png"
-                    ></img>
-                    <p className="  text-sm  font-medium">
+                    <img className="w-[30px]" src={img}></img>
+                    <p className="    font-medium">
                       The food here uses 100% natural preservatives
                     </p>
                   </div>
                   <div className="addFlexItems gap-2">
-                    <img
-                      className="w-[30px] "
-                      src="https://i.ibb.co/qxknKhC/checkmark.png"
-                    ></img>
-                    <p className="  text-sm  font-medium">
+                    <img className="w-[30px] " src={img}></img>
+                    <p className="    font-medium">
                       The package here is very up to date and safe
                     </p>
                   </div>
                   <div className="addFlexItems gap-2">
-                    <img
-                      className="w-[30px]"
-                      src="https://i.ibb.co/qxknKhC/checkmark.png"
-                    ></img>
-                    <p className="  text-sm  font-medium">
+                    <img className="w-[30px]" src={img}></img>
+                    <p className="    font-medium">
                       A comfortable place to hang out with your friends.
                     </p>
                   </div>
                 </div>
-              </div>
-              <div className=" lg:w-2/3 mx-auto  mt-10 ">
-                <form
-                  onSubmit={handleSubmit(onSubmit)}
-                  className=" flex  "
-                  action=""
-                >
-                  <input
-                    {...register("title", { required: true })}
-                    name="title"
-                    id="field-id"
-                    className="pl-4 rounded-l w-full outline-none"
-                    type="text"
-                    placeholder="Find Food"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-p2 rounded-r  hover:text-white text-[#000000] hover:bg-[#870012] transition-all duration-150  hover: addFlex  w-[200px] h-[45px]  lg:h-[50px] text-lg font-semibold "
-                  >
-                    {" "}
-                    <BsSearch></BsSearch>
-                  </button>
-                </form>
               </div>
             </div>
           </div>
@@ -163,22 +123,22 @@ const MealPage = () => {
         </div>
 
         <div className="border-b mt-10 lg:mt-20 mb-12 border-[#444] pb-10">
-          <h2 className=" text-3xl uppercase lg:text-4xl text-center   font-extrabold  ">
-            Our <span className="text-p1"> Specials</span>
+          <h2 className=" headTitle  ">
+            Our <span className="text-p1"> specials</span>
           </h2>
         </div>
 
         <div className="flex flex-col lg:flex-row  gap-10">
           <div className="">
-            <div className="  bg-white  p-6  pb-20 rounded-3xl">
+            <div className="  bg-p6  p-6  pb-20 rounded-3xl">
               <div className="flex gap-4 lg:gap-10">
-                <div className=" bg-[#FFF]  ">
+                <div className="   ">
                   <div className=" ">
-                    <h2 className="font-bold text-center mb-4 text-[#000]  text-[19px]">
+                    <h2 className="font-bold text-center mb-4   text-[19px]">
                       Filter By Category
                     </h2>
                     <Select
-                      className=""
+                      className="text-p4 "
                       defaultValue={selectedOption}
                       onChange={setSelectedOption}
                       options={options}
@@ -187,20 +147,20 @@ const MealPage = () => {
                 </div>
 
                 <div>
-                  <h2 className="font-bold text-center mb-4 text-[#000]   text-[19px]">
+                  <h2 className="font-bold text-center mb-4   text-[19px]">
                     Filter By Price
                   </h2>
                   <button
                     onClick={() => setAsc(!asc)}
-                    className="cursor-pointer w-full  py-2 rounded button  bg-[#161515] hover:bg-[#444] "
+                    className="cursor-pointer w-full  py-2 rounded button bg-p3 "
                   >
                     {asc ? "High to Low" : "Low to High"}{" "}
                   </button>
                 </div>
               </div>
 
-              <h2 className="font-bold text-center mb-10 text-[#000]  text-3xl lg:text-4xl  mt-36 ">
-                Best Rating Meal
+              <h2 className="font-medium  mb-10   text-2xl lg:text-4xl  mt-36 ">
+                Best rating meal
               </h2>
               <div className="lg:w-[400px]">
                 <Slider {...settings}>
@@ -216,6 +176,28 @@ const MealPage = () => {
           </div>
 
           <div className="mb-20 flex-1 ">
+            <div className=" mb-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="  " action="">
+                <div className=" relative w-[280px] lg:w-[350px]    flex rounded-lg ">
+                  <input
+                    {...register("title", { required: true })}
+                    name="title"
+                    id="field-id"
+                    className="pl-3 bg-p6  rounded-lg  w-full py-3.5 outline-none   "
+                    type="text"
+                    placeholder="Find Food"
+                  />
+
+                  <button
+                    type="submit"
+                    className="absolute right-0  bg-p1 px-4 flex items-center justify-center m-1 h-[39px] rounded"
+                  >
+                    {" "}
+                    <BsSearch className="text-[#444]   text-lg"></BsSearch>
+                  </button>
+                </div>
+              </form>
+            </div>
             {categoryValue ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredMeals.map((meal) => (

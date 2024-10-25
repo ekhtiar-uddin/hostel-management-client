@@ -1,8 +1,11 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
+import { RiVerifiedBadgeLine } from "react-icons/ri";
+import { Bounce, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import UseAuth from "../../../Hooks/UseAuth";
 import UseAxiosSecure from "../../../Hooks/UseAxiosSecure";
+import img from "/assets/medal.png";
 
 const CheckOutForm = ({ item }) => {
   const [error, setError] = useState("");
@@ -65,32 +68,73 @@ const CheckOutForm = ({ item }) => {
       console.log("payment intent", paymentIntent);
 
       if (item?.planName === "Gold") {
-        Swal.fire({
-          imageUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ8Rf-P_S17VvgG5fIp1JWKKyX7AgTCbOt3w&usqp=CAU",
-          imageHeight: 150,
-          imageAlt: "A tall image",
-          title: "Good Job",
-          text: "You Have Done the Payment!",
-        });
+        toast(
+          <div className="">
+            <img
+              className="w-[50px] h-[50px] mx-auto"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ8Rf-P_S17VvgG5fIp1JWKKyX7AgTCbOt3w&usqp=CAU"
+              alt=""
+            />{" "}
+            <div className="addFlexItems gap-2 mt-2">
+              <RiVerifiedBadgeLine className="text-xl text-p4"></RiVerifiedBadgeLine>{" "}
+              You Have Done the Payment!
+            </div>
+          </div>,
+          {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          }
+        );
       } else if (item?.planName === "Silver") {
-        Swal.fire({
-          imageUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL_2ONbUoN2WEMSi7tEXSvFOJwaRM52AxYRQ&usqp=CAU",
-          imageHeight: 150,
-          imageAlt: "A tall image",
-          title: "Good Job",
-          text: "You Have Done the Payment!",
-        });
+        toast(
+          <div className="">
+            <img className="w-[50px] h-[50px] mx-auto" src={img} alt="" />{" "}
+            <div className="addFlexItems gap-2 mt-2">
+              <RiVerifiedBadgeLine className="text-xl text-p4"></RiVerifiedBadgeLine>{" "}
+              You Have Done the Payment!
+            </div>
+          </div>,
+          {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          }
+        );
       } else {
-        Swal.fire({
-          imageUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvQcfoau_BSAE4OADEZ6HbTrLyLHrKqwN4AQ&usqp=CAU",
-          imageHeight: 150,
-          imageAlt: "A tall image",
-          title: "Good Job",
-          text: "You Have Done the Payment!",
-        });
+        toast(
+          <div className="">
+            <img
+              className="w-[50px] h-[50px] mx-auto"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvQcfoau_BSAE4OADEZ6HbTrLyLHrKqwN4AQ&usqp=CAU"
+              alt=""
+            />{" "}
+            <div className="addFlexItems gap-2 mt-2">
+              <RiVerifiedBadgeLine className="text-xl text-p4"></RiVerifiedBadgeLine>{" "}
+              You Have Done the Payment!
+            </div>
+          </div>,
+          {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          }
+        );
       }
 
       const paymentInfo = {
@@ -110,16 +154,17 @@ const CheckOutForm = ({ item }) => {
       }
     }
   };
+
   return (
-    <div className="mt-12">
+    <div className="">
       <form onSubmit={handleSubmit}>
         <CardElement
-          className="py-3 px-4 border rounded-lg"
+          className="py-3 px-4 bg-white rounded-lg"
           options={{
             style: {
               base: {
                 fontSize: "16px",
-                color: "#424770",
+                color: "#000000",
                 "::placeholder": {
                   color: "#aab7c4",
                 },
@@ -132,8 +177,8 @@ const CheckOutForm = ({ item }) => {
         />
 
         <button
-          className="mt-5 w-full py-2 rounded-lg  
-           font-semibold cursor-pointer hover:bg-p1 bg-[#870012] "
+          className="mt-5 w-full bg-p1 text-p4 py-2 rounded-lg  
+           font-semibold cursor-pointer "
           type="submit"
         >
           {" "}

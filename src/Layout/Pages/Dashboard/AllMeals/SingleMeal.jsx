@@ -5,7 +5,7 @@ const SingleMeal = ({ item, handleDeleteMeal }) => {
     item;
 
   return (
-    <div className="bg-[#2C2C2C] flex gap-4 rounded-3xl ">
+    <div className="bg-d2 flex gap-4 rounded-3xl ">
       <div className="">
         <img
           className="w-[200px] rounded-tr-[70px] rounded-br-[50px] h-[200px] rounded-3xl"
@@ -17,20 +17,16 @@ const SingleMeal = ({ item, handleDeleteMeal }) => {
         <div className="addFlexItems gap-2 mt-3 ">
           <Link to={`/dashboard/updateMeal/${item._id}`}>
             {" "}
-            <button className="text-[#000000] px-4 py-1 rounded bg-p2 addFlexItems gap-2 text-sm  ">
-              Update
-            </button>
+            <button className="updateBtn">Update</button>
           </Link>
           <button
             onClick={() => handleDeleteMeal(item)}
-            className=" px-4 py-1 rounded  bg-p1 addFlexItems gap-2 text-sm "
+            className=" deleteBtn "
           >
             Delete
           </button>
           <Link to={`/details/${item._id}`}>
-            <button className=" px-4 py-1 rounded bg-[#161515] addFlexItems gap-2 text-sm ">
-              Details
-            </button>
+            <button className="detailsBtn ">Details</button>
           </Link>
         </div>
 
@@ -42,8 +38,8 @@ const SingleMeal = ({ item, handleDeleteMeal }) => {
           <p>{review} reviews</p>
         </div>
         <div className="mt-3">
-          <h2 className="  text-sm  font-medium">{adminName}</h2>
-          <h2 className="  text-sm  font-medium">{adminEmail}</h2>
+          <h2 className="    font-medium">{adminName}</h2>
+          <h2 className="    font-medium">{adminEmail}</h2>
         </div>
       </div>
     </div>

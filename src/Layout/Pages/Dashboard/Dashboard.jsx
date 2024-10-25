@@ -12,7 +12,6 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
-import img from "../../../../public/Assets/dashboardLogo.png";
 import UseAdmin from "../../../Hooks/UseAdmin";
 import UseAuth from "../../../Hooks/UseAuth";
 import UseAxiosSecure from "../../../Hooks/UseAxiosSecure";
@@ -41,8 +40,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems  gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm addFlexItems  gap-2 hover:bg-[#101010]   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaPray></FaPray>
@@ -57,8 +56,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaUser></FaUser>
@@ -73,8 +72,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaMedal></FaMedal>
@@ -88,8 +87,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaListAlt></FaListAlt>
@@ -103,8 +102,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaRedRiver></FaRedRiver>
@@ -119,8 +118,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaServer></FaServer>
@@ -135,8 +134,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaUpload></FaUpload>
@@ -150,8 +149,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaUpload></FaUpload>
@@ -166,8 +165,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaEye></FaEye>
@@ -186,8 +185,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaPray></FaPray>
@@ -202,8 +201,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaRegQuestionCircle></FaRegQuestionCircle>
@@ -218,8 +217,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaRecordVinyl></FaRecordVinyl>
@@ -234,8 +233,8 @@ const Dashboard = () => {
             isLoading
               ? "pending"
               : isActive
-              ? "text-sm addFlexItems gap-2 bg-[#101010]  text-p1  rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
-              : "text-sm hover:bg-[#101010] addFlexItems gap-2   rounded transition-all duration-150  font-semibold py-1 lg:py-2 lg:px-4"
+              ? "dashboardActive"
+              : "dashboardInActive"
           }
         >
           <FaEye></FaEye>
@@ -246,11 +245,12 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="bg-[#161515] ">
+    <div className="bg-d1">
       <div className="flex">
-        <div className="w-[300px] rounded-r-3xl min-h-screen bg-[#2C2C2C] ">
+        <div className="w-[300px] rounded-r-3xl min-h-screen bg-d2">
           <div className=" addFlex mx-10    my-5">
-            <img className="w-[50px] lg:w-[70px]" src={img}></img>
+            {/* <img className="w-[50px] lg:w-[70px]" src={img}></img> */}
+            <h2 className="text-2xl font-semibold text-p1">Mealvy.</h2>
           </div>
 
           <div className="relative pt-5 border-t border-b border-[#444] pb-5 mb-5">
@@ -260,7 +260,7 @@ const Dashboard = () => {
             ></img>
             <span
               className="absolute
-            top-14 right-[90px] bg-[#FFF] text-black  text-sm px-2 rounded"
+            top-14 right-[90px] bg-[#FFF] text-p4  text-sm px-2 rounded"
             >
               {isAdmin ? "Admin" : "User"}
             </span>

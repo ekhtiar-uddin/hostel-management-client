@@ -19,9 +19,9 @@ const UserProfile = () => {
 
   return (
     <div className="">
-      <h2 className=" my-20  dashboardTitle">
+      <h2 className=" my-20  headTitle">
         You are a{" "}
-        <span className="text-p1">
+        <span className="text-p1 lowercase">
           {" "}
           {payments?.[0]?.plan ? payments?.[0]?.plan : "Silver"} Member{" "}
         </span>

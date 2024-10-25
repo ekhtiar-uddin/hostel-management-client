@@ -4,11 +4,18 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Inter: "'Inter', sans-serif ",
+        Outfit: "'Outfit', sans-serif ",
       },
       colors: {
-        p1: "#EB3656",
+        p1: "#53e6af",
         p2: "#BFFCF9",
+        p3: "#2c344b",
+        p4: "#000000",
+        p5: "#f67e7f",
+        p6: "#15273f",
+        d1: "#1d2029",
+        d2: "#252b43",
+        b1: "#198ff5",
       },
     },
   },

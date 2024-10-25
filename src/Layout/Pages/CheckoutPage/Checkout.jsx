@@ -14,40 +14,22 @@ const Checkout = () => {
 
   return (
     <div className="mt-20">
-      <h2 className="text-3xl lg:text-4xl uppercase text-center mb-10 lg:mb-10    font-extrabold">
-        Payment <span className=" text-p1 "> Details</span>
+      <h2 className="text-3xl lg:text-4xl  text-center mb-10 lg:mb-10    font-bold">
+        Payment <span className=" text-p1 "> details</span>
       </h2>
-      <div className="lg:h-[70vh] bg-white rounded-3xl lg:w-2/3 mx-auto p-10">
-        <div className="relative">
-          <div className="bg-[#20272D] addFlex h-[20vh] lg:h-[17vh] rounded-3xl">
-            <div>
-              {" "}
-              <h2 className=" mb-1  ">You have selected</h2>
-              <h2 className=" text-center text-2xl  font-bold">
-                {item.planName}
-              </h2>
-            </div>
-          </div>
-
-          <div className="addFlex h-[13vh] lg:w-4/6 mx-auto -mt-8 bg-white shadow-xl rounded-3xl">
-            <div>
-              <h2 className="text-center text-3xl  font-bold text-p1">
-                $ {item.price}
-              </h2>
-              <p className=" text-center  font-bold">
-                For each additional user billed monthly
-              </p>
-            </div>
-          </div>
-        </div>
-
+      <div className=" bg-p6 rounded-3xl h-[50vh] lg:w-[40%] mx-auto p-10">
         <div className="addFlexJustify">
           <div>
-            <h2 className="font-semibold text-center lg:text-left  mt-8 mb-5">
-              We Accept
-            </h2>
+            <div className="addFlexBetween">
+              <p className="  text-4xl  ">{item.planName}</p>
 
-            <div className="addFlexJustify gap-4">
+              <p className="text-5xl  font-semibold text-p1">
+                <span className="font-thin">$</span>
+                {item.price}
+              </p>
+            </div>
+
+            <div className="addFlexJustify gap-4 my-8">
               <img
                 className="w-[50px] lg:w-[80px] h-[50px] lg:h-[80px] rounded-xl"
                 src="https://i.ibb.co/ykChZxf/Visa-Straight.png"

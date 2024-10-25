@@ -1,20 +1,7 @@
-.active {
-  background-color: #bffcf9;
-  color: #000000;
-  font-family: inter;
-  font-weight: semibold;
-
-  font-size: small;
+.active div img {
+  border: 4px solid #53e6af;
 }
 
 .inActive {
-  font-family: inter;
-  font-weight: semibold;
-  font-size: small;
-  color: white;
-}
-.inActive:hover {
-  box-shadow: 4px;
-  transition: all;
-  color: #bffcf9;
+  border: none;
 }

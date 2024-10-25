@@ -12,9 +12,9 @@ const UpcomingMeals = () => {
   return (
     <div>
       <div>
-        <h2 className=" my-12 dashboardTitle">
+        <h2 className=" my-12 headTitle">
           {productionMeals?.length} meals are{" "}
-          <span className="text-p1"> Upcoming </span>
+          <span className="text-p1"> upcoming </span>
         </h2>
 
         <div className="">

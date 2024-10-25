@@ -9,17 +9,16 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="addFlex lg:h-[70vh]">
-        {" "}
-        <Lottie className="w-[300px]" animationData={banner} loop={true} />{" "}
+        <Lottie className="w-[300px]" animationData={banner} loop={true} />
       </div>
     );
   }
 
-  if (user) {
-    return children;
-  } else {
-    return <Navigate to="/login"></Navigate>;
+  if (!user && !loading) {
+    return <Navigate to="/login" />;
   }
+
+  return children;
 };
 
 export default PrivateRoute;

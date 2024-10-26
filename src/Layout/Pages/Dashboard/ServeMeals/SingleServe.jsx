@@ -18,8 +18,8 @@ const SingleServe = ({ item, handleServeMeal }) => {
         <div className="addFlexItems gap-2 mt-3 ">
           <button
             onClick={() => handleServeMeal(item)}
-            className="w-full rounded bg-p1 hover:bg-p2transition-all duration-300 
-           py-1  font-medium  text-sm  text-p4"
+            className="w-full rounded bg-p1  transition-all duration-300 
+           py-1  font-medium  text-sm"
           >
             {status === "delivered" ? " Served" : "Accept"}
           </button>

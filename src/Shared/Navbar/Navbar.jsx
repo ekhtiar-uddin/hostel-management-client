@@ -122,7 +122,7 @@ const NavBar = () => {
               className="w-[50px] lg:w-[70px]"
               src="https://i.ibb.co/Zfz6Pjz/Mealvy.-2.png"
             ></img> */}
-            <h2 className="text-2xl font-semibold text-p1">Mealvy.</h2>
+            <h2 className="text-4xl font-semibold text-p5">Mealvy.</h2>
           </div>
         </div>
 

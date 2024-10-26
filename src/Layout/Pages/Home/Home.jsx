@@ -23,6 +23,7 @@ const Home = () => {
         <HowWork></HowWork>
         <WhyChoose></WhyChoose>
         <Membership></Membership>
+
         <Footer></Footer>
         <SocialLink></SocialLink>
       </div>

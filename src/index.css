@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-[#111725] font-Outfit  text-white;
+    @apply bg-[#181e2a] font-Outfit  text-white;
   }
 }
 
@@ -90,7 +90,7 @@
   left: 0;
   width: 0px;
   height: 0px;
-  background-color: #f67e7f;
+  background-color: #ffffff;
   border-top-right-radius: 50px;
   transition: width 0.5s, height 0.5s;
 }
@@ -136,11 +136,11 @@
 
   .navInActive {
     @apply lowercase
-     rounded-full hover:bg-[#53e6af] hover:text-p4  py-1 lg:py-2 lg:px-4 transition-all duration-150;
+     rounded-full hover:bg-p1 hover:text-p4  py-1 lg:py-2 lg:px-4 transition-all duration-150;
   }
   .navActive {
     @apply lowercase
-     rounded-full  py-1 lg:py-2 lg:px-4 hover:bg-[#53e6af] bg-[#53e6af] text-p4  transition-all duration-150;
+     rounded-full  py-1 lg:py-2 lg:px-4 hover:bg-p1 bg-p1 text-p4  transition-all duration-150;
   }
   .dashboardInActive {
     @apply lowercase addFlexItems gap-2 hover:bg-[#1d2029] rounded transition-all duration-150  py-1 lg:py-2 lg:px-4;
@@ -155,14 +155,14 @@
   }
 
   .updateBtn {
-    @apply px-4 py-1 rounded bg-p6 addFlexItems gap-2 text-sm;
+    @apply px-4 py-1 rounded bg-p1 addFlexItems gap-2 text-sm;
   }
   .deleteBtn {
-    @apply px-4 py-1 rounded  bg-p5 text-p4 addFlexItems gap-2 text-sm;
+    @apply px-4 py-1 rounded  bg-b1  addFlexItems gap-2 text-sm;
   }
   .detailsBtn {
     @apply px-4 py-1 rounded 
-    bg-p3 addFlexItems gap-2 text-sm;
+    bg-p5 text-p4 addFlexItems gap-2 text-sm;
   }
   .errorText {
     @apply text-p5 text-sm -mt-2;

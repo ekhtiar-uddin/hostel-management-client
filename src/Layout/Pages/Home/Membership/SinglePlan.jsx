@@ -6,11 +6,11 @@ const SinglePlan = ({ plan }) => {
 
   const bgColor = () => {
     if (planName === "Sliver") {
-      return "bg-[#00403f]";
+      return "bg-[#1c2230]";
     } else if (planName === "Gold") {
       return "bg-p1 text-p4";
     } else {
-      return "bg-[#00403f]";
+      return "bg-[#1c2230]";
     }
   };
 

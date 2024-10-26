@@ -24,7 +24,6 @@ const AllReviews = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await axiosSecure.delete(`/reviews/${review._id}`);
-
         if (res.data.deletedCount > 0) {
           refetchReviews();
           UseToastify("success", `${review.title} has been deleted!`);

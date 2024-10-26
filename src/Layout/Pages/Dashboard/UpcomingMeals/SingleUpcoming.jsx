@@ -13,7 +13,7 @@ const SingleUpcoming = ({ item }) => {
           }}
           className="addFlex bg-no-repeat bg-cover w-full h-[200px]  rounded-3xl"
         >
-          <h2 className=" bg-p2px-3 py-1 rounded    font-semibold ">
+          <h2 className=" bg-b1  px-3 py-1 rounded    font-semibold ">
             Likes {likes}
           </h2>
         </div>

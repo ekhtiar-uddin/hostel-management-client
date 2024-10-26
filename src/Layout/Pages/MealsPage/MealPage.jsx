@@ -130,7 +130,7 @@ const MealPage = () => {
 
         <div className="flex flex-col lg:flex-row  gap-10">
           <div className="">
-            <div className="  bg-p6  p-6  pb-20 rounded-3xl">
+            <div className="  bg-c1  p-6  pb-20 rounded-3xl">
               <div className="flex gap-4 lg:gap-10">
                 <div className="   ">
                   <div className=" ">
@@ -183,7 +183,7 @@ const MealPage = () => {
                     {...register("title", { required: true })}
                     name="title"
                     id="field-id"
-                    className="pl-3 bg-p6  rounded-lg  w-full py-3.5 outline-none   "
+                    className="pl-3 bg-c1  rounded-lg  w-full py-3.5 outline-none   "
                     type="text"
                     placeholder="Find Food"
                   />

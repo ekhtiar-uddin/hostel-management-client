@@ -19,9 +19,10 @@ const UpcomingMeals = () => {
 
         <div className="">
           <div className="grid grid-cols-6 gap-4">
-            {productionMeals?.map((item, index) => (
-              <SingleUpcoming key={item._id} item={item}></SingleUpcoming>
-            ))}
+            {productionMeals &&
+              productionMeals?.map((item, index) => (
+                <SingleUpcoming key={item._id} item={item}></SingleUpcoming>
+              ))}
           </div>
         </div>
       </div>

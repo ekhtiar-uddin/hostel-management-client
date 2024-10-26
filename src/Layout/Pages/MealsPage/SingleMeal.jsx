@@ -19,7 +19,7 @@ const SingleMeal = ({ meal }) => {
   } = meal;
   return (
     <div className="">
-      <div className=" bg-p6   rounded-3xl ">
+      <div className=" bg-c1   rounded-3xl ">
         <div>
           <img
             className="rounded-3xl p-3 mx-auto  w-full h-[150px]"

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div className="mb-10">
-      <div className="addFlexJustify lg:flex-row gap-10  pt-20">
+      <div className="addFlexJustify flex-col lg:flex-row gap-10  pt-20">
         <div className="flex flex-col lg:flex-row lg:gap-10 gap-16">
           <div className="w-[330px] lg:w-[350px]">
             <div className="border-b-4 pb-1 mb-4  border-p1">

@@ -48,7 +48,7 @@ const Analytics = () => {
     { name: "Group C", value: platinum?.length },
   ];
 
-  const COLORS = ["#f67e7f", "#53e6af", "#252b43"];
+  const COLORS = ["#ffffff", "#42b0d1", "#b75cff"];
 
   return (
     <div className="">
@@ -93,7 +93,7 @@ const Analytics = () => {
           </div>
           <div className="addFlexItems gap-4">
             <h4 className="  text-lg font-semibold ">Platinum </h4>
-            <div className="w-[100px] h-[12px] bg-d2"> </div>
+            <div className="w-[100px] h-[12px] bg-b1"> </div>
           </div>
         </div>
       </div>

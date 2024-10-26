@@ -13,13 +13,17 @@ const SingleUser = ({ user, handleMakeAdmin }) => {
       <p className="text-center   text-sm ">{email}</p>
       <div className="addFlexJustify  mt-3 ">
         {user.role === "admin" ? (
-          <span className="bg-p6  top-[80px] right-[40px] absolute text-sm px-2 py-1 rounded">
+          <span
+            className="bg-p3
+            top-[80px] right-[40px] absolute text-sm
+             px-2 py-1 rounded"
+          >
             Admin
           </span>
         ) : (
           <button
             onClick={() => handleMakeAdmin(user)}
-            className=" px-4 py-1 rounded bg-p6 addFlexItems gap-2 text-sm"
+            className="bg-b1 px-4 py-1 rounded  addFlexItems gap-2 text-sm"
           >
             Make Admin
             <FaUsers className=" text-xl  transition-all duration-200 "></FaUsers>{" "}

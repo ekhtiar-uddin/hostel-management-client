@@ -183,14 +183,14 @@ const MealDetail = () => {
                   <h2 className=" lg:text-xl mb-2   font-medium  text-center">
                     {postTime}
                   </h2>{" "}
-                  <span className="hidden lg:block text-p2ext-xl mb-2   font-medium  text-center">
+                  <span className="hidden lg:block  ext-xl mb-2   font-medium  text-center">
                     ||
                   </span>
                   <h2 className=" lg:text-xl mb-2   font-medium  text-center">
                     <span className="lg:block hidden"> Total</span> Review{" "}
                     {allReviews?.length}
                   </h2>
-                  <span className="hidden lg:block text-p2ext-xl mb-2   font-medium  text-center">
+                  <span className="hidden lg:block ext-xl mb-2   font-medium  text-center">
                     ||
                   </span>
                   <h2 className=" lg:text-xl mb-2   font-medium  text-center">
@@ -232,13 +232,13 @@ const MealDetail = () => {
                 <h2 className=" lg:text-xl mb-2   font-medium  text-center">
                   {postTime}
                 </h2>{" "}
-                <span className="hidden lg:block text-p2ext-xl mb-2   font-medium  text-center">
+                <span className="hidden lg:block  mb-2   font-medium  text-center">
                   ||
                 </span>
                 <h2 className=" lg:text-xl mb-2   font-medium  text-center">
                   Total Review {allReviews?.length}
                 </h2>
-                <span className="hidden lg:block text-p2ext-xl mb-2   font-medium  text-center">
+                <span className="hidden lg:block  text-xl mb-2   font-medium  text-center">
                   ||
                 </span>
                 <h2 className=" lg:text-xl mb-2   font-medium  text-center">

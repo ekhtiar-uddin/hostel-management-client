@@ -12,6 +12,8 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import UseAdmin from "../../../Hooks/UseAdmin";
 import UseAuth from "../../../Hooks/UseAuth";
 import UseAxiosSecure from "../../../Hooks/UseAxiosSecure";
@@ -246,11 +248,12 @@ const Dashboard = () => {
 
   return (
     <div className="bg-d1">
+      <ToastContainer />
       <div className="flex">
         <div className="w-[300px] rounded-r-3xl min-h-screen bg-d2">
           <div className=" addFlex mx-10    my-5">
             {/* <img className="w-[50px] lg:w-[70px]" src={img}></img> */}
-            <h2 className="text-2xl font-semibold text-p1">Mealvy.</h2>
+            <h2 className="text-4xl font-semibold text-p1">Mealvy.</h2>
           </div>
 
           <div className="relative pt-5 border-t border-b border-[#444] pb-5 mb-5">

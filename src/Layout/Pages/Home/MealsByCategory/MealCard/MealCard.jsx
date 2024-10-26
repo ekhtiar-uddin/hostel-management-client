@@ -33,7 +33,7 @@ const MealCard = ({ item }) => {
       <div className="border-b-2 border-p1 rounded-3xl">
         <img className="h-[300px] w-full rounded-t-3xl" src={image}></img>
         <div className="  w-full  ">
-          <div className="bg-p3 p-4 rounded-b-3xl">
+          <div className="bg-c1 p-4 rounded-b-3xl">
             <div className="addFlexBetween my-1">
               <h2 className="  text-xl font-semibold ">
                 {name?.split(" ")[0]} {name?.split(" ")[1]}
@@ -51,7 +51,7 @@ const MealCard = ({ item }) => {
                 <p className="  font-extralight ">Price ${price}</p>
               </div>
               <Link to={`/details/${_id}`}>
-                <button className="btnAll  py-2 px-5 mt-3   text-p1  border pb-2 border-p1 rounded-full">
+                <button className="btnAll  py-2 px-5 mt-3   text-p1  border pb-2 hover:text-p4 hover:border-none border-p1 rounded-full">
                   <span className=""> Explore More</span>
                 </button>{" "}
               </Link>

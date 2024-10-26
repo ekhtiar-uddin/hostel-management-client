@@ -1,4 +1,4 @@
-import imgOne from "/assets/diet.png";
+import imgOne from "/assets/diet-1.png";
 import imgFour from "/assets/exercise.png";
 import imgTwo from "/assets/salad.png";
 import imgThree from "/assets/weighing-machine.png";
@@ -32,29 +32,29 @@ const items = [
 
 const WhyChoose = () => {
   return (
-    <div className="lg:my-24">
-      <h2 className="text-3xl lg:text-4xl text-center mb-16 lg:mb-14 font-bold">
+    <div className="lg:my-24  my-16">
+      {/* <h2 className="text-3xl lg:text-4xl text-center mb-16 lg:mb-14 font-bold">
         Why <span className="text-p1">choose us?</span>
-      </h2>
+      </h2> */}
 
-      <div className="grid grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-10">
+      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-16 ">
         {items.map((item, index) => (
-          <div key={index} className="flex lg:flex-row flex-col gap-5">
-            <div
-              className={`border transition-all duration-150 border-p1 rounded-lg  w-[150px] h-[120px]   addFlexItems justify-center`}
-            >
+          <div key={index} className="">
+            <div className={`w-[70px] h-[70px] mx-auto`}>
               <img
-                className="w-[60px] lg:w-[60px]"
+                className="w-[120px] lg:w-[120px]"
                 src={item.image}
                 alt={item.title}
               />
             </div>
-            <div>
-              <h2 className="text-center md:text-left font-bold mb-1 lg:mb-3 text-xl lg:text-2xl">
-                {item.title}
-              </h2>
-              <p className="md:block hidden font-medium">{item.description}</p>
-            </div>
+
+            <h2 className="text-center font-semibold  mt-4 text-xl lg:text-2xl">
+              {item.title}
+            </h2>
+            <p className="text-[#858992] lg:w-[400px] mx-auto text-center  font-medium mt-1">
+              {item.description} Lorem ipsum dolor sit amet consectetur
+              adipisicing elit, omnis!
+            </p>
           </div>
         ))}
       </div>

@@ -18,6 +18,9 @@ const Membership = () => {
       return res.data;
     },
   });
+
+  console.log(plansInfo);
+
   return (
     <div className="mt-16 lg:mt-20 ">
       <h2 className="text-3xl lg:text-4xl   font-bold text-center">

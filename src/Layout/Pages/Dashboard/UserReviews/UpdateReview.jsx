@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
-import Swal from "sweetalert2";
 import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
+import UseToastify from "../../../../Hooks/UseToastify";
 
 const UpdateReview = () => {
   const axiosSecure = UseAxiosSecure();
@@ -19,13 +19,7 @@ const UpdateReview = () => {
     );
 
     if (reviewRes.data.modifiedCount > 0) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: `Review has been updated`,
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      UseToastify("success", `Review has been updated!`);
     }
   };
   return (

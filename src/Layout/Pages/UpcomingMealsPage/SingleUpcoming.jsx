@@ -3,10 +3,10 @@ import "@smastrom/react-rating/style.css";
 import { useEffect, useState } from "react";
 import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 import UseAuth from "../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../Hooks/UseAxiosPublic";
+import UseToastify from "../../../Hooks/UseToastify";
 const SingleUpcoming = ({ meal, upcomingRefetch }) => {
   const { user } = UseAuth();
   const navigate = useNavigate();
@@ -88,7 +88,7 @@ const SingleUpcoming = ({ meal, upcomingRefetch }) => {
           })
           .then((res) => {
             if (res.data?.result?.insertedId) {
-              toast.success("added to upcoming");
+              UseToastify("success", `${name} added to upcoming`);
               setProductions(res.data?.allProductions);
               localStorage.setItem(
                 "productions",

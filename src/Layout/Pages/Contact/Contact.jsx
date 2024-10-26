@@ -2,7 +2,7 @@ import emailjs from "@emailjs/browser";
 import Lottie from "lottie-react";
 import { useRef } from "react";
 import { Helmet } from "react-helmet";
-import Swal from "sweetalert2";
+import UseToastify from "../../../Hooks/UseToastify";
 import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import banner from "../../../assets/bannerAnimation/UXsWHFSAaz.json";
 import Footer from "../Home/Footer/Footer";
@@ -22,13 +22,7 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          Swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: "Your Message has been sent",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          UseToastify("success", "Your Message has been sent!");
         },
         (error) => {
           console.log(error.text);

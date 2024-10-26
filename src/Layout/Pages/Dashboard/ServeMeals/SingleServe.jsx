@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const SingleServe = ({ item, handleServeMeal }) => {
-  const { title, likeNumber, userEmail, userName, status } = item;
+  const { title, likeNumber, userEmail, userName, status, detailsId } = item;
   return (
     <div className="bg-d2 rounded-3xl ">
       <div className="px-4 pb-4">
@@ -23,7 +23,7 @@ const SingleServe = ({ item, handleServeMeal }) => {
           >
             {status === "delivered" ? " Served" : "Accept"}
           </button>
-          <Link className="w-full" to={`/details/${item.detailsId}`}>
+          <Link className="w-full" to={`/details/${item._id}`}>
             <button className="detailsBtn">View Meal</button>
           </Link>
         </div>

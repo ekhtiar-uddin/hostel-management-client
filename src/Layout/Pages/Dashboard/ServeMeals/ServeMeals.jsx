@@ -1,6 +1,6 @@
-import Swal from "sweetalert2";
 import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
 import UseFetchSecure from "../../../../Hooks/UseFetchSecure";
+import UseToastify from "../../../../Hooks/UseToastify";
 import SingleServe from "./SingleServe";
 
 const ServeMeals = () => {
@@ -12,16 +12,12 @@ const ServeMeals = () => {
     axiosSecure.patch(`/requestedMeals/${request._id}`).then((res) => {
       if (res.data.modifiedCount > 0) {
         refetch();
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: `${request.title} has been delivered now`,
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        UseToastify("success", `${request.title} has been delivered now!`);
       }
     });
   };
+
+  console.log(allRequests);
 
   return (
     <div>

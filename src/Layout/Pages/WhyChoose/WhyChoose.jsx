@@ -50,10 +50,10 @@ const WhyChoose = () => {
               />
             </div>
             <div>
-              <h2 className="font-bold mb-1 lg:mb-3 text-xl lg:text-2xl">
+              <h2 className="text-center md:text-left font-bold mb-1 lg:mb-3 text-xl lg:text-2xl">
                 {item.title}
               </h2>
-              <p className="font-medium">{item.description}</p>
+              <p className="md:block hidden font-medium">{item.description}</p>
             </div>
           </div>
         ))}

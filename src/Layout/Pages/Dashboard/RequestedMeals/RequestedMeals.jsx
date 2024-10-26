@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../../Components/AuthProvider/AuthProvider";
 import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
+import UseToastify from "../../../../Hooks/UseToastify";
 import SingleRequest from "./SingleRequest";
 
 const RequestedMeals = () => {
@@ -38,20 +39,11 @@ const RequestedMeals = () => {
         const res = await axiosSecure.delete(`/requestedMeals/${meal._id}`);
 
         if (res.data.deletedCount > 0) {
-          // refetch to update the ui
-
+          UseToastify("success", `${meal.title} has been deleted!`);
           const newRequestedArray = requestedMeals.filter(
             (item) => item._id !== meal._id
           );
           setRequestedMeals(newRequestedArray);
-
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: `${meal.title} has been deleted`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
         }
       }
     });

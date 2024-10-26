@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import Swal from "sweetalert2";
 import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
+import UseToastify from "../../../../Hooks/UseToastify";
 import SingleUser from "./SingleUser";
 
 const ManageUsers = () => {
@@ -18,13 +18,7 @@ const ManageUsers = () => {
     axiosSecure.patch(`/users/admin/${user._id}`).then((res) => {
       if (res.data.modifiedCount > 0) {
         refetch();
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: `${user.name} is an admin now`,
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        UseToastify("success", `${user.name} is an admin now!`);
       }
     });
   };

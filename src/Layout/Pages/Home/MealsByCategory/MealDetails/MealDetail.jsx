@@ -1,16 +1,12 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import "react-awesome-button/dist/styles.css";
 import { useForm } from "react-hook-form";
 import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
-import { RiVerifiedBadgeLine } from "react-icons/ri";
 import { TiTick } from "react-icons/ti";
 import { useNavigate, useParams } from "react-router-dom";
-import { Bounce, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Swal from "sweetalert2";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
@@ -20,8 +16,8 @@ import useAxiosPublic from "../../../../../Hooks/UseAxiosPublic";
 import UseAxiosSecure from "../../../../../Hooks/UseAxiosSecure";
 import UseFetch from "../../../../../Hooks/UseFetch";
 import UseReviewTitle from "../../../../../Hooks/UseReviewTitle";
+import UseToastify from "../../../../../Hooks/UseToastify";
 import SocialLink from "../../../../../Shared/SocialLinks/SocialLink";
-import banner from "../../../../../assets/bannerAnimation/is5WNsFx8i.json";
 import Footer from "../../Footer/Footer";
 const MealDetail = () => {
   const { user } = UseAuth();
@@ -80,6 +76,7 @@ const MealDetail = () => {
       const status = "pending";
       const reviews = allReviews.length;
       const img = image;
+      const detailsId = _id;
       const requestedMealInfo = {
         title,
         likeNumber,
@@ -88,27 +85,17 @@ const MealDetail = () => {
         userName,
         userEmail,
         img,
+        detailsId,
       };
 
       axiosSecure.post("/mealRequest", requestedMealInfo).then((data) => {
         if (data.data.insertedId) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "You have done a Request",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          UseToastify("success", ` You have done a Request!`);
         }
       });
     } else {
-      Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: "You Need to Login First to request",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      UseToastify("error", `You Need to Login First to request!`);
+
       navigate("/login");
     }
   };
@@ -136,23 +123,7 @@ const MealDetail = () => {
           .then(() => {})
           .catch((err) => console.log(err));
         refetchReviews();
-        toast(
-          <div className="addFlexItems gap-2 ">
-            {" "}
-            <RiVerifiedBadgeLine className="text-xl text-p4"></RiVerifiedBadgeLine>{" "}
-            You have added a Review!
-          </div>,
-          {
-            position: "bottom-center",
-            autoClose: 2000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          }
-        );
+        UseToastify("success", `You have added a Review!`);
       }
     });
   };
@@ -179,10 +150,16 @@ const MealDetail = () => {
                 <div className="mt-8 addFlex  gap-2">
                   <button
                     onClick={handleMealRequest}
-                    className=" px-8 py-2   font-medium hover:bg-p2transition-all duration-200 bg-p1 rounded "
+                    className=" btnAllGlobal 
+                  bg-d2 "
                   >
-                    Make Request
+                    {" "}
+                    <span className="text-white hover:text-p4">
+                      {" "}
+                      Make Request
+                    </span>
                   </button>
+
                   {toggle && (
                     <button onClick={handleLikeClick}>
                       <MdOutlineFavoriteBorder className=" text-5xl text-p1" />
@@ -230,7 +207,7 @@ const MealDetail = () => {
                       className="mr-3 text-center text-sm lg:text-[17px]  font-medium  addFlexItems gap-2"
                     >
                       {" "}
-                      <TiTick className="hidden lg:block text-2xl text-[#870012]"></TiTick>{" "}
+                      <TiTick className="hidden lg:block text-2xl text-p5"></TiTick>{" "}
                       {item}{" "}
                     </span>
                   ))}
@@ -247,7 +224,7 @@ const MealDetail = () => {
           </div>
 
           <div
-            className="border border-[#444] bg-[#161515]  rounded-xl 
+            className="bg-d2  rounded-xl 
             lg:w-2/3  absolute lg:bottom-0 hidden lg:block"
           >
             <div className="py-7 ">
@@ -287,53 +264,47 @@ const MealDetail = () => {
           </div>
         </div>
       </div>
-      <h2 className="  text-center  mt-10  text-3xl lg:text-4xl font-bold ">
+      <h2 className="  text-center  my-10  text-3xl lg:text-4xl font-bold ">
         Add Your <span className="text-p1">Thoughts</span> Here{" "}
       </h2>
-      <div className="addFlex lg:flex-row flex-col-reverse   lg:gap-20">
-        <div>
-          <div className="flex-1">
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <textarea
-                className="outline-none rounded-lg border-2 w-[370px] lg:w-[600px]  mb-3 pl-5 pt-5  text-sm"
-                {...register("review", { required: true })}
-                id=""
-                cols="50"
-                rows="6"
-              ></textarea>
+      <div className="flex gap-10 ">
+        <div className="flex-1">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <textarea
+              className="outline-none rounded w-full bg-d2 h-[40vh]
+                     lg:h-[20vh] mb-3 pl-5 pt-5  text-sm"
+              {...register("review", { required: true })}
+              id=""
+              cols="50"
+              rows="6"
+            ></textarea>
 
-              <div className="addFlexJustify lg:justify-normal">
-                <button className="btnAll mt-4 px-6 lg:px-8 py-1 lg:py-2   font-medium  transition-all duration-200 rounded bg-p1 ">
-                  <span className=""> Make Review</span>
-                </button>{" "}
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div className="">
-          {" "}
-          <Lottie animationData={banner} loop={true} />
-        </div>
-      </div>
-      <div className="">
-        <h2 className="  text-center my-10  text-2xl lg:text-4xl font-bold ">
-          Word from our <span className="text-p1">customers</span>{" "}
-        </h2>
-        <div className="">
+            <div className="addFlexJustify lg:justify-normal">
+              <button className="btnAllGlobal bg-d2 ">
+                <span className="text-white hover:text-p4"> Make Review</span>
+              </button>{" "}
+            </div>
+          </form>
+        </div>{" "}
+        {/* <Lottie animationData={banner} loop={true} /> */}
+        <div className="lg:w-[50%]">
           <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
             {loadingReview
               ? "Loading"
               : allReviews?.map((item) => (
                   <SwiperSlide className="  " key={item._id}>
-                    <div className="bg-white lg:w-9/12 h-[40vh] lg:h-[20vh] mx-auto rounded-xl addFlex">
-                      <p className="mx-10 text-p4"> {item?.reviewTitle}</p>
+                    <div
+                      className="bg-p3 rounded   h-[40vh]
+                     lg:h-[20vh] mx-auto addFlex"
+                    >
+                      <p className="mx-10 "> {item?.reviewTitle}</p>
                     </div>
                   </SwiperSlide>
                 ))}
           </Swiper>
         </div>
       </div>
+
       <Footer></Footer>
       <SocialLink></SocialLink>
     </div>

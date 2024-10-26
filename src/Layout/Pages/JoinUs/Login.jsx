@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 import { AuthContext } from "../../../Components/AuthProvider/AuthProvider";
+import UseToastify from "../../../Hooks/UseToastify";
 import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import Footer from "../Home/Footer/Footer";
 
@@ -30,15 +30,17 @@ const Login = () => {
     console.log(data);
 
     if (!accepted) {
-      new Swal("Sorry !", "please accept our terms and conditions !", "error");
+      UseToastify("error", "please accept our terms and conditions!");
     } else {
       signInUser(email, password)
         .then((res) => {
-          new Swal("Login Successful!", "Welcome back!", "success");
+          UseToastify("success", "Login Successful!");
+
           navigate("/");
         })
         .catch((error) => {
-          new Swal("Please Register!", "", "error");
+          UseToastify("error", " Please Register!");
+
           navigate("/register");
         });
     }
@@ -47,7 +49,8 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((res) => {
-        new Swal("Login Successful!", "Welcome back!", "success");
+        UseToastify("success", "Login Successful!");
+
         navigate("/");
       })
       .catch((error) => {
@@ -161,7 +164,7 @@ const Login = () => {
             </form>
           </div>
 
-          <div className="flex-1  py-20 lg:py-0 text-p4  lg:rounded-tl-[170px] lg:rounded-bl-[100px] bg-p1 addFlex rounded-3xl lg:rounded-t-3xl rounded-t-[90px]">
+          <div className="flex-1  py-20 lg:py-0   lg:rounded-tl-[170px] lg:rounded-bl-[100px] bg-p1 addFlex rounded-3xl lg:rounded-t-3xl rounded-t-[90px]">
             <div className="">
               <h2 className="mb-4 text-2xl lg:text-3xl  font-bold  text-center">
                 Create Account
@@ -172,8 +175,8 @@ const Login = () => {
               <div className="addFlexJustify ">
                 <Link to="/register">
                   <button
-                    className="px-4 lg:px-8 py-1 lg:py-2  
-                   font-medium bg-p3 text-white rounded-full"
+                    className=" px-7 lg:px-8 py-3 
+    font-medium  bg-p3  rounded-full"
                   >
                     SIGN UP
                   </button>

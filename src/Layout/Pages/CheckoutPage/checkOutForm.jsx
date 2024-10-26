@@ -1,10 +1,9 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
-import { RiVerifiedBadgeLine } from "react-icons/ri";
-import { Bounce, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import UseAuth from "../../../Hooks/UseAuth";
 import UseAxiosSecure from "../../../Hooks/UseAxiosSecure";
+import UseToastify from "../../../Hooks/UseToastify";
 import img from "/assets/medal.png";
 
 const CheckOutForm = ({ item }) => {
@@ -68,72 +67,18 @@ const CheckOutForm = ({ item }) => {
       console.log("payment intent", paymentIntent);
 
       if (item?.planName === "Gold") {
-        toast(
-          <div className="">
-            <img
-              className="w-[50px] h-[50px] mx-auto"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ8Rf-P_S17VvgG5fIp1JWKKyX7AgTCbOt3w&usqp=CAU"
-              alt=""
-            />{" "}
-            <div className="addFlexItems gap-2 mt-2">
-              <RiVerifiedBadgeLine className="text-xl text-p4"></RiVerifiedBadgeLine>{" "}
-              You Have Done the Payment!
-            </div>
-          </div>,
-          {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          }
+        UseToastify(
+          "",
+          "You Have Done the Payment!",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ8Rf-P_S17VvgG5fIp1JWKKyX7AgTCbOt3w&usqp=CAU"
         );
       } else if (item?.planName === "Silver") {
-        toast(
-          <div className="">
-            <img className="w-[50px] h-[50px] mx-auto" src={img} alt="" />{" "}
-            <div className="addFlexItems gap-2 mt-2">
-              <RiVerifiedBadgeLine className="text-xl text-p4"></RiVerifiedBadgeLine>{" "}
-              You Have Done the Payment!
-            </div>
-          </div>,
-          {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          }
-        );
+        UseToastify("", "You Have Done the Payment!", img);
       } else {
-        toast(
-          <div className="">
-            <img
-              className="w-[50px] h-[50px] mx-auto"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvQcfoau_BSAE4OADEZ6HbTrLyLHrKqwN4AQ&usqp=CAU"
-              alt=""
-            />{" "}
-            <div className="addFlexItems gap-2 mt-2">
-              <RiVerifiedBadgeLine className="text-xl text-p4"></RiVerifiedBadgeLine>{" "}
-              You Have Done the Payment!
-            </div>
-          </div>,
-          {
-            position: "top-center",
-            autoClose: 2000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          }
+        UseToastify(
+          "",
+          "You Have Done the Payment!",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvQcfoau_BSAE4OADEZ6HbTrLyLHrKqwN4AQ&usqp=CAU"
         );
       }
 

@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../Components/AuthProvider/AuthProvider";
 import useAxiosPublic from "../../../Hooks/UseAxiosPublic";
+import UseToastify from "../../../Hooks/UseToastify";
 import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import Footer from "../Home/Footer/Footer";
 
@@ -37,7 +38,7 @@ const Register = () => {
     const accepted = data.terms;
 
     if (!accepted) {
-      new Swal("Sorry !", " please accept our terms and conditions !", "error");
+      UseToastify("error", `Please accept our terms and conditions!`);
     } else {
       createUser(email, password)
         .then((res) => {
@@ -55,11 +56,11 @@ const Register = () => {
                 .then((res) => {
                   if (res.data.insertedId) {
                     reset();
-                    new Swal(
-                      "Thank you!",
-                      "You have successfully completed your registration!",
-                      "success"
+                    UseToastify(
+                      "success",
+                      `You have successfully completed your registration!`
                     );
+
                     navigate("/");
                   }
                 })
@@ -70,7 +71,7 @@ const Register = () => {
 
             .catch((error) => console.log(error));
         })
-        .catch(() => new Swal("Sorry! User Already Exist", "error"));
+        .catch(() => UseToastify("error", `Sorry! User Already Exist`));
     }
   };
 
@@ -108,8 +109,8 @@ const Register = () => {
               <div className="addFlexJustify ">
                 <Link to="/login">
                   <button
-                    className="px-4 lg:px-8 py-1 lg:py-2  
-                   font-medium bg-p3 text-white rounded-full"
+                    className="px-7 lg:px-8 py-3 
+    font-medium  bg-p3  rounded-full text-white"
                   >
                     SIGN IN
                   </button>

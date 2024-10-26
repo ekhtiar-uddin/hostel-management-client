@@ -3,10 +3,10 @@ import Lottie from "lottie-react";
 import moment from "moment";
 import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
-import Swal from "sweetalert2";
+import banner from "../../../../assets/lottie/SsKQcPBeWP.json";
 import UseAuth from "../../../../Hooks/UseAuth";
 import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
-import banner from "../../../../assets/lottie/SsKQcPBeWP.json";
+import UseToastify from "../../../../Hooks/UseToastify";
 const UpdateMeal = () => {
   const mealInfo = useLoaderData();
   const axiosSecure = UseAxiosSecure();
@@ -69,13 +69,7 @@ const UpdateMeal = () => {
     );
 
     if (updateMealRes.data.modifiedCount > 0) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: `${name} has been updated`,
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      UseToastify("success", `${name} has been updated!`);
     }
   };
 

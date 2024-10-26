@@ -10,13 +10,13 @@ const Banner = () => {
       className="bg-no-repeat bg-[#01010144] bg-blend-overlay rounded-xl bg-cover lg:h-[70vh] h-[40vh] mt-10 lg:mt-10 addFlexItems "
     >
       <div className="ml-5 lg:ml-24 ">
-        <div className="space-y-3 lg:space-y-5">
+        <div className="space-y-6 lg:space-y-5">
           <h2
-            className="text-4xl lg:text-6xl  
+            className="text-4xl md:text-5xl lg:text-6xl  
           font-semibold  "
           >
-            Best food for
-            <span className=" text-p1"> students</span>
+            Best food options <br />
+            <span className=" text-p1"> for students</span>
           </h2>
           <p className="  hidden lg:block w-2/3">
             On campus dining locations provide an essential service for the CB

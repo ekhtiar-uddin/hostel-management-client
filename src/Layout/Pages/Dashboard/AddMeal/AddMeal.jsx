@@ -1,11 +1,10 @@
 import { format, parseISO } from "date-fns";
-
 import Lottie from "lottie-react";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
+import banner from "../../../../assets/lottie/SsKQcPBeWP.json";
 import UseAuth from "../../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../../Hooks/UseAxiosPublic";
-import banner from "../../../../assets/lottie/SsKQcPBeWP.json";
+import UseToastify from "../../../../Hooks/UseToastify";
 const AddMeal = () => {
   const axiosPublic = useAxiosPublic();
   const { user } = UseAuth();
@@ -52,13 +51,7 @@ const AddMeal = () => {
     const mealRes = await axiosPublic.post("/meals", mealInfo);
 
     if (mealRes.data.insertedId) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: `${data.name} is added`,
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      UseToastify("success", `${data.name} is added!`);
     }
   };
 
@@ -103,13 +96,7 @@ const AddMeal = () => {
     );
 
     if (upcomingMealRes.data.insertedId) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: `${data.name} is added`,
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      UseToastify("success", `${data.name} is added!`);
     }
   };
 

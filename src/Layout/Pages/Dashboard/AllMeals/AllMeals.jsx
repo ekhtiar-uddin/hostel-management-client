@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../../Hooks/UseAxiosPublic";
 import UseMeal from "../../../../Hooks/UseMeal";
+import UseToastify from "../../../../Hooks/UseToastify";
 import SingleMeal from "./SingleMeal";
-
 const AllMeals = () => {
   const [meals, loading, refetch] = UseMeal();
   const axiosPublic = useAxiosPublic();
@@ -22,13 +22,7 @@ const AllMeals = () => {
 
         if (res.data.deletedCount > 0) {
           refetch();
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: `${meal.name} has been deleted`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          UseToastify("success", `${meal.name} has been deleted!`);
         }
       }
     });

@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import UseAuth from "../../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../../Hooks/UseAxiosPublic";
 import UseFetch from "../../../../Hooks/UseFetch";
+import UseToastify from "../../../../Hooks/UseToastify";
 import SingleReviewUser from "./SingleReviewUser";
 
 const UserReviews = () => {
@@ -43,13 +44,7 @@ const UserReviews = () => {
 
         if (res.data.deletedCount > 0) {
           refetch();
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: `${review.title} has been deleted`,
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          UseToastify("success", `${review.title} has been deleted!`);
         }
       }
     });

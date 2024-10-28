@@ -1,16 +1,23 @@
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { useLoaderData } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import Footer from "../Home/Footer/Footer";
 import CheckOutForm from "./checkOutForm";
 
-console.log(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
+// console.log(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK);
 const Checkout = () => {
-  const plan = useLoaderData();
-  const [item] = plan;
+  const { planName } = useParams();
+  let totalPrice = 0;
+  if (planName === "Silver") {
+    totalPrice = 599;
+  } else if (planName === "Gold") {
+    totalPrice = 799;
+  } else {
+    totalPrice = 999;
+  }
 
   return (
     <div className="mt-20">
@@ -21,11 +28,11 @@ const Checkout = () => {
         <div className="addFlexJustify">
           <div>
             <div className="addFlexBetween">
-              <p className="  text-4xl  ">{item.planName}</p>
+              <p className="  text-4xl  ">{planName}</p>
 
               <p className="text-5xl  font-semibold text-p1">
                 <span className="font-thin">$</span>
-                {item.price}
+                {totalPrice}
               </p>
             </div>
 
@@ -49,7 +56,7 @@ const Checkout = () => {
             </div>
             <div className="lg:w-[350px]">
               <Elements stripe={stripePromise}>
-                <CheckOutForm item={item}></CheckOutForm>
+                <CheckOutForm></CheckOutForm>
               </Elements>
             </div>
           </div>

@@ -1,16 +1,15 @@
+import Lottie from "lottie-react";
 import Swal from "sweetalert2";
+import banner from "../../../../assets/bannerAnimation/loading.json";
 import UseAuth from "../../../../Hooks/UseAuth";
-import useAxiosPublic from "../../../../Hooks/UseAxiosPublic";
 import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
-import UseFetch from "../../../../Hooks/UseFetch";
+import { useFetchGlobal } from "../../../../Hooks/useFetchGlobal";
 import UseToastify from "../../../../Hooks/UseToastify";
 import SingleReview from "./SingleReview";
-
 const AllReviews = () => {
-  const axiosPublic = useAxiosPublic();
   const { user } = UseAuth();
   const axiosSecure = UseAxiosSecure();
-  const [reviews, , refetchReviews] = UseFetch("/reviews");
+  const [reviews, loading, refetchReviews] = useFetchGlobal("/reviews");
 
   const handleDeleteReview = (review) => {
     Swal.fire({
@@ -51,21 +50,30 @@ const AllReviews = () => {
 
   return (
     <div>
-      <h2 className=" my-12  headTitle">
-        {reviews?.length} review From <span className="text-p1"> users </span>
-      </h2>
-
-      <div className="">
-        <div className="grid grid-cols-6 gap-4">
-          {titleReviews.map((item, index) => (
-            <SingleReview
-              key={item._id}
-              handleDeleteReview={handleDeleteReview}
-              item={item}
-            ></SingleReview>
-          ))}
+      {loading ? (
+        <div className="addFlex lg:h-[70vh]">
+          <Lottie className="w-[300px]" animationData={banner} loop={true} />
         </div>
-      </div>
+      ) : (
+        <>
+          <h2 className=" my-12  headTitle">
+            {reviews?.length} review From{" "}
+            <span className="text-p1"> users </span>
+          </h2>
+
+          <div className="">
+            <div className="grid grid-cols-6 gap-4">
+              {titleReviews.map((item, index) => (
+                <SingleReview
+                  key={item._id}
+                  handleDeleteReview={handleDeleteReview}
+                  item={item}
+                ></SingleReview>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

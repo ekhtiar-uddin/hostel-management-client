@@ -7,7 +7,7 @@ const Banner = () => {
         backgroundImage:
           "url('https://dining.uiowa.edu/sites/dining.uiowa.edu/files/styles/ultrawide__1312_x_562/public/2024-08/2019_06_05-UHD%20Commercial%20Food%20Shoot%20jatorner%20-0335.jpg?h=0dca3afc&itok=LcLRMHYi')",
       }}
-      className="bg-no-repeat bg-[#01010144] bg-blend-overlay rounded-xl bg-cover lg:h-[70vh] h-[40vh] mt-10 lg:mt-10 addFlexItems "
+      className="bg-no-repeat bg-[#342525b5] bg-blend-overlay rounded-xl bg-cover lg:h-[70vh] h-[40vh] mt-10 lg:mt-10 addFlexItems "
     >
       <div className="ml-5 lg:ml-24 ">
         <div className="space-y-6 lg:space-y-5">
@@ -28,7 +28,7 @@ const Banner = () => {
 
           <div className="">
             <Link to={`/login`}>
-              <button className="btnAllGlobal  bg-p1">
+              <button className="btnAllGlobal   bg-p1">
                 <span className=""> Start Now</span>
               </button>{" "}
             </Link>

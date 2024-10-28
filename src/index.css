@@ -92,7 +92,7 @@
   height: 0px;
   background-color: #ffffff;
   border-top-right-radius: 50px;
-  transition: width 0.5s, height 0.5s;
+  transition: width 0.4s, height 0.4s;
 }
 
 .btnAll:hover::before {
@@ -136,11 +136,11 @@
 
   .navInActive {
     @apply lowercase
-     rounded-full hover:bg-p1 hover:text-p4  py-1 lg:py-2 lg:px-4 transition-all duration-150;
+     rounded-full hover:bg-p1 hover:text-p5 py-1 lg:py-2 lg:px-4 transition-all duration-150;
   }
   .navActive {
     @apply lowercase
-     rounded-full  py-1 lg:py-2 lg:px-4 hover:bg-p1 bg-p1 text-p4  transition-all duration-150;
+     rounded-full  py-1 lg:py-2 lg:px-4 text-p5 hover:bg-p1 bg-p1   transition-all duration-150;
   }
   .dashboardInActive {
     @apply lowercase addFlexItems gap-2 hover:bg-[#1d2029] rounded transition-all duration-150  py-1 lg:py-2 lg:px-4;
@@ -151,7 +151,7 @@
 
   .btnAllGlobal {
     @apply btnAll px-7 lg:px-8 py-3 
-    font-medium text-p4   rounded-full;
+    font-medium rounded-full [&_span]:hover:text-p4;
   }
 
   .updateBtn {
@@ -165,7 +165,10 @@
     bg-p5 text-p4 addFlexItems gap-2 text-sm;
   }
   .errorText {
-    @apply text-p5 text-sm -mt-2;
+    @apply text-p1 text-sm -mt-2;
+  }
+  .errorAddMeal {
+    @apply text-p1 mr-4;
   }
   .registerInputWidth {
     @apply lg:w-[400px] w-3/4 mx-auto mb-1;

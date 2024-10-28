@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import AddMeal from "../Layout/Pages/Dashboard/AddMeal/AddMeal";
-import AdminProfile from "../Layout/Pages/Dashboard/AdminProfile/AdminProfile";
 import AllMeals from "../Layout/Pages/Dashboard/AllMeals/AllMeals";
 import AllReviews from "../Layout/Pages/Dashboard/AllReviews/AllReviews";
 import Dashboard from "../Layout/Pages/Dashboard/Dashboard";
@@ -73,10 +72,6 @@ export const router = createBrowserRouter([
             <Checkout></Checkout>
           </PrivateRoute>
         ),
-        loader: ({ params }) =>
-          fetch(
-            `https://hostel-management-server-six.vercel.app/plans/${params.planName}`
-          ),
       },
     ],
   },
@@ -86,14 +81,14 @@ export const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       // admin routes
-      {
-        path: "adminProfile",
-        element: (
-          <AdminRoute>
-            <AdminProfile></AdminProfile>
-          </AdminRoute>
-        ),
-      },
+      // {
+      //   path: "adminProfile",
+      //   element: (
+      //     <AdminRoute>
+      //       <AdminProfile></AdminProfile>
+      //     </AdminRoute>
+      //   ),
+      // },
       {
         path: "manageUsers",
         element: (

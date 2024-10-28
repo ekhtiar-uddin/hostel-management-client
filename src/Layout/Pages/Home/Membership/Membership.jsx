@@ -19,7 +19,7 @@ const Membership = () => {
     },
   });
 
-  console.log(plansInfo);
+  // console.log(plansInfo);
 
   return (
     <div className="mt-16 lg:mt-20 ">

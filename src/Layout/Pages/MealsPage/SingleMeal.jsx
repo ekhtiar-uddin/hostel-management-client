@@ -22,7 +22,7 @@ const SingleMeal = ({ meal }) => {
       <div className=" bg-c1   rounded-3xl ">
         <div>
           <img
-            className="rounded-3xl p-3 mx-auto  w-full h-[150px]"
+            className="rounded-3xl p-3 mx-auto  w-full h-[200px]"
             src={image}
           ></img>
         </div>
@@ -42,7 +42,7 @@ const SingleMeal = ({ meal }) => {
             <p className=" text-center ">{category}</p>
           </div>
         </div>
-        <p className="text-p1 text-center mt-8 pb-10 font-medium   text-[19px]">
+        <p className="text-p1 text-center mt-4 pb-10 font-medium   text-[19px]">
           USD ${price}
         </p>
       </div>
@@ -51,12 +51,3 @@ const SingleMeal = ({ meal }) => {
 };
 
 export default SingleMeal;
-
-{
-  /* <div className="absolute  left-[25%] -top-[40%]">
-<img
-  className="  rounded-full mx-auto  w-[150px] h-[150px]"
-  src={image}
-></img>
-</div> */
-}

@@ -6,15 +6,16 @@ import { useForm } from "react-hook-form";
 import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 import { TiTick } from "react-icons/ti";
 import { useNavigate, useParams } from "react-router-dom";
+import Slider from "react-slick";
 import "react-toastify/dist/ReactToastify.css";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import UseAuth from "../../../../../Hooks/UseAuth";
 import useAxiosPublic from "../../../../../Hooks/UseAxiosPublic";
 import UseAxiosSecure from "../../../../../Hooks/UseAxiosSecure";
-import UseFetch from "../../../../../Hooks/UseFetch";
+import { useFetchGlobal } from "../../../../../Hooks/useFetchGlobal";
 import UseReviewTitle from "../../../../../Hooks/UseReviewTitle";
 import UseToastify from "../../../../../Hooks/UseToastify";
 import SocialLink from "../../../../../Shared/SocialLinks/SocialLink";
@@ -25,8 +26,16 @@ const MealDetail = () => {
   const axiosSecure = UseAxiosSecure();
   const axiosPublic = useAxiosPublic();
   const { id } = useParams();
-  const [mealDetails, loading, refetch] = UseFetch(`/meals/${id}`);
+  const [mealDetails, loading, refetch] = useFetchGlobal(`/meals/${id}`);
   const [toggle, setToggle] = useState(true);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   const {
     name,
@@ -43,6 +52,8 @@ const MealDetail = () => {
     image,
     _id,
   } = mealDetails;
+
+  console.log("name email", adminName, adminEmail);
 
   const [allReviews, loadingReview, refetchReviews] = UseReviewTitle(name);
   useEffect(() => {
@@ -88,11 +99,15 @@ const MealDetail = () => {
         detailsId,
       };
 
-      axiosSecure.post("/mealRequest", requestedMealInfo).then((data) => {
-        if (data.data.insertedId) {
-          UseToastify("success", ` You have done a Request!`);
-        }
-      });
+      if (user?.email === adminEmail) {
+        UseToastify("error", `You can't make request to your added meals!`);
+      } else {
+        axiosSecure.post("/mealRequest", requestedMealInfo).then((data) => {
+          if (data.data.insertedId) {
+            UseToastify("success", ` You have done a Request!`);
+          }
+        });
+      }
     } else {
       UseToastify("error", `You Need to Login First to request!`);
 
@@ -151,13 +166,10 @@ const MealDetail = () => {
                   <button
                     onClick={handleMealRequest}
                     className=" btnAllGlobal 
-                  bg-d2 "
+                  bg-d2  "
                   >
                     {" "}
-                    <span className="text-white hover:text-p4">
-                      {" "}
-                      Make Request
-                    </span>
+                    <span className="text-white "> Make Request</span>
                   </button>
 
                   {toggle && (
@@ -267,12 +279,12 @@ const MealDetail = () => {
       <h2 className="  text-center  my-10  text-3xl lg:text-4xl font-bold ">
         Add Your <span className="text-p1">Thoughts</span> Here{" "}
       </h2>
-      <div className="flex gap-10 ">
+      <div className="flex lg:flex-row flex-col gap-10 ">
         <div className="flex-1">
           <form onSubmit={handleSubmit(onSubmit)}>
             <textarea
-              className="outline-none rounded w-full bg-d2 h-[40vh]
-                     lg:h-[20vh] mb-3 pl-5 pt-5  text-sm"
+              className="outline-none rounded w-full bg-d2 h-[15vh]
+               md:h-[20vh] mb-3 pl-5 pt-5  text-sm"
               {...register("review", { required: true })}
               id=""
               cols="50"
@@ -280,28 +292,25 @@ const MealDetail = () => {
             ></textarea>
 
             <div className="addFlexJustify lg:justify-normal">
-              <button className="btnAllGlobal bg-d2 ">
-                <span className="text-white hover:text-p4"> Make Review</span>
+              <button className="btnAllGlobal  bg-d2 ">
+                <span className="text-white "> Make Review</span>
               </button>{" "}
             </div>
           </form>
         </div>{" "}
         {/* <Lottie animationData={banner} loop={true} /> */}
         <div className="lg:w-[50%]">
-          <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-            {loadingReview
-              ? "Loading"
-              : allReviews?.map((item) => (
-                  <SwiperSlide className="  " key={item._id}>
-                    <div
-                      className="bg-p3 rounded   h-[40vh]
-                     lg:h-[20vh] mx-auto addFlex"
-                    >
-                      <p className="mx-10 "> {item?.reviewTitle}</p>
-                    </div>
-                  </SwiperSlide>
-                ))}
-          </Swiper>
+          <Slider {...settings}>
+            {allReviews.map((item) => (
+              <div
+                key={item._id}
+                className="bg-p3 rounded   h-[25vh]
+            md:h-[20vh]  addFlex items-center "
+              >
+                <p className="p-4"> {item?.reviewTitle}</p>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
 

@@ -245,7 +245,7 @@ const Register = () => {
               </div>
 
               <div className="lg:w-[400px]  w-3/4  mt-3 mx-auto">
-                <button className="btnAllGlobal bg-p1 xl:-ml-6    ">
+                <button className="btnAllGlobal  bg-p1 xl:-ml-6    ">
                   <span className=""> Continue</span>
                 </button>{" "}
               </div>

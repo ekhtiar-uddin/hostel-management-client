@@ -165,7 +165,7 @@ const NavBar = () => {
                     className="hover:bg-p1 hover:text-p4 
                    rounded-xl  w-[70%] mx-auto "
                   >
-                    <Link to="/dashboard/adminProfile"> Dashboard</Link>
+                    <Link to="/dashboard/manageUsers"> Dashboard</Link>
                   </li>
                 )}
                 {user && !isAdmin && (

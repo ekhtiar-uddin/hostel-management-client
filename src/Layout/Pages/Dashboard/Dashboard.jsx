@@ -35,7 +35,7 @@ const Dashboard = () => {
 
   const adminNavLinks = (
     <>
-      <li className="w-[220px]  mx-auto">
+      {/* <li className="w-[220px]  mx-auto">
         <NavLink
           to="/dashboard/adminProfile"
           className={({ isActive, isLoading }) =>
@@ -49,7 +49,7 @@ const Dashboard = () => {
           <FaPray></FaPray>
           Membership
         </NavLink>{" "}
-      </li>
+      </li> */}
 
       <li className="w-[220px]  mx-auto">
         <NavLink
@@ -253,7 +253,7 @@ const Dashboard = () => {
         <div className="w-[300px] rounded-r-3xl min-h-screen bg-d2">
           <div className=" addFlex mx-10    my-5">
             {/* <img className="w-[50px] lg:w-[70px]" src={img}></img> */}
-            <h2 className="text-4xl font-semibold text-p1">Mealvy.</h2>
+            <h2 className="text-4xl font-semibold ">Mealvy.</h2>
           </div>
 
           <div className="relative pt-5 border-t border-b border-[#444] pb-5 mb-5">

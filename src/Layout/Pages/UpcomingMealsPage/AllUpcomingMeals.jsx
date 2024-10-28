@@ -46,7 +46,7 @@ const AllUpcomingMeals = () => {
             </p>
             <Link to={`/allMeals`}>
               <div className="addFlexJustify">
-                <button className="btnAllGlobal bg-p1 mt-4 ">
+                <button className="btnAllGlobal bg-p1  mt-4 ">
                   <span className=""> Eat Healthy </span>
                 </button>{" "}
               </div>

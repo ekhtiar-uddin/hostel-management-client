@@ -119,7 +119,7 @@ const Contact = () => {
                 Question <span className="text-p1">*</span>
               </label>
             </div>
-            <button className="btnAllGlobal bg-p1 ">
+            <button className="btnAllGlobal  bg-p1 ">
               <span>Send Message</span>
             </button>
           </form>

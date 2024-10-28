@@ -2,7 +2,7 @@ import Lottie from "lottie-react";
 import { Navigate, useLocation } from "react-router-dom";
 import UseAdmin from "../Hooks/UseAdmin";
 import UseAuth from "../Hooks/UseAuth";
-import banner from "../assets/bannerAnimation/kJf7VPLhza.json";
+import banner from "../assets/bannerAnimation/loading.json";
 const AdminRoute = ({ children }) => {
   const { user, loading, setLoading } = UseAuth();
 
@@ -19,7 +19,7 @@ const AdminRoute = ({ children }) => {
     );
   }
 
-  if (!user && !loading) {
+  if (!isAdmin) {
     return <Navigate state={{ from: location }} replace to="/login"></Navigate>;
   }
 

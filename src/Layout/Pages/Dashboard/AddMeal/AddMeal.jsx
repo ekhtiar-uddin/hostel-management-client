@@ -153,7 +153,7 @@ const AddMeal = () => {
               <input
                 type="number"
                 placeholder="Rating"
-                {...register("rating")}
+                {...register("rating", { required: true })}
                 className="inputAndTextarea"
               />
               <input
@@ -204,49 +204,53 @@ const AddMeal = () => {
                 className="inputAndTextarea"
               />
             </div>
-            <div>
+            <div className="mb-3">
               {errors.name && (
-                <span className="text-[#D24821] mr-4 ">Name is required</span>
+                <span className="errorAddMeal ">Name is required</span>
               )}
 
               {errors.category && (
-                <span className="text-[#D24821] mr-4 ">Select a category</span>
+                <span className="errorAddMeal ">Select a category</span>
               )}
 
               {errors.date && (
-                <span className="text-[#D24821] mr-4 ">Date is required</span>
+                <span className="errorAddMeal ">Date is required</span>
+              )}
+
+              {errors.rating && (
+                <span className="errorAddMeal ">Rating is required</span>
               )}
 
               {errors.price && (
-                <span className="text-[#D24821] mr-4 ">Price is required</span>
+                <span className="errorAddMeal ">Price is required</span>
               )}
 
               {errors.ingredients && (
-                <span className="text-[#D24821] mr-4 ">
+                <span className="errorAddMeal ">
                   Meal ingredients is required
                 </span>
               )}
               {errors.description && (
-                <span className="text-[#D24821] mr-4 ">
+                <span className="errorAddMeal ">
                   Meal description is required
                 </span>
               )}
 
               {errors.image && (
-                <span className="text-[#D24821]  ">
+                <span className="errorAddMeal ">
                   Meals photoURL is required
                 </span>
               )}
             </div>
             <button
               onClick={handleSubmit(onSubmitAddMeal)}
-              className="btnAllGlobal bg-p1"
+              className="btnAllGlobal  bg-p1"
             >
               <span className=""> Add Meal</span>
             </button>{" "}
             <button
               onClick={handleSubmit(onSubmitUpcomingMeal)}
-              className="btnAllGlobal bg-p1 ml-4"
+              className="btnAllGlobal  bg-p1 ml-4"
             >
               <span className=""> Add To Upcoming</span>
             </button>{" "}

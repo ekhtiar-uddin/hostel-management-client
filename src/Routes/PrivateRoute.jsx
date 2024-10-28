@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import { Navigate } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
-import banner from "../assets/bannerAnimation/kJf7VPLhza.json";
+import banner from "../assets/bannerAnimation/loading.json";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = UseAuth();

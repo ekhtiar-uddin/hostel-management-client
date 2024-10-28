@@ -7,8 +7,8 @@ import Select from "react-select";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import { useFetchGlobal } from "../../../Hooks/useFetchGlobal";
 import useFilterSearch from "../../../Hooks/useFilterSearch";
-import UseMeal from "../../../Hooks/UseMeal";
 import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import Footer from "../Home/Footer/Footer";
 import SingleBestRating from "./SingleBestRating";
@@ -20,12 +20,12 @@ const MealPage = () => {
 
   const [asc, setAsc] = useState(true);
   const allMeals = useFilterSearch(asc, search);
-  const [meals] = UseMeal();
+  const [meals, loading, refetch] = useFetchGlobal("/meals");
 
   const [selectedOption, setSelectedOption] = useState("Dinner");
   const categoryValue = selectedOption.value;
 
-  const bestRatingMeals = meals.filter((item) => item?.rating > 3);
+  const bestRatingMeals = meals.filter((item) => item?.rating > 4);
 
   const filteredMeals = allMeals.filter(
     (meal) => meal.category === selectedOption.value
@@ -193,7 +193,7 @@ const MealPage = () => {
                     className="absolute right-0  bg-p1 px-4 flex items-center justify-center m-1 h-[39px] rounded"
                   >
                     {" "}
-                    <BsSearch className="text-[#444]   text-lg"></BsSearch>
+                    <BsSearch className="   text-lg"></BsSearch>
                   </button>
                 </div>
               </form>

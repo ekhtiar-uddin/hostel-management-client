@@ -1,10 +1,12 @@
+import Lottie from "lottie-react";
 import Swal from "sweetalert2";
+import banner from "../../../../assets/bannerAnimation/loading.json";
 import useAxiosPublic from "../../../../Hooks/UseAxiosPublic";
-import UseMeal from "../../../../Hooks/UseMeal";
+import { useFetchGlobal } from "../../../../Hooks/useFetchGlobal";
 import UseToastify from "../../../../Hooks/UseToastify";
 import SingleMeal from "./SingleMeal";
 const AllMeals = () => {
-  const [meals, loading, refetch] = UseMeal();
+  const [meals, loading, refetch] = useFetchGlobal("/meals");
   const axiosPublic = useAxiosPublic();
 
   const handleDeleteMeal = (meal) => {
@@ -30,21 +32,28 @@ const AllMeals = () => {
 
   return (
     <div>
-      <h2 className="my-12 headTitle">
-        Added <span className="text-p1"> meals </span>
-      </h2>
-
-      <div className="">
-        <div className="grid grid-cols-3 gap-4">
-          {meals?.map((item, index) => (
-            <SingleMeal
-              key={item._id}
-              handleDeleteMeal={handleDeleteMeal}
-              item={item}
-            ></SingleMeal>
-          ))}
+      {loading ? (
+        <div className="addFlex lg:h-[70vh]">
+          <Lottie className="w-[300px]" animationData={banner} loop={true} />
         </div>
-      </div>
+      ) : (
+        <>
+          <h2 className="my-12 headTitle">
+            Added <span className="text-p1"> meals </span>
+          </h2>
+          <div className="">
+            <div className="grid grid-cols-3 gap-4">
+              {meals?.map((item, index) => (
+                <SingleMeal
+                  key={item._id}
+                  handleDeleteMeal={handleDeleteMeal}
+                  item={item}
+                ></SingleMeal>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

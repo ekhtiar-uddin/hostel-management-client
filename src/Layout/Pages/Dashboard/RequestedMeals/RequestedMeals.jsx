@@ -1,29 +1,19 @@
-import { useContext, useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import banner from "../../../../assets/bannerAnimation/loading.json";
 import { AuthContext } from "../../../../Components/AuthProvider/AuthProvider";
 import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
+import { useFetchSecure } from "../../../../Hooks/useFetchSecure";
 import UseToastify from "../../../../Hooks/UseToastify";
 import SingleRequest from "./SingleRequest";
-
 const RequestedMeals = () => {
   const { user } = useContext(AuthContext);
   const axiosSecure = UseAxiosSecure();
-  const [requestedMeals, setRequestedMeals] = useState([]);
 
-  // const res = axiosSecure.get(`/requestedMeals?userEmail=${user?.email}`);
   const url = `/requestedMeals?userEmail=${user?.email}`;
 
-  useEffect(() => {
-    axiosSecure
-      .get(url)
-
-      .then((res) => {
-        setRequestedMeals(res.data);
-      })
-      .catch((err) => {
-        console.log("error", err);
-      });
-  }, [url]);
+  const [requestedMeals, loading, refetch] = useFetchSecure(url);
 
   const handleDeleteRequest = (meal) => {
     Swal.fire({
@@ -40,35 +30,37 @@ const RequestedMeals = () => {
 
         if (res.data.deletedCount > 0) {
           UseToastify("success", `${meal.title} has been deleted!`);
-          const newRequestedArray = requestedMeals.filter(
-            (item) => item._id !== meal._id
-          );
-          setRequestedMeals(newRequestedArray);
+          refetch();
         }
       }
     });
   };
   return (
     <div>
-      <h2 className=" my-12 headTitle">
-        You have{" "}
-        <span className="text-p1">
-          {" "}
-          requested {requestedMeals?.length} meals{" "}
-        </span>
-      </h2>
-
-      <div className="">
-        <div className="grid grid-cols-6 gap-4">
-          {requestedMeals?.map((item, index) => (
-            <SingleRequest
-              key={item._id}
-              handleDeleteRequest={handleDeleteRequest}
-              item={item}
-            ></SingleRequest>
-          ))}
+      {loading ? (
+        <div className="addFlex lg:h-[70vh]">
+          <Lottie className="w-[300px]" animationData={banner} loop={true} />
         </div>
-      </div>
+      ) : (
+        <>
+          <h2 className=" my-12 headTitle">
+            You have{" "}
+            <span className="text-p1">
+              {" "}
+              requested {requestedMeals?.length} meals{" "}
+            </span>
+          </h2>
+          <div className="grid grid-cols-6 gap-4">
+            {requestedMeals?.map((item, index) => (
+              <SingleRequest
+                key={item._id}
+                handleDeleteRequest={handleDeleteRequest}
+                item={item}
+              ></SingleRequest>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

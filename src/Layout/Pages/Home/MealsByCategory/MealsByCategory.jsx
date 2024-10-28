@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import UseMeal from "../../../../Hooks/UseMeal";
+import { useFetchGlobal } from "../../../../Hooks/useFetchGlobal";
 import "../MealsByCategory/TabCss/Tab.css";
 import MealTab from "./MealTab/MealTab";
 import imgOne from "/assets/breakfast.jpeg";
@@ -8,7 +8,7 @@ import imgThree from "/assets/dinner.jpg";
 import imgTwo from "/assets/lunch.jpg";
 const MealsByCategory = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const [meals, loading, refetch] = UseMeal();
+  const [meals, loading, refetch] = useFetchGlobal("/meals");
   const tabs = [
     {
       id: 1,
@@ -70,23 +70,29 @@ const MealsByCategory = () => {
           ))}
         </TabList>
 
-        {activeTab === 0 && (
-          <TabPanel>
-            <MealTab items={meals}></MealTab>
-          </TabPanel>
+        {loading ? (
+          "Loading.."
+        ) : (
+          <>
+            {activeTab === 0 && (
+              <TabPanel>
+                <MealTab items={meals}></MealTab>
+              </TabPanel>
+            )}
+
+            <TabPanel>
+              <MealTab items={breakfast}></MealTab>
+            </TabPanel>
+
+            <TabPanel>
+              <MealTab items={lunch}></MealTab>
+            </TabPanel>
+
+            <TabPanel>
+              <MealTab items={dinner}></MealTab>
+            </TabPanel>
+          </>
         )}
-
-        <TabPanel>
-          <MealTab items={breakfast}></MealTab>
-        </TabPanel>
-
-        <TabPanel>
-          <MealTab items={lunch}></MealTab>
-        </TabPanel>
-
-        <TabPanel>
-          <MealTab items={dinner}></MealTab>
-        </TabPanel>
       </Tabs>
     </div>
   );

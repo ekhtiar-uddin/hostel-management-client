@@ -11,7 +11,9 @@ const About = () => {
             backgroundImage:
               'url("https://i.pinimg.com/564x/ab/51/73/ab5173eb1ef2d973ae36a028f53755b9.jpg")',
           }}
-          className="flex-1 mt-10 rounded-tr-[100px] w-[400px] lg:w-[500px] bg-no-repeat bg-cover rounded-lg h-[500px] relative"
+          className="flex-1 mt-10 rounded-tr-[100px] w-[90%]
+          md:w-full lg:w-[500px] bg-no-repeat bg-cover rounded-lg 
+          h-[500px] relative"
         >
           <div className="md:block lg:hidden h-[500px]"></div>
           {/* <div
@@ -73,7 +75,7 @@ const About = () => {
             your college experience. Discover Mealvy today!
           </p>
           <Link to={`/contact`}>
-            <button className="btnAllGlobal bg-p1 mt-8">
+            <button className="btnAllGlobal bg-p1  mt-8">
               <span className=""> Contact Us</span>
             </button>{" "}
           </Link>

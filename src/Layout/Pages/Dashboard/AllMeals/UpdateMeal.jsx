@@ -86,7 +86,7 @@ const UpdateMeal = () => {
 
         <div className="w-3/6 relative">
           <form className="w-full text-p2">
-            <div className="flex gap-5 w-full mb-6">
+            <div className="flex gap-5  ">
               <div className=" w-full">
                 <input
                   {...register("name", { required: true })}
@@ -94,7 +94,7 @@ const UpdateMeal = () => {
                   type="text"
                   defaultValue={name}
                   placeholder="Meal Name"
-                  className="outline-none rounded-lg bg-[#161515]  w-full pl-2 border  border-p2 py-2 "
+                  className="inputAndTextarea"
                 />
               </div>
 
@@ -102,7 +102,7 @@ const UpdateMeal = () => {
                 <select
                   defaultValue={category}
                   {...register("category", { required: true })}
-                  className="outline-none rounded-lg bg-[#161515] w-full pl-2 border   border-p2 py-2 "
+                  className="inputAndTextarea"
                 >
                   <option disabled value="default">
                     Select a category{" "}
@@ -118,14 +118,14 @@ const UpdateMeal = () => {
                 type="date"
                 defaultValue={formattedDate}
                 {...register("date")}
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 py-2 w-full "
+                className="inputAndTextarea"
               />
 
               <input
                 type="number"
                 defaultValue={rating}
                 {...register("rating")}
-                className="outline-none  rounded-lg bg-[#161515]   pl-2 border border-p2 py-2 w-full"
+                className="inputAndTextarea"
               />
 
               <input
@@ -135,27 +135,27 @@ const UpdateMeal = () => {
                 {...register("like")}
                 name=""
                 id=""
-                className="outline-none rounded-lg bg-[#161515]   pl-2 border border-p2 py-2 w-full"
+                className="inputAndTextarea"
               />
             </div>
-            <div className="flex w-full gap-4 mt-6">
+            <div className="flex gap-4 ">
               <input
                 type="number"
                 defaultValue={review}
                 {...register("review")}
                 name=""
                 id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2"
+                className="inputAndTextarea"
               />
               <input
                 type="number"
                 defaultValue={price}
                 {...register("price")}
                 id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2  "
+                className="inputAndTextarea"
               />
             </div>
-            <div className="flex w-full gap-4 mt-12">
+            <div className="flex  gap-4 ">
               <input
                 type="text"
                 placeholder="Distributor Name"
@@ -163,7 +163,7 @@ const UpdateMeal = () => {
                 defaultValue={user?.displayName}
                 name=""
                 id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2 mb-7 "
+                className="inputAndTextarea"
               />
               <input
                 type="text"
@@ -172,7 +172,7 @@ const UpdateMeal = () => {
                 {...register("adminEmail")}
                 name=""
                 id=""
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 w-full py-2 mb-7 "
+                className="inputAndTextarea"
               />
             </div>
             <div className="flex gap-5 w-full">
@@ -180,7 +180,7 @@ const UpdateMeal = () => {
                 {...register("ingredients")}
                 defaultValue={defaultIngredients}
                 placeholder="Ingredients"
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 py-2 mb-7  w-full"
+                className="inputAndTextarea"
               ></textarea>
 
               <textarea
@@ -189,7 +189,7 @@ const UpdateMeal = () => {
                 cols="10"
                 rows="5"
                 placeholder="Description"
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border border-p2 mb-7 py-2 w-full"
+                className="inputAndTextarea"
               ></textarea>
             </div>
             <div className="w-full">
@@ -198,19 +198,19 @@ const UpdateMeal = () => {
                 type="text"
                 defaultValue={image}
                 placeholder="imageURL"
-                className="outline-none rounded-lg bg-[#161515]  pl-2 border w-full border-p2 py-2 mb-7 "
+                className="inputAndTextarea"
               />
             </div>
             <button
               onClick={handleSubmit(onSubmitUpdateMeal)}
-              className="btnAll mt-4 px-4 lg:px-6 py-1 lg:py-2   font-medium  transition-all duration-200 rounded bg-p1 "
+              className="btnAllGlobal bg-p1"
             >
               <span className="">Update Meal</span>
             </button>{" "}
           </form>
-          <h2 className=" top-[13%] left-[38%] absolute">Rating</h2>
-          <h2 className=" top-[13%] right-[23%] absolute">Likes</h2>
-          <h2 className=" top-[24.5%] left-7 absolute">Reviews</h2>
+          <h2 className=" top-[14%] right-[35%] absolute">Rating</h2>
+          <h2 className=" top-[14%] right-[2%] absolute">Likes</h2>
+          <h2 className=" top-[26%] left-[40%] absolute">Reviews</h2>
         </div>
       </div>
     </div>

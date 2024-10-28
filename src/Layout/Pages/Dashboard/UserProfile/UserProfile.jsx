@@ -1,40 +1,40 @@
-import { useQuery } from "@tanstack/react-query";
 import Lottie from "lottie-react";
-import UseAuth from "../../../../Hooks/UseAuth";
-import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
 import goldBedgeAnimation from "../../../../assets/lottie/Bedges/eyvoDqwwLu.json";
 import silverAnimation from "../../../../assets/lottie/Bedges/rfB3OLjbdi.json";
 import platinumAnimation from "../../../../assets/lottie/Bedges/uVh8iOBGBC.json";
+import UseAuth from "../../../../Hooks/UseAuth";
+import UseAxiosSecure from "../../../../Hooks/UseAxiosSecure";
+import { useFetchSecure } from "../../../../Hooks/useFetchSecure";
 const UserProfile = () => {
   const { user } = UseAuth();
   const axiosSecure = UseAxiosSecure();
+  const [payments, loading, refetch] = useFetchSecure(
+    `/payments/${user.email}`
+  );
+  console.log("before", payments);
 
-  const { data: payments } = useQuery({
-    queryKey: ["payments", user?.email],
-    queryFn: async () => {
-      const res = await axiosSecure.get(`/payments/${user.email}`);
-      return res.data;
-    },
-  });
-
+  const latestPayment = payments?.sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  )[0];
+  console.log("here", latestPayment);
   return (
     <div className="">
       <h2 className=" my-20  headTitle">
         You are a{" "}
         <span className="text-p1 lowercase">
           {" "}
-          {payments?.[0]?.plan ? payments?.[0]?.plan : "Silver"} Member{" "}
+          {latestPayment?.plan ? latestPayment?.plan : "Silver"} Member{" "}
         </span>
       </h2>
 
       <div>
-        {payments?.[0]?.plan === "Platinum" ? (
+        {latestPayment?.plan === "Platinum" ? (
           <Lottie
             className="w-[400px] mx-auto"
             animationData={platinumAnimation}
             loop={true}
           />
-        ) : payments?.[0]?.plan === "Gold" ? (
+        ) : latestPayment?.plan === "Gold" ? (
           <Lottie
             className="w-[400px] mx-auto"
             animationData={goldBedgeAnimation}

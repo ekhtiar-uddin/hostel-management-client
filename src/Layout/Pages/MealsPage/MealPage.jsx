@@ -28,7 +28,7 @@ const MealPage = () => {
   const bestRatingMeals = meals.filter((item) => item?.rating > 4);
 
   const filteredMeals = allMeals.filter(
-    (meal) => meal.category === selectedOption.value
+    (meal) => meal.category === selectedOption.value,
   );
 
   const options = [

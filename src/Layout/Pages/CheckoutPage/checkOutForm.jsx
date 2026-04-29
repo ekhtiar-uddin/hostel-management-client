@@ -49,14 +49,14 @@ const CheckOutForm = () => {
           price: totalPrice,
           email: user?.email,
         },
-        { skipAuthErrorHandler: true }
+        { skipAuthErrorHandler: true },
       );
       clientSecret = res.data.clientSecret; // Capture clientSecret
     } catch (error) {
       if (error.response?.status === 403) {
         UseToastify(
           "",
-          "You have already made a payment within the last 30 days."
+          "You have already made a payment within the last 30 days.",
         );
       }
 
@@ -105,7 +105,7 @@ const CheckOutForm = () => {
         UseToastify(
           "",
           toastMessage,
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ8Rf-P_S17VvgG5fIp1JWKKyX7AgTCbOt3w&usqp=CAU"
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ8Rf-P_S17VvgG5fIp1JWKKyX7AgTCbOt3w&usqp=CAU",
         );
       } else if (planName === "Silver") {
         UseToastify("", toastMessage, img);
@@ -113,7 +113,7 @@ const CheckOutForm = () => {
         UseToastify(
           "",
           toastMessage,
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvQcfoau_BSAE4OADEZ6HbTrLyLHrKqwN4AQ&usqp=CAU"
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvQcfoau_BSAE4OADEZ6HbTrLyLHrKqwN4AQ&usqp=CAU",
         );
       }
 

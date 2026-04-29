@@ -186,7 +186,7 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://hostel-management-server-six.vercel.app/reviews/${params.id}`
+            `https://hostel-management-server-six.vercel.app/reviews/${params.id}`,
           ),
       },
       {
@@ -198,7 +198,7 @@ export const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://hostel-management-server-six.vercel.app/meals/${params.id}`
+            `https://hostel-management-server-six.vercel.app/meals/${params.id}`,
           ),
       },
     ],

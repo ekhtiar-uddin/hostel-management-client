@@ -92,7 +92,9 @@
   height: 0px;
   background-color: #ffffff;
   border-top-right-radius: 50px;
-  transition: width 0.4s, height 0.4s;
+  transition:
+    width 0.4s,
+    height 0.4s;
 }
 
 .btnAll:hover::before {
@@ -103,6 +105,10 @@
 /* contact us */
 
 @layer utilities {
+  .customWidth {
+    @apply max-w-[1480px] mx-auto cw:px-2 md:px-5 px-3;
+  }
+
   .inputAndTextarea {
     @apply outline-none rounded-lg bg-p6 pl-2 w-full py-2.5 mb-4;
   }

@@ -16,7 +16,7 @@ const SinglePlan = ({ plan }) => {
 
   return (
     <>
-      <div className={` p-8   rounded-xl mx-3 lg:mx-5 my-5  ${bgColor()} `}>
+      <div className={`p-8 rounded-xl my-5 ${bgColor()}`}>
         <h2 className="text-center text-2xl font-medium ">{planName}</h2>
 
         <h2 className="text-center text-5xl lg:text-6xl font-medium mt-4 mb-4 lg:mb-8 ">

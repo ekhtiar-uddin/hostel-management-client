@@ -111,19 +111,21 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm 
               dropdown-content z-[1] shadow  
-              rounded-box bg-p3 w-52 text-p1 absolute -right-[140px] top-0"
+              rounded-box bg-p3 w-52 text-p1 absolute -right-[180px] top-0"
             >
               {user ? navLinks : navlinksBeforeLogin}
             </ul>
           </div>
 
-          <div className="">
-            {/* <img
+          <Link to={`/`}>
+            <div className="">
+              {/* <img
               className="w-[50px] lg:w-[70px]"
               src="https://i.ibb.co/Zfz6Pjz/Mealvy.-2.png"
             ></img> */}
-            <h2 className="text-4xl font-semibold text-p5">Mealvy.</h2>
-          </div>
+              <h2 className="text-4xl font-semibold text-p5">Mealvy.</h2>
+            </div>
+          </Link>
         </div>
 
         <div className="addFlexItems">
@@ -186,8 +188,8 @@ const NavBar = () => {
                   isLoading
                     ? "pending"
                     : isActive
-                    ? "border border-p5  rounded-full  font-semibold py-2.5 px-6"
-                    : "border border-p5  rounded-full  font-semibold py-2.5 px-6"
+                      ? "border border-p5  rounded-full  font-semibold py-2.5 px-6"
+                      : "border border-p5  rounded-full  font-semibold py-2.5 px-6"
                 }
               >
                 join now

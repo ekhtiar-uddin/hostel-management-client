@@ -4,7 +4,21 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Outfit: "'Outfit', sans-serif ",
+        Outfit: "'Outfit', sans-serif",
+      },
+      screens: {
+        "3xs": "328px", // --breakpoint-3xs
+        "2xs": "410px", // --breakpoint-2xs
+        xs: "512px", // --breakpoint-xs
+        sm: "640px", // --breakpoint-sm
+        "2sm": "704px", // --breakpoint-2sm
+        md: "768px", // --breakpoint-md
+        "2md": "832px", // --breakpoint-2md
+        lg: "1024px", // --breakpoint-lg
+        "2lg": "1120px", // --breakpoint-2lg
+        cw: "1480px", // --breakpoint-cw
+        xl: "1280px", // --breakpoint-xl
+        "2xl": "1536px", // --breakpoint-2xl
       },
       colors: {
         p1: "#42b0d1",

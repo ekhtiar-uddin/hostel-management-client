@@ -29,7 +29,7 @@ const Membership = () => {
       <p className="  text-center">
         These are the cost effective and valuable for your growth
       </p>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
         {plansInfo?.map((plan) => (
           <SinglePlan key={plan._id} plan={plan}></SinglePlan>
         ))}

@@ -11,7 +11,7 @@ const About = () => {
             backgroundImage:
               'url("https://i.pinimg.com/564x/ab/51/73/ab5173eb1ef2d973ae36a028f53755b9.jpg")',
           }}
-          className="flex-1 mt-10 rounded-tr-[100px] w-[90%]
+          className="flex-1 min-w-0 mt-10 rounded-tr-[100px] w-[90%]
           md:w-full lg:w-[500px] bg-no-repeat bg-cover rounded-lg 
           h-[500px] relative"
         >
@@ -26,17 +26,17 @@ const About = () => {
             {" "}
           </div> */}
           <img
-            className="-rotate-[10deg] absolute -top-20 lg:-top-12 right-[60%] lg:right-[15%] rounded-full w-[170px] h-[170px]"
+            className="-rotate-[10deg] absolute -top-20 lg:-top-12 right-[30%] sm:right-[45%] lg:right-[15%] rounded-full w-[170px] h-[170px]"
             src="https://i.pinimg.com/564x/b2/73/ab/b273abb13bef73395622b584b2c1e4c5.jpg"
             alt=""
           />
           <img
-            className="-rotate-[11deg] lg:-rotate-[10deg] absolute bottom-0 -right-7 lg:-right-14 rounded-xl w-[200px] lg:w-[280px] h-[150px] lg:h-[200px]"
+            className="-rotate-[11deg] lg:-rotate-[10deg] absolute bottom-0 right-0 lg:-right-14 rounded-xl w-[200px] lg:w-[280px] h-[150px] lg:h-[200px]"
             src="https://i.pinimg.com/564x/e7/a8/bc/e7a8bcfbe44c54a0d384c44830b92368.jpg"
             alt=""
           />
         </div>
-        <div className="flex-1 ">
+        <div className="flex-1 min-w-0">
           <div className="addFlexBetween rounded-full px-3 py-2 lg:w-[60%] bg-p6">
             <div className="flex -space-x-2">
               <img

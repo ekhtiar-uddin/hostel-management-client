@@ -13,7 +13,6 @@ import SocialLink from "../../../Shared/SocialLinks/SocialLink";
 import Footer from "../Home/Footer/Footer";
 import SingleBestRating from "./SingleBestRating";
 import SingleMeal from "./SingleMeal";
-import checkmark from "/assets/checkmark.png";
 const MealPage = () => {
   const { register, handleSubmit } = useForm();
   const [search, setSearch] = useState("");
@@ -75,19 +74,22 @@ const MealPage = () => {
               <div className="">
                 <div className="space-y-2 mb-5 ">
                   <div className="addFlexItems gap-2">
-                    <img className="w-[30px]" src={checkmark}></img>
+                    <img className="w-[30px]" src="/assets/checkmark.png"></img>
                     <p className="    font-medium">
                       The food here uses 100% natural preservatives
                     </p>
                   </div>
                   <div className="addFlexItems gap-2">
-                    <img className="w-[30px] " src={checkmark}></img>
+                    <img
+                      className="w-[30px] "
+                      src="/assets/checkmark.png"
+                    ></img>
                     <p className="    font-medium">
                       The package here is very up to date and safe
                     </p>
                   </div>
                   <div className="addFlexItems gap-2">
-                    <img className="w-[30px]" src={checkmark}></img>
+                    <img className="w-[30px]" src="/assets/checkmark.png"></img>
                     <p className="    font-medium">
                       A comfortable place to hang out with your friends.
                     </p>
